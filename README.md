@@ -1,4 +1,4 @@
-Meals To God
+Meals To Go
 
 Order food, find restuarants all on your phone.
 
