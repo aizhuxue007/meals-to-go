@@ -1,6 +1,6 @@
-import { StyleSheet, SafeAreaView, StatusBar } from 'react-native';
-import SearchBar from './src/components/SearchBar';
-import RestaurantList from './src/components/RestaurantList';
+import { StyleSheet, SafeAreaView, StatusBar } from "react-native";
+import SearchBar from "./src/components/SearchBar";
+import RestaurantList from "./src/components/RestaurantList";
 
 export default function App() {
   return (

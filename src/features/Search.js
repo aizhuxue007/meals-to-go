@@ -1,13 +1,11 @@
-import SearchBar from '../components/SearchBar'
-import RestaurantList from '../components/RestaurantList'
+import SearchBar from "../components/SearchBar";
+import RestaurantList from "../components/RestaurantList";
 
-const Search = () => {
-    return (
-        <>
-            <SearchBar />
-            <RestaurantList />
-        </>
-    )
-}
+const Search = () => (
+  <>
+    <SearchBar />
+    <RestaurantList />
+  </>
+);
 
-export default Search   
+export default Search;
