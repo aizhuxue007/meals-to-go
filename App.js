@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, SafeAreaView, StatusBar } from "react-native";
 import SearchBar from "./src/components/SearchBar";
 import RestaurantList from "./src/components/RestaurantList";
