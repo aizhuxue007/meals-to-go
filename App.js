@@ -1,13 +1,12 @@
 import React from "react";
 import { StyleSheet, StatusBar } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Search from "./src/features/Search";
-
+import { RestaurantScreen } from './src/features/restaurants/screens/restaurants.screen'
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Search />
+      <RestaurantScreen />
     </SafeAreaView>
   );
 }
