@@ -1,5 +1,5 @@
 import React from "react";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/MySearchBar";
 import RestaurantList from "../components/RestaurantList";
 
 const Search = () => (
