@@ -1,14 +1,14 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import MySearchBar from '../../../components/MySearchBar'
-import RestaurantList from '../../../components/RestaurantList'
+import RestaurantInfo from '../components/restaurant-info.component'
 import { sizes } from '../../../utils/Sizes'
 
 export const RestaurantScreen = () => {
     return (
         <View style={styles.search}>
             <MySearchBar />
-            <RestaurantList />
+            <RestaurantInfo />
         </View>
     )
 }
