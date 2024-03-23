@@ -1,23 +1,22 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
+import { styled } from 'styled-components/native'
 import MySearchBar from '../../../components/MySearchBar'
 import RestaurantList from '../components/restaurant-list.component'
 import { sizes } from '../../../utils/Sizes'
 
+const Search = styled(View)` 
+    padding: ${sizes.sm}px;
+    flex: 1;
+`
+
 export const RestaurantScreen = () => {
     return (
-        <View style={styles.search}>
+        <Search>
             <MySearchBar />
             <RestaurantList />
-        </View>
+        </Search>
     )
 }
-
-const styles = StyleSheet.create({
-    search: {
-        padding: sizes.sm,
-        flex: 1
-    }
-})
 
 export default RestaurantScreen
