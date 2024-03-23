@@ -1,10 +1,11 @@
 import React from 'react'
-import RestaurantInfo from './restaurant-info.component'
+import RestaurantInfoCard from './restaurant-info-card.component'
 
 const RestaurantList = () => {
     return (
         <>
-            <RestaurantInfo />
+            <RestaurantInfoCard />
+            <RestaurantInfoCard />
         </>
     )
 }
