@@ -6,6 +6,7 @@ import { sizes } from '../../../utils/Sizes'
 
 const RestaurantCard = styled(Card)`
     marginBottom: ${sizes.xxl}px;
+    background: #f8f9fa;
 `
 
 const RestaurantCardCover = styled(Card.Cover)`
