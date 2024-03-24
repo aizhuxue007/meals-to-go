@@ -2,6 +2,8 @@ import React from 'react'
 import { Text } from 'react-native'
 import { Card } from 'react-native-paper'
 import styled from 'styled-components/native'
+import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/oswald'
+import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
 import { sizes } from '../../../utils/Sizes'
 
 const RestaurantCard = styled(Card)`
@@ -11,12 +13,14 @@ const RestaurantCard = styled(Card)`
 const RestaurantCardCover = styled(Card.Cover)``
 
 const Title = styled(Text)`
+    font-family: ${props => props.theme.fonts.heading};
     font-size: ${props => props.theme.fontSizes.title};
     font-weight: ${props => props.theme.fontWeights.bold};
     color: ${props => props.theme.colors.ui.error};
     margin: 10px 0px 5px 10px;
 `
 const Subtitle = styled(Text)`
+    font-family: ${props => props.theme.fonts.body};
     font-size: ${props => props.theme.fontSizes.body};
     margin: ${props => props.theme.space[2]};
 `
@@ -30,6 +34,17 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         rating = 4,
         isClosedTemporarily,
     } = restaurant
+
+    const [oswaldLoaded, oswaldError] = useOswald({
+        Oswald_400Regular
+    })
+    const [latoLoaded, latoError] = useLato({
+        Lato_400Regular
+    })
+
+    if (!oswaldLoaded && !oswaldError || !latoLoaded && !latoError) {
+        return null;
+    }
 
     return (
         <RestaurantCard elevation={5}>
