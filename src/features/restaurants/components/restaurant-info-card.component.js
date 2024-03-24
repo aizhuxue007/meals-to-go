@@ -16,6 +16,7 @@ const RestaurantCardCover = styled(Card.Cover)`
 const Title = styled(Text)`
     font-size: 20px;
     font-weight: bold;
+    color: ${props => props.theme.colors.ui.error};
     margin: 10px 0px 5px 10px;
 `
 const Subtitle = styled(Text)`
