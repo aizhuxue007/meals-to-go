@@ -6,24 +6,20 @@ import { sizes } from '../../../utils/Sizes'
 
 const RestaurantCard = styled(Card)`
     marginBottom: ${sizes.xxl}px;
-    background: #f8f9fa;
+    background: ${props => props.theme.colors.bg.primary};
 `
-
-const RestaurantCardCover = styled(Card.Cover)`
-
-`
+const RestaurantCardCover = styled(Card.Cover)``
 
 const Title = styled(Text)`
-    font-size: 20px;
-    font-weight: bold;
+    font-size: ${props => props.theme.fontSizes.title};
+    font-weight: ${props => props.theme.fontWeights.bold};
     color: ${props => props.theme.colors.ui.error};
     margin: 10px 0px 5px 10px;
 `
 const Subtitle = styled(Text)`
-    font-size: 16px;
-    margin: 10px;
+    font-size: ${props => props.theme.fontSizes.body};
+    margin: ${props => props.theme.space[2]};
 `
-
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
     const {
         name = "Some restaurant",
