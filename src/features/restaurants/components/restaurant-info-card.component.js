@@ -19,7 +19,7 @@ const Title = styled(Text)`
     color: ${props => props.theme.colors.ui.error};
     margin: 10px 0px 5px 10px;
 `
-const Subtitle = styled(Text)`
+const Address = styled(Text)`
     font-family: ${props => props.theme.fonts.body};
     font-size: ${props => props.theme.fontSizes.body};
     margin: ${props => props.theme.space[2]};
@@ -50,7 +50,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         <RestaurantCard elevation={5}>
             <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
             <Title>{name}</Title>
-            <Subtitle>{address}</Subtitle>
+            <Address>{address}</Address>
         </RestaurantCard>
     )
 }
