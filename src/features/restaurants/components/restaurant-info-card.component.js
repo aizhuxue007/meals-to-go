@@ -4,6 +4,8 @@ import { Card } from 'react-native-paper'
 import styled from 'styled-components/native'
 import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/oswald'
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
+import { SvgXml } from 'react-native-svg'
+import star from '../../../../assets/star'
 import { sizes } from '../../../utils/Sizes'
 
 const RestaurantCard = styled(Card)`
@@ -24,6 +26,12 @@ const Address = styled(Text)`
     font-size: ${props => props.theme.fontSizes.body};
     margin: ${props => props.theme.space[2]};
 `
+
+const Star = styled(SvgXml)`
+    margin-left: ${sizes.sm}px;
+    margin-bottom: ${sizes.sm}px;
+`
+
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
     const {
         name = "Some restaurant",
@@ -51,6 +59,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
             <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
             <Title>{name}</Title>
             <Address>{address}</Address>
+            <Star xml={star} width={20} height={20} />
         </RestaurantCard>
     )
 }
