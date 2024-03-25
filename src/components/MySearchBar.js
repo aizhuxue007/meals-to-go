@@ -1,14 +1,18 @@
 import { useState } from "react";
-import { StyleSheet } from "react-native";
 import { Searchbar } from "react-native-paper";
+import styled from 'styled-components/native'
 import { sizes } from "../utils/Sizes";
 sizes
+
+const StyledSearchBar = styled(Searchbar)`
+  background: ${props => props.theme.colors.bg.primary};
+  margin-bottom: ${props => props.theme.space[4]}
+`
 
 const MySearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("")
   return (
-    <Searchbar
-      style={styles.search}
+    <StyledSearchBar
       placeholder="Search"
       onChangeText={setSearchQuery}
       value={searchQuery}
@@ -16,11 +20,5 @@ const MySearchBar = () => {
     />
   );
 };
-
-const styles = StyleSheet.create({
-  search: {
-    marginBottom: sizes.md
-  }
-})
 
 export default MySearchBar;

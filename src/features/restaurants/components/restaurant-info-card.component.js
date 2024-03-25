@@ -6,6 +6,7 @@ import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/osw
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
 import { SvgXml } from 'react-native-svg'
 import star from '../../../../assets/star'
+import greyStar from '../../../../assets/greyStar'
 import { sizes } from '../../../utils/Sizes'
 
 const RestaurantCard = styled(Card)`
@@ -15,7 +16,9 @@ const RestaurantCard = styled(Card)`
 const RestaurantCardCover = styled(Card.Cover)``
 
 const RestaurantInfo = styled(View)`
-    flex-direction: row
+    flex-direction: row;
+    justify-content: space-between;
+    padding: ${props => props.theme.space[1]} ${props => props.theme.space[1]} ${props => props.theme.space[3]} ${props => props.theme.space[1]};
 `
 const RestaurantDescription = styled(View)`
 `
@@ -24,8 +27,8 @@ const Title = styled(Text)`
     font-family: ${props => props.theme.fonts.heading};
     font-size: ${props => props.theme.fontSizes.title};
     font-weight: ${props => props.theme.fontWeights.bold};
-    color: ${props => props.theme.colors.ui.error};
-    margin: 10px 0 0 10px;
+    color: ${props => props.theme.colors.ui.primary};
+    margin: ${props => props.theme.space[2]} 0 0 ${props => props.theme.space[2]};
 `
 const Address = styled(Text)`
     font-family: ${props => props.theme.fonts.body};
@@ -35,7 +38,8 @@ const Address = styled(Text)`
 
 const Ratings = styled(View)`
     flex-direction: row;
-    
+    padding-top: ${props => props.theme.space[1]};
+    margin: ${props => props.theme.space[2]} ${props => props.theme.space[2]} ${props => props.theme.space[2]} 0;
 `
 
 const Star = styled(SvgXml)`
@@ -65,7 +69,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         isClosedTemporarily,
     } = restaurant
 
-    const starRatings = [...Array(Math.ceil(rating))].map((_, i) => i)
+    const starRatings = [...Array(5)].map((_, i) => i)
 
     return (
         <RestaurantCard elevation={5}>
@@ -76,7 +80,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                     <Address>{address}</Address>
                 </RestaurantDescription>
                 <Ratings>
-                    {starRatings.map(_ => <Star xml={star} width={20} height={20} />)}
+                    {starRatings.map(i => i < Math.ceil(rating) ? <Star key={i} xml={star} width={20} height={20} /> : <Star key={i} xml={greyStar} width={20} height={20} />)}
                 </Ratings>
             </RestaurantInfo>
         </RestaurantCard>
