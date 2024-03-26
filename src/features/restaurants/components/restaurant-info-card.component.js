@@ -7,6 +7,7 @@ import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
 import { SvgXml } from 'react-native-svg'
 import star from '../../../../assets/star'
 import greyStar from '../../../../assets/greyStar'
+import open from '../../../../assets/open'
 import { sizes } from '../../../utils/Sizes'
 
 const RestaurantCard = styled(Card)`
@@ -30,10 +31,15 @@ const Title = styled(Text)`
     color: ${props => props.theme.colors.ui.primary};
     margin: ${props => props.theme.space[2]} 0 0 ${props => props.theme.space[2]};
 `
+
 const Address = styled(Text)`
     font-family: ${props => props.theme.fonts.body};
     font-size: ${props => props.theme.fontSizes.body};
     margin: ${props => props.theme.space[2]};
+`
+
+const Icons = styled(View)`
+    align-items: flex-end;
 `
 
 const Ratings = styled(View)`
@@ -47,6 +53,10 @@ const Star = styled(SvgXml)`
     margin-bottom: ${sizes.sm}px;
 `
 
+const Open = styled(SvgXml)`
+    margin: 0 ${sizes.sm}px ${sizes.sm}px 0;
+`
+
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
     const [oswaldLoaded, oswaldError] = useOswald({
         Oswald_400Regular
@@ -54,7 +64,6 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     const [latoLoaded, latoError] = useLato({
         Lato_400Regular
     })
-
     if (!oswaldLoaded && !oswaldError || !latoLoaded && !latoError) {
         return null;
     }
@@ -79,9 +88,13 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                     <Title>{name}</Title>
                     <Address>{address}</Address>
                 </RestaurantDescription>
-                <Ratings>
-                    {starRatings.map(i => i < Math.ceil(rating) ? <Star key={i} xml={star} width={20} height={20} /> : <Star key={i} xml={greyStar} width={20} height={20} />)}
-                </Ratings>
+                <Icons>
+
+                    <Ratings>
+                        {starRatings.map(i => i < Math.ceil(rating) ? <Star key={i} xml={star} width={20} height={20} /> : <Star key={i} xml={greyStar} width={20} height={20} />)}
+                    </Ratings>
+                    <Open xml={open} width={20} height={20} />
+                </Icons>
             </RestaurantInfo>
         </RestaurantCard>
     )
