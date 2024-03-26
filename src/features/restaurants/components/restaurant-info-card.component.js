@@ -61,11 +61,10 @@ const Icon = styled(Image)`
 
 const Ratings = styled(View)`
     flex-direction: row;
-    padding-top: ${props => props.theme.space[1]}
+    padding: ${props => props.theme.space[1]} 0;
 `
 
 const Star = styled(SvgXml)`
-    margin: 0 0 ${sizes.sm}px;
 `
 
 const Open = styled(SvgXml)``
