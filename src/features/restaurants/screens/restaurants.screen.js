@@ -8,13 +8,12 @@ import RestaurantList from '../components/restaurant-list.component'
 import { sizes } from '../../../utils/Sizes'
 
 const Search = styled(View)` 
-    padding: ${sizes.sm}px;
+    padding: 0 ${sizes.sm}px ${sizes.sm}px ${sizes.sm}px;
     flex: 1;
 `
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
-  margin-top: ${StatusBar.currentHeight}px;
 `
 
 export const RestaurantScreen = () => {
