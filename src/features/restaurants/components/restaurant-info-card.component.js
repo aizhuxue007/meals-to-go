@@ -8,10 +8,9 @@ import { SvgXml } from 'react-native-svg'
 import star from '../../../../assets/star'
 import greyStar from '../../../../assets/greyStar'
 import open from '../../../../assets/open'
-import { sizes } from '../../../utils/Sizes'
+import Spacer from '../../../components/spacer/spacer.component'
 
 const RestaurantCard = styled(Card)`
-    marginBottom: ${sizes.xxl}px;
     background: ${props => props.theme.colors.bg.primary};
 `
 const RestaurantCardCover = styled(Card.Cover)``
@@ -21,8 +20,7 @@ const RestaurantInfo = styled(View)`
     justify-content: space-between;
     padding: ${props => props.theme.space[4]} ${props => props.theme.space[3]};
 `
-const RestaurantDescription = styled(View)`
-`
+const RestaurantDescription = styled(View)``
 
 const Title = styled(Text)`
     font-family: ${props => props.theme.fonts.heading};
@@ -64,8 +62,7 @@ const Ratings = styled(View)`
     padding: ${props => props.theme.space[1]} 0;
 `
 
-const Star = styled(SvgXml)`
-`
+const Star = styled(SvgXml)``
 
 const Open = styled(SvgXml)``
 
@@ -93,25 +90,28 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     const starRatings = [...Array(5)].map((_, i) => i)
 
     return (
-        <RestaurantCard elevation={5}>
-            <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
-            <RestaurantInfo>
-                <RestaurantDescription>
-                    <Title>{name}</Title>
-                    <Address>{address}</Address>
-                    {isClosedTemporarily && <IsClosedTemporarily>Temporarily Closed</IsClosedTemporarily>}
-                </RestaurantDescription>
-                <Icons>
-                    <Ratings>
-                        {starRatings.map(i => i < Math.ceil(rating) ? <Star key={i} xml={star} width={20} height={20} /> : <Star key={i} xml={greyStar} width={20} height={20} />)}
-                    </Ratings>
-                    <Status>
-                        {isOpenNow && <Open xml={open} width={20} height={20} />}
-                        <Icon source={{ uri: icon }}></Icon>
-                    </Status>
-                </Icons>
-            </RestaurantInfo>
-        </RestaurantCard>
+        <>
+            <RestaurantCard elevation={5}>
+                <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
+                <RestaurantInfo>
+                    <RestaurantDescription>
+                        <Title>{name}</Title>
+                        <Address>{address}</Address>
+                        {isClosedTemporarily && <IsClosedTemporarily>Temporarily Closed</IsClosedTemporarily>}
+                    </RestaurantDescription>
+                    <Icons>
+                        <Ratings>
+                            {starRatings.map(i => i < Math.ceil(rating) ? <Star key={i} xml={star} width={20} height={20} /> : <Star key={i} xml={greyStar} width={20} height={20} />)}
+                        </Ratings>
+                        <Status>
+                            {isOpenNow && <Open xml={open} width={20} height={20} />}
+                            <Icon source={{ uri: icon }}></Icon>
+                        </Status>
+                    </Icons>
+                </RestaurantInfo>
+            </RestaurantCard>
+            <Spacer variant="top.large" />
+        </>
     )
 }
 
