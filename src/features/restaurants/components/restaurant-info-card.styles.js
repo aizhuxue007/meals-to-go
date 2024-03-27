@@ -1,6 +1,6 @@
 import { styled } from "styled-components/native"
 import { SvgXml } from 'react-native-svg'
-import { View, Image } from 'react-native'
+import { Text, View, Image } from 'react-native'
 import { Card } from 'react-native-paper'
 
 export const RestaurantCard = styled(Card)`
