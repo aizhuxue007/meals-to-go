@@ -1,70 +1,12 @@
 import React from 'react'
-import { Text, View, Image } from 'react-native'
-import { Card } from 'react-native-paper'
-import styled from 'styled-components/native'
 import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/oswald'
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
-import { SvgXml } from 'react-native-svg'
+import { RestaurantCard, RestaurantCardCover, RestaurantInfo, RestaurantDescription, Icons, Ratings, Icon, Status, Open, Star } from './restaurant-info-card.styles'
+import { Text } from '../../../components/typography/text.component'
 import star from '../../../../assets/star'
 import greyStar from '../../../../assets/greyStar'
 import open from '../../../../assets/open'
 import Spacer from '../../../components/spacer/spacer.component'
-
-const RestaurantCard = styled(Card)`
-    background: ${props => props.theme.colors.bg.primary};
-`
-const RestaurantCardCover = styled(Card.Cover)``
-
-const RestaurantInfo = styled(View)`
-    flex-direction: row;
-    justify-content: space-between;
-    padding: ${props => props.theme.space[4]} ${props => props.theme.space[3]};
-`
-const RestaurantDescription = styled(View)``
-
-const Title = styled(Text)`
-    font-family: ${props => props.theme.fonts.heading};
-    font-size: ${props => props.theme.fontSizes.title};
-    font-weight: ${props => props.theme.fontWeights.bold};
-    color: ${props => props.theme.colors.ui.primary};
-    margin-bottom:  ${props => props.theme.space[2]}
-`
-
-const Address = styled(Text)`
-    font-family: ${props => props.theme.fonts.body};
-    font-size: ${props => props.theme.fontSizes.body};
-    margin-bottom: ${props => props.theme.space[4]};
-`
-
-const IsClosedTemporarily = styled(Text)`
-    font-family: ${props => props.theme.fonts.body};
-    font-size: ${props => props.theme.fontSizes.body};
-    color: ${props => props.theme.colors.ui.error}
-`
-
-const Icons = styled(View)`
-    align-items: flex-end;
-`
-
-const Status = styled(View)`
-    flex-direction: row;
-    gap: ${props => props.theme.space[3]}
-`
-
-const Icon = styled(Image)`
-    width: ${props => props.theme.sizes[2]};
-    height: ${props => props.theme.sizes[1]};
-    margin-top: ${props => props.theme.space[1]}
-`
-
-const Ratings = styled(View)`
-    flex-direction: row;
-    padding: ${props => props.theme.space[1]} 0;
-`
-
-const Star = styled(SvgXml)``
-
-const Open = styled(SvgXml)``
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
     const [oswaldLoaded, oswaldError] = useOswald({
@@ -95,9 +37,10 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                 <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
                 <RestaurantInfo>
                     <RestaurantDescription>
-                        <Title>{name}</Title>
-                        <Address>{address}</Address>
-                        {isClosedTemporarily && <IsClosedTemporarily>Temporarily Closed</IsClosedTemporarily>}
+                        <Text variant={"bold"}>{name}</Text>
+                        <Text variant={"body"}>{"Good restaurant"}</Text>
+                        <Text variant={"caption"}>{address}</Text>
+                        {isClosedTemporarily && <Text variant={"error"}>Temporarily Closed</Text>}
                     </RestaurantDescription>
                     <Icons>
                         <Ratings>
