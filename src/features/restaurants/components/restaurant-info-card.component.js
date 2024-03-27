@@ -37,9 +37,16 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                 <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
                 <RestaurantInfo>
                     <RestaurantDescription>
-                        <Text variant={"bold"}>{name}</Text>
-                        <Text variant={"body"}>{"Good restaurant"}</Text>
-                        <Text variant={"caption"}>{address}</Text>
+                        <Spacer position={'bottom'} size={'m'}>
+                            <Text variant={"bold"}>{name}</Text>
+                        </Spacer>
+                        <Spacer position={'bottom'} size={'s'}>
+                            <Text variant={"body"}>{"Good restaurant"}</Text>
+                        </Spacer>
+                        <Spacer position={'bottom'} size={'l'}>
+                            <Text variant={"caption"}>{address}</Text>
+                        </Spacer>
+
                         {isClosedTemporarily && <Text variant={"error"}>Temporarily Closed</Text>}
                     </RestaurantDescription>
                     <Icons>
