@@ -90,7 +90,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     const starRatings = [...Array(5)].map((_, i) => i)
 
     return (
-        <>
+        <Spacer position={'top'} size={'xl'}>
             <RestaurantCard elevation={5}>
                 <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
                 <RestaurantInfo>
@@ -110,8 +110,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                     </Icons>
                 </RestaurantInfo>
             </RestaurantCard>
-            <Spacer variant="top.large" />
-        </>
+        </Spacer>
     )
 }
 
