@@ -5,6 +5,7 @@ import { Card } from 'react-native-paper'
 
 export const RestaurantCard = styled(Card)`
     background: ${props => props.theme.colors.bg.primary};
+    border: 1px solid grey;
 `
 export const RestaurantCardCover = styled(Card.Cover)``
 
@@ -13,7 +14,9 @@ export const RestaurantInfo = styled(View)`
     justify-content: space-between;
     padding: ${props => props.theme.space[4]} ${props => props.theme.space[3]};
 `
-export const RestaurantDescription = styled(View)``
+export const RestaurantDescription = styled(View)`
+    width: 60%;
+`
 
 export const Title = styled(Text)`
     font-family: ${props => props.theme.fonts.heading};
