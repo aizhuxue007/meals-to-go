@@ -38,10 +38,10 @@ const restaurants = [
     },
 ];
 
-const RestaurantFlatList = styled(FlatList)`
-    padding: 0 ${props => props.theme.space[3]}
-`
-RestaurantFlatList.attrs({ padding: 16 })
+const RestaurantFlatList = styled(FlatList).attrs({
+    contentContainerStyle: { padding: 16 }
+})``
+
 const RestaurantList = () => {
     return (
         <RestaurantFlatList
