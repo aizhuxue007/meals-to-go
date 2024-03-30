@@ -6,7 +6,6 @@ sizes
 
 const StyledSearchBar = styled(Searchbar)`
   background: ${props => props.theme.colors.bg.primary};
-  margin-bottom: ${props => props.theme.space[4]}
 `
 
 const MySearchBar = () => {
