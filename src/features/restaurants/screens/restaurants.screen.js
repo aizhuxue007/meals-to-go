@@ -11,7 +11,7 @@ const Search = styled(View)`
 `
 
 const SafeArea = styled(SafeAreaView)`
-  flex: 1;
+    flex: 1;
 `
 
 export const RestaurantScreen = () => {
