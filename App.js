@@ -8,6 +8,7 @@ import { theme } from './src/infrastructure/theme'
 import RestaurantScreen from './src/features/restaurants/screens/restaurants.screen'
 import MapScreen from "./src/features/restaurants/screens/map.screen";
 import SettingScreen from "./src/features/restaurants/screens/settings.screen";
+import { restaurantsRequest, transformRestaurantsReq } from "./src/services/restaurants/restaurants.service";
 
 const Tab = createBottomTabNavigator()
 
@@ -30,6 +31,11 @@ const createScreenOptions = ({ route }) => {
     tabBarStyle: { paddingBottom: 4 }
   })
 }
+
+restaurantsRequest('51.219448,4.402464')
+  .then(transformRestaurantsReq)
+  .then(transformedResp => console.log(transformedResp))
+  .catch(err => console.log(err))
 
 export default function App() {
   return (
