@@ -26,9 +26,9 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         rating,
         isClosedTemporarily,
     } = restaurant
-
     const starRatings = [...Array(5)].map((_, i) => i)
 
+    console.log(restaurant, photos)
     return (
         <RestaurantCard elevation={5}>
             <RestaurantCardCover key={name} source={{ uri: photos && photos[0] }} />
