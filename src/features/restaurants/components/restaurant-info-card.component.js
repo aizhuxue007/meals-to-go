@@ -7,7 +7,7 @@ import greyStar from '../../../../assets/greyStar'
 import open from '../../../../assets/open'
 import Spacer from '../../../components/spacer/spacer.component'
 
-export const RestaurantInfoCard = ({ restaurant = {} }) => {
+export const RestaurantInfoCard = ({ restaurant }) => {
     const [latoLoaded, latoError] = useLato({
         Lato_400Regular,
         Lato_700Bold
@@ -27,7 +27,16 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         isClosedTemporarily,
     } = restaurant
     const starRatings = [...Array(5)].map((_, i) => i)
-
+    console.log("info",
+        name,
+        description,
+        icon,
+        photos,
+        address,
+        isOpenNow,
+        rating,
+        isClosedTemporarily,
+    )
     return (
         <RestaurantCard elevation={5}>
             <RestaurantCardCover key={name} source={{ uri: photos && photos[0] }} />

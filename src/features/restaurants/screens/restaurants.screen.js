@@ -1,4 +1,4 @@
-import React, { useContext, useCallback } from 'react'
+import React, { useContext, useCallback, useMemo } from 'react'
 import { View, FlatList, Text } from 'react-native'
 import { styled } from 'styled-components/native'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -22,10 +22,18 @@ const RestaurantFlatList = styled(FlatList).attrs({
 
 export const RestaurantScreen = () => {
     const { restaurants, isLoading, error } = useContext(RestaurantsContext)
+    const flatRestaurants = restaurants.length > 0 ? restaurants[0] : [];
+
+    console.log('in restaurant screen', restaurants)
+
+    const memoizedRestaurants = useMemo(() => {
+        return flatRestaurants.map(restaurant => ({
+            ...restaurant
+        }));
+    }, [restaurants]);
 
     const renderItem = useCallback(
         ({ item }) => {
-            console.log(item)
             return (
                 <Spacer position={'bottom'} size={'xl'}>
                     <RestaurantInfoCard restaurant={item} />
@@ -40,9 +48,9 @@ export const RestaurantScreen = () => {
             <Search>
                 <MySearchBar />
                 <RestaurantFlatList
-                    data={restaurants}
+                    data={memoizedRestaurants}
                     renderItem={renderItem}
-                    keyExtractor={item => `${item.name}-${item.placeId}-${item.vicinity}`}
+                    keyExtractor={(item, i) => `${item.name}-${item.placeId}-${item.vicinity}${i}`}
                     bounces={false}
                     overScrollMode="never"
                 />
