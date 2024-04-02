@@ -35,8 +35,8 @@ const createScreenOptions = ({ route }) => {
 export default function App() {
   return (
     <SafeAreaProvider>
-      <ThemeProvider theme={theme}>
-        <RestaurantsContextProvider>
+      <RestaurantsContextProvider>
+        <ThemeProvider theme={theme}>
           <NavigationContainer>
             <Tab.Navigator
               screenOptions={createScreenOptions}
@@ -55,8 +55,8 @@ export default function App() {
               />
             </Tab.Navigator>
           </NavigationContainer>
-        </RestaurantsContextProvider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </RestaurantsContextProvider>
     </SafeAreaProvider>
   );
 }

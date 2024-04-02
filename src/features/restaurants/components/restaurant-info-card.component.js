@@ -28,7 +28,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     } = restaurant
     const starRatings = [...Array(5)].map((_, i) => i)
 
-    console.log(restaurant, photos)
+    console.log('from info card', restaurant)
     return (
         <RestaurantCard elevation={5}>
             <RestaurantCardCover key={name} source={{ uri: photos && photos[0] }} />
@@ -61,4 +61,4 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     )
 }
 
-export default RestaurantInfoCard
+export default React.memo(RestaurantInfoCard)

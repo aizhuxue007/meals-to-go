@@ -9,11 +9,12 @@ const RestaurantFlatList = styled(FlatList).attrs({
     contentContainerStyle: { padding: 16 }
 })``
 
-const RestaurantList = ({ restaurants }) => {
+const RestaurantList = ({ restaurants, renderItem1 }) => {
+    console.log('from restaurant list', restaurants)
     return (
         <RestaurantFlatList
             data={restaurants}
-            renderItem={(restaurant) => <Spacer position={'bottom'} size={'xl'}><RestaurantInfoCard restaurant={restaurant.item} /></Spacer>}
+            renderItem={renderItem1}
             keyExtractor={(e, i) => i}
             bounces={false}
             overScrollMode="never"
