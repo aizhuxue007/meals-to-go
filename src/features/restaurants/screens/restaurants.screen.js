@@ -1,5 +1,5 @@
 import React, { useContext, useCallback } from 'react'
-import { View, FlatList } from 'react-native'
+import { View, FlatList, Text } from 'react-native'
 import { styled } from 'styled-components/native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import MySearchBar from '../../../components/MySearchBar'
@@ -24,11 +24,14 @@ export const RestaurantScreen = () => {
     const { restaurants, isLoading, error } = useContext(RestaurantsContext)
 
     const renderItem = useCallback(
-        ({ item }) => (
-            <Spacer position={'bottom'} size={'xl'}>
-                <RestaurantInfoCard restaurant={item} />
-            </Spacer>
-        ),
+        ({ item }) => {
+            console.log(item)
+            return (
+                <Spacer position={'bottom'} size={'xl'}>
+                    <RestaurantInfoCard restaurant={item} />
+                </Spacer>
+            )
+        },
         []
     );
 
