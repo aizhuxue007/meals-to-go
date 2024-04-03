@@ -27,7 +27,7 @@ export const RestaurantScreen = () => {
     console.log('in restaurant screen', restaurants)
 
     const memoizedRestaurants = useMemo(() => {
-        return flatRestaurants.map(restaurant => ({
+        return restaurants.map(restaurant => ({
             ...restaurant
         }));
     }, [restaurants]);

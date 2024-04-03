@@ -14,9 +14,7 @@ const RestaurantsContextProvider = ({ children }) => {
             restaurantsRequest()
                 .then(restaurantsTransform)
                 .then(result => {
-                    if (JSON.stringify(result) !== JSON.stringify(restaurants)) {
-                        setRestaurants(currentRestaurants => [...currentRestaurants, result])
-                    }
+                    setRestaurants(result)
                 })
                 .catch(err => {
                     console.log(err)
