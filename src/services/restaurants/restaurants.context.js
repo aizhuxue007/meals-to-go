@@ -1,40 +1,45 @@
-import React, { useState, useEffect, useMemo, createContext } from 'react'
-import { restaurantsRequest, restaurantsTransform } from './restaurants.service'
+import React, { useState, createContext, useEffect, useMemo } from "react";
 
-export const RestaurantsContext = createContext()
+import {
+    restaurantsRequest,
+    restaurantsTransform,
+} from "./restaurants.service";
 
-const RestaurantsContextProvider = ({ children }) => {
-    const [restaurants, setRestaurants] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState(null)
+export const RestaurantsContext = createContext();
 
-    function retrieveRestaurants() {
-        setIsLoading(true)
+export const RestaurantsContextProvider = ({ children }) => {
+    const [restaurants, setRestaurants] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+
+    const retrieveRestaurants = () => {
+        setIsLoading(true);
         setTimeout(() => {
             restaurantsRequest()
                 .then(restaurantsTransform)
-                .then(result => {
-                    setRestaurants(result)
+                .then((results) => {
+                    setIsLoading(false);
+                    setRestaurants(results);
                 })
-                .catch(err => {
-                    console.log(err)
-                    setError(err)
-                    setIsLoading(false)
-                })
-        }, 2000)
-    }
-
+                .catch((err) => {
+                    setIsLoading(false);
+                    setError(err);
+                });
+        }, 2000);
+    };
     useEffect(() => {
-        retrieveRestaurants()
-    }, [])
-
-    const contextValue = useMemo(() => ({ restaurants, isLoading, error }), [restaurants, isLoading, error])
+        retrieveRestaurants();
+    }, []);
 
     return (
-        <RestaurantsContext.Provider value={contextValue}>
+        <RestaurantsContext.Provider
+            value={{
+                restaurants,
+                isLoading,
+                error,
+            }}
+        >
             {children}
         </RestaurantsContext.Provider>
-    )
-}
-
-export default React.memo(RestaurantsContextProvider)
+    );
+};

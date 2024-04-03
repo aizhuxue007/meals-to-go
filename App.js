@@ -4,9 +4,9 @@ import { ThemeProvider } from "styled-components";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from '@expo/vector-icons';
-import RestaurantsContextProvider from "./src/services/restaurants/restaurants.context";
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 import { theme } from './src/infrastructure/theme'
-import RestaurantScreen from './src/features/restaurants/screens/restaurants.screen'
+import { RestaurantsScreen } from './src/features/restaurants/screens/restaurants.screen'
 import MapScreen from "./src/features/restaurants/screens/map.screen";
 import SettingScreen from "./src/features/restaurants/screens/settings.screen";
 
@@ -43,7 +43,7 @@ export default function App() {
             >
               <Tab.Screen
                 name="Restaurants"
-                component={RestaurantScreen}
+                component={RestaurantsScreen}
               />
               <Tab.Screen
                 name="Map"

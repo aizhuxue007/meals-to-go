@@ -1,62 +1,43 @@
-import React, { useContext, useCallback, useMemo } from 'react'
-import { View, FlatList, Text } from 'react-native'
-import { styled } from 'styled-components/native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import MySearchBar from '../../../components/MySearchBar'
-import { RestaurantsContext } from '../../../services/restaurants/restaurants.context'
-import Spacer from '../../../../src/components/spacer/spacer.component'
-import RestaurantInfoCard from '../components/restaurant-info-card.component'
+import React, { useContext } from "react";
+import { Searchbar } from "react-native-paper";
+import { FlatList } from "react-native";
+import styled from "styled-components/native";
 
-const Search = styled(View)` 
-    padding: 0 ${props => props.theme.space[0]} ${props => props.theme.space[0]} ${props => props.theme.space[0]};
-    flex: 1;
-`
+import { SafeArea } from "../../../components/utility/safe-area.component";
+import RestaurantInfoCard from "../components/restaurant-info-card.component";
+import Spacer from "../../../components/spacer/spacer.component";
 
-const SafeArea = styled(SafeAreaView)`
-    flex: 1;
-`
+import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
-const RestaurantFlatList = styled(FlatList).attrs({
-    contentContainerStyle: { padding: 16 }
-})``
+const SearchContainer = styled.View`
+  padding: ${(props) => props.theme.space[3]};
+`;
 
-export const RestaurantScreen = () => {
-    const { restaurants, isLoading, error } = useContext(RestaurantsContext)
-    const flatRestaurants = restaurants.length > 0 ? restaurants[0] : [];
+const RestaurantList = styled(FlatList).attrs({
+    contentContainerStyle: {
+        padding: 16,
+    },
+})``;
 
-    console.log('in restaurant screen', restaurants)
-
-    const memoizedRestaurants = useMemo(() => {
-        return restaurants.map(restaurant => ({
-            ...restaurant
-        }));
-    }, [restaurants]);
-
-    const renderItem = useCallback(
-        ({ item }) => {
-            return (
-                <Spacer position={'bottom'} size={'xl'}>
-                    <RestaurantInfoCard restaurant={item} />
-                </Spacer>
-            )
-        },
-        []
-    );
-
+export const RestaurantsScreen = () => {
+    const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+    console.log(error);
     return (
         <SafeArea>
-            <Search>
-                <MySearchBar />
-                <RestaurantFlatList
-                    data={memoizedRestaurants}
-                    renderItem={renderItem}
-                    keyExtractor={(item, i) => `${item.name}-${item.placeId}-${item.vicinity}${i}`}
-                    bounces={false}
-                    overScrollMode="never"
-                />
-            </Search>
+            <SearchContainer>
+                <Searchbar />
+            </SearchContainer>
+            <RestaurantList
+                data={restaurants}
+                renderItem={({ item }) => {
+                    return (
+                        <Spacer position="bottom" size="large">
+                            <RestaurantInfoCard restaurant={item} />
+                        </Spacer>
+                    );
+                }}
+                keyExtractor={(item) => item.name}
+            />
         </SafeArea>
-    )
-}
-
-export default RestaurantScreen
+    );
+};
