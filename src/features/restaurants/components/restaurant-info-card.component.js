@@ -1,5 +1,6 @@
-import React from 'react'
-import { useFonts as useLato, Lato_400Regular, Lato_700Bold } from '@expo-google-fonts/lato'
+import React, { useMemo } from 'react'
+import { useFonts } from 'expo-font';
+import { Lato_400Regular, Lato_700Bold } from '@expo-google-fonts/lato';
 import { RestaurantCard, RestaurantCardCover, RestaurantInfo, RestaurantDescription, Icons, Ratings, Icon, Status, Open, Star } from './restaurant-info-card.styles'
 import { Text } from '../../../components/typography/text.component'
 import star from '../../../../assets/star'
@@ -7,15 +8,22 @@ import greyStar from '../../../../assets/greyStar'
 import open from '../../../../assets/open'
 import Spacer from '../../../components/spacer/spacer.component'
 
-export const RestaurantInfoCard = ({ restaurant }) => {
-    const [latoLoaded, latoError] = useLato({
-        Lato_400Regular,
-        Lato_700Bold
-    })
-    if (!latoLoaded && !latoError) {
-        return null;
-    }
+export const RestaurantInfoCard = React.memo(({ restaurant }) => {
+    // const [latoLoaded, latoError] = useLato({
+    //     Lato_400Regular,
+    //     Lato_700Bold
+    // })
+    // if (!latoLoaded && !latoError) {
+    //     return null;
+    // }
+    // const [fontsLoaded] = useFonts({
+    //     Lato_400Regular,
+    //     Lato_700Bold,
+    // });
 
+    // if (!fontsLoaded) {
+    //     return null;
+    // }
     const {
         name,
         description,
@@ -67,6 +75,6 @@ export const RestaurantInfoCard = ({ restaurant }) => {
             </RestaurantInfo>
         </RestaurantCard>
     )
-}
+})
 
 export default React.memo(RestaurantInfoCard)

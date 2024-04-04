@@ -17,9 +17,11 @@ export const RestaurantInfo = styled(View)`
 export const RestaurantDescription = styled(View)`
     width: 60%;
 `
-
+// font-family: ${props => props.theme.fonts.heading};
+// font-family: ${props => props.theme.fonts.body};
+// font-family: ${props => props.theme.fonts.body};
 export const Title = styled(Text)`
-    font-family: ${props => props.theme.fonts.heading};
+    
     font-size: ${props => props.theme.fontSizes.title};
     font-weight: ${props => props.theme.fontWeights.bold};
     color: ${props => props.theme.colors.ui.primary};
@@ -27,13 +29,13 @@ export const Title = styled(Text)`
 `
 
 export const Address = styled(Text)`
-    font-family: ${props => props.theme.fonts.body};
+   
     font-size: ${props => props.theme.fontSizes.body};
     margin-bottom: ${props => props.theme.space[4]};
 `
 
 export const IsClosedTemporarily = styled(Text)`
-    font-family: ${props => props.theme.fonts.body};
+   
     font-size: ${props => props.theme.fontSizes.body};
     color: ${props => props.theme.colors.ui.error}
 `

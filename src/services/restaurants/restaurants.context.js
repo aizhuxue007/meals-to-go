@@ -7,7 +7,7 @@ import {
 
 export const RestaurantsContext = createContext();
 
-export const RestaurantsContextProvider = ({ children }) => {
+const RestaurantsContextProvider = ({ children }) => {
     const [restaurants, setRestaurants] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -31,15 +31,19 @@ export const RestaurantsContextProvider = ({ children }) => {
         retrieveRestaurants();
     }, []);
 
+    const value = useMemo(() => ({
+        restaurants,
+        isLoading,
+        error,
+    }), [restaurants, isLoading, error]);
+
     return (
         <RestaurantsContext.Provider
-            value={{
-                restaurants,
-                isLoading,
-                error,
-            }}
+            value={value}
         >
             {children}
         </RestaurantsContext.Provider>
     );
 };
+
+export default React.memo(RestaurantsContextProvider)

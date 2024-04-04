@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import { View } from "react-native";
 import { styled } from 'styled-components/native'
 
@@ -22,12 +23,12 @@ const getPropertyAndSizeIndex = (position, size) => {
     return [property, sizeIndex]
 }
 
-const Spacer = ({ position, size, children }) => {
+const Spacer = React.memo(({ position, size, children }) => {
     let [property, sizeIndex] = getPropertyAndSizeIndex(position, size)
     const SpacerComponent = styled(View)`${property}: ${props => props.theme.space[sizeIndex]};`
 
     return <SpacerComponent>{children}</SpacerComponent>
-}
+})
 
 export default Spacer
 

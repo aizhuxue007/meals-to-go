@@ -1,10 +1,13 @@
 import React from "react";
+import { useEffect } from 'react';
+import { Font } from 'expo-font';
+import { Lato_400Regular, Lato_700Bold } from '@expo-google-fonts/lato';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from "styled-components";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from '@expo/vector-icons';
-import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
+import RestaurantsContextProvider from "./src/services/restaurants/restaurants.context";
 import { theme } from './src/infrastructure/theme'
 import { RestaurantsScreen } from './src/features/restaurants/screens/restaurants.screen'
 import MapScreen from "./src/features/restaurants/screens/map.screen";
@@ -33,6 +36,16 @@ const createScreenOptions = ({ route }) => {
 }
 
 export default function App() {
+  useEffect(() => {
+    const loadFonts = async () => {
+      await Font.loadAsync({
+        Lato_400Regular,
+        Lato_700Bold,
+      });
+    };
+
+    loadFonts();
+  }, []);
   return (
     <SafeAreaProvider>
       <RestaurantsContextProvider>

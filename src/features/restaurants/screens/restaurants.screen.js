@@ -13,11 +13,11 @@ const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
-const RestaurantList = styled(FlatList).attrs({
+const RestaurantList = React.memo(styled(FlatList).attrs({
     contentContainerStyle: {
         padding: 16,
     },
-})``;
+})``, (prevProps, nextProps) => prevProps.data === nextProps.data)
 
 export const RestaurantsScreen = () => {
     const { isLoading, error, restaurants } = useContext(RestaurantsContext);
