@@ -12,6 +12,7 @@ import { theme } from './src/infrastructure/theme'
 import { RestaurantsScreen } from './src/features/restaurants/screens/restaurants.screen'
 import MapScreen from "./src/features/restaurants/screens/map.screen";
 import SettingScreen from "./src/features/restaurants/screens/settings.screen";
+import { locationRequest, locationTransform } from "./src/features/location/location.service";
 
 const Tab = createBottomTabNavigator()
 
@@ -46,12 +47,15 @@ export default function App() {
         });
       } catch (error) {
         console.error('Failed to load fonts:', error);
-        // Handle the error case, e.g., show an error message to the user
       }
     };
 
     loadFonts();
   }, []);
+
+  locationRequest('san francisco')
+    .then(locationTransform)
+    .catch(err => console.log(err))
 
   return (
     <SafeAreaProvider>
