@@ -39,13 +39,13 @@ const label = (theme) => `
 `;
 
 const variants = {
-    heading,
-    body,
-    bold,
-    label,
-    caption,
-    error,
-    hint,
+  heading,
+  body,
+  bold,
+  label,
+  caption,
+  error,
+  hint,
 };
 
 export const Text = styled.Text`
