@@ -39,8 +39,10 @@ export const RestaurantInfoCard = React.memo(({ restaurant }) => {
                         {starRatings.map(i => i < Math.ceil(rating) ? <Star key={i} xml={star} width={20} height={20} /> : <Star key={i} xml={greyStar} width={20} height={20} />)}
                     </Ratings>
                     <Status>
-                        {isOpenNow && <Open xml={open} width={20} height={20} />}
-                        <Icon source={{ uri: icon }}></Icon>
+                        {isOpenNow &&
+                            <Spacer position={'top'} size={'s'}>
+                                <Open xml={open} width={16} height={16} /></Spacer>}
+                        <Icon source={{ uri: icon }} />
                     </Status>
                 </Icons>
             </RestaurantInfo>

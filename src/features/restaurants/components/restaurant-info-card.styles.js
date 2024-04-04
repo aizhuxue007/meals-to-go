@@ -50,7 +50,7 @@ export const Status = styled(View)`
 `
 
 export const Icon = styled(Image)`
-    width: ${props => props.theme.sizes[2]};
+    width: ${props => props.theme.sizes[1]};
     height: ${props => props.theme.sizes[1]};
     margin-top: ${props => props.theme.space[1]}
 `

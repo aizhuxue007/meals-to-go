@@ -17,6 +17,7 @@ const RestaurantList = React.memo(styled(FlatList).attrs({
     contentContainerStyle: {
         padding: 16,
     },
+    overScrollMode: 'never',
 })``, (prevProps, nextProps) => prevProps.data === nextProps.data)
 
 
