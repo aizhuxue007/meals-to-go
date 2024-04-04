@@ -12,7 +12,7 @@ export const RestaurantCardCover = styled(Card.Cover)``
 export const RestaurantInfo = styled(View)`
     flex-direction: row;
     justify-content: space-between;
-    padding: ${props => props.theme.space[4]} ${props => props.theme.space[3]};
+    padding: ${props => props.theme.space[3]} ${props => props.theme.space[3]};
 `
 export const RestaurantDescription = styled(View)`
     width: 60%;

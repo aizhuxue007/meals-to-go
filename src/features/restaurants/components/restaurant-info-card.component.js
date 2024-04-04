@@ -1,6 +1,4 @@
-import React, { useMemo } from 'react'
-import { useFonts } from 'expo-font';
-import { Lato_400Regular, Lato_700Bold } from '@expo-google-fonts/lato';
+import React from 'react'
 import { RestaurantCard, RestaurantCardCover, RestaurantInfo, RestaurantDescription, Icons, Ratings, Icon, Status, Open, Star } from './restaurant-info-card.styles'
 import { Text } from '../../../components/typography/text.component'
 import star from '../../../../assets/star'
@@ -9,42 +7,18 @@ import open from '../../../../assets/open'
 import Spacer from '../../../components/spacer/spacer.component'
 
 export const RestaurantInfoCard = React.memo(({ restaurant }) => {
-    // const [latoLoaded, latoError] = useLato({
-    //     Lato_400Regular,
-    //     Lato_700Bold
-    // })
-    // if (!latoLoaded && !latoError) {
-    //     return null;
-    // }
-    // const [fontsLoaded] = useFonts({
-    //     Lato_400Regular,
-    //     Lato_700Bold,
-    // });
-
-    // if (!fontsLoaded) {
-    //     return null;
-    // }
     const {
         name,
-        description,
         icon,
         photos,
-        address,
+        vicinity,
         isOpenNow,
         rating,
         isClosedTemporarily,
     } = restaurant
+
     const starRatings = [...Array(5)].map((_, i) => i)
-    console.log("info",
-        name,
-        description,
-        icon,
-        photos,
-        address,
-        isOpenNow,
-        rating,
-        isClosedTemporarily,
-    )
+
     return (
         <RestaurantCard elevation={5}>
             <RestaurantCardCover key={name} source={{ uri: photos && photos[0] }} />
@@ -53,11 +27,8 @@ export const RestaurantInfoCard = React.memo(({ restaurant }) => {
                     <Spacer position={'bottom'} size={'s'}>
                         <Text variant={"bold"}>{name}</Text>
                     </Spacer>
-                    <Spacer position={'bottom'} size={'l'}>
-                        <Text variant={"body"}>{description}</Text>
-                    </Spacer>
                     <Spacer position={'bottom'} size={'m'}>
-                        <Text variant={"body"}>{address}</Text>
+                        <Text variant={"body"}>{vicinity}</Text>
                     </Spacer>
 
                     {isClosedTemporarily && <Text variant={"error"}>Temporarily Closed</Text>}

@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from 'react';
-import { Font } from 'expo-font';
+import * as Font from 'expo-font';
 import { Lato_400Regular, Lato_700Bold } from '@expo-google-fonts/lato';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from "styled-components";
@@ -36,16 +36,23 @@ const createScreenOptions = ({ route }) => {
 }
 
 export default function App() {
+
   useEffect(() => {
     const loadFonts = async () => {
-      await Font.loadAsync({
-        Lato_400Regular,
-        Lato_700Bold,
-      });
+      try {
+        await Font.loadAsync({
+          Lato_400Regular,
+          Lato_700Bold,
+        });
+      } catch (error) {
+        console.error('Failed to load fonts:', error);
+        // Handle the error case, e.g., show an error message to the user
+      }
     };
 
     loadFonts();
   }, []);
+
   return (
     <SafeAreaProvider>
       <RestaurantsContextProvider>
