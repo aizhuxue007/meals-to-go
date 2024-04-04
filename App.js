@@ -8,6 +8,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from '@expo/vector-icons';
 import RestaurantsContextProvider from "./src/services/restaurants/restaurants.context";
+import LocationContextProvider from "./src/features/location/location.context";
 import { theme } from './src/infrastructure/theme'
 import { RestaurantsScreen } from './src/features/restaurants/screens/restaurants.screen'
 import MapScreen from "./src/features/restaurants/screens/map.screen";
@@ -53,34 +54,32 @@ export default function App() {
     loadFonts();
   }, []);
 
-  locationRequest('san francisco')
-    .then(locationTransform)
-    .catch(err => console.log(err))
-
   return (
     <SafeAreaProvider>
-      <RestaurantsContextProvider>
-        <ThemeProvider theme={theme}>
-          <NavigationContainer>
-            <Tab.Navigator
-              screenOptions={createScreenOptions}
-            >
-              <Tab.Screen
-                name="Restaurants"
-                component={RestaurantsScreen}
-              />
-              <Tab.Screen
-                name="Map"
-                component={MapScreen}
-              />
-              <Tab.Screen
-                name="Setting"
-                component={SettingScreen}
-              />
-            </Tab.Navigator>
-          </NavigationContainer>
-        </ThemeProvider>
-      </RestaurantsContextProvider>
+      <LocationContextProvider>
+        <RestaurantsContextProvider>
+          <ThemeProvider theme={theme}>
+            <NavigationContainer>
+              <Tab.Navigator
+                screenOptions={createScreenOptions}
+              >
+                <Tab.Screen
+                  name="Restaurants"
+                  component={RestaurantsScreen}
+                />
+                <Tab.Screen
+                  name="Map"
+                  component={MapScreen}
+                />
+                <Tab.Screen
+                  name="Setting"
+                  component={SettingScreen}
+                />
+              </Tab.Navigator>
+            </NavigationContainer>
+          </ThemeProvider>
+        </RestaurantsContextProvider>
+      </LocationContextProvider>
     </SafeAreaProvider>
   );
 }
