@@ -2,6 +2,10 @@ import camelize from "camelize";
 import { locations } from "./location.mock";
 
 export const locationRequest = (searchTerm) => {
+    if (!searchTerm.length) {
+        console.log('from locationRequest, empty string')
+        return
+    }
     return new Promise((resolve, reject) => {
         const mockLocation = locations[searchTerm]
         if (!mockLocation) reject('mockLocation not found!')
