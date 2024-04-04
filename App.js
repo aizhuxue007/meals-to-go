@@ -8,12 +8,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from '@expo/vector-icons';
 import RestaurantsContextProvider from "./src/services/restaurants/restaurants.context";
-import LocationContextProvider from "./src/features/location/location.context";
+import { LocationContextProvider } from "./src/features/location/location.context";
 import { theme } from './src/infrastructure/theme'
 import { RestaurantsScreen } from './src/features/restaurants/screens/restaurants.screen'
 import MapScreen from "./src/features/restaurants/screens/map.screen";
 import SettingScreen from "./src/features/restaurants/screens/settings.screen";
-import { locationRequest, locationTransform } from "./src/features/location/location.service";
 
 const Tab = createBottomTabNavigator()
 
