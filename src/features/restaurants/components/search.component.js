@@ -18,7 +18,10 @@ const Search = () => {
                 value={searchTerm}
                 onChangeText={(term) => setSearchTerm(term)}
                 onSubmitEditing={() => {
-                    if (searchTerm) search(searchTerm)
+                    if (searchTerm) {
+                        search(searchTerm)
+                        setSearchTerm('')
+                    }
                 }}
             />
         </SearchContainer>
