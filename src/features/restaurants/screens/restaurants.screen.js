@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { FlatList, View } from "react-native";
 import { Searchbar, ActivityIndicator, MD2Colors } from "react-native-paper";
 import styled from "styled-components/native";
-
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import RestaurantInfoCard from "../components/restaurant-info-card.component";
 import Spacer from "../../../components/spacer/spacer.component";
@@ -52,7 +51,6 @@ export const RestaurantsScreen = () => {
                 renderItem={renderItem}
                 keyExtractor={(item) => item.name}
             />}
-
         </SafeArea>
     );
 };
