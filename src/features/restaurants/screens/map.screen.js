@@ -8,11 +8,11 @@ const SafeArea = styled(SafeAreaView)`
 `;
 
 const MapScreen = () => {
-  return (
-    <SafeArea>
-      <Text>Map Screen</Text>
-    </SafeArea>
-  );
+    return (
+        <SafeArea>
+            <Text>Map Screen</Text>
+        </SafeArea>
+    );
 };
 
 export default MapScreen;
