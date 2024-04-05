@@ -5,7 +5,11 @@ const SettingStack = createStackNavigator()
 
 export const SettingsNavigator = () => {
     return (
-        <SettingStack.Navigator headerMode="none">
+        <SettingStack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}
+        >
             <SettingStack.Screen
                 name="SettingScreen"
                 component={SettingScreen}

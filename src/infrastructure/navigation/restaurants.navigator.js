@@ -5,7 +5,11 @@ const RestaurantStack = createStackNavigator()
 
 export const RestaurantsNavigator = () => {
     return (
-        <RestaurantStack.Navigator headerMode="none">
+        <RestaurantStack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}
+        >
             <RestaurantStack.Screen
                 name="RestaurantsScreen"
                 component={RestaurantsScreen}
