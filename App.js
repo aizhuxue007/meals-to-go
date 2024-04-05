@@ -6,7 +6,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "styled-components";
 import RestaurantsContextProvider from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/features/location/location.context";
-import AppNavigator from "./src/infrastructure/navigation/app.navigator";
+import Navigation from "./src/infrastructure/navigation";
 import { theme } from "./src/infrastructure/theme";
 
 export default function App() {
@@ -30,7 +30,7 @@ export default function App() {
       <LocationContextProvider>
         <RestaurantsContextProvider>
           <ThemeProvider theme={theme}>
-            <AppNavigator />
+            <Navigation />
           </ThemeProvider>
         </RestaurantsContextProvider>
       </LocationContextProvider>
