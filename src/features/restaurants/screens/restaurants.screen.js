@@ -1,5 +1,5 @@
 import React, { useContext, useCallback } from "react";
-import { FlatList, View, Pressable } from "react-native";
+import { FlatList, View, TouchableOpacity } from "react-native";
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import styled from "styled-components/native";
 import { SafeArea } from "../../../components/utility/safe-area.component";
@@ -9,13 +9,13 @@ import Spacer from "../../../components/spacer/spacer.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
 const RestaurantList = React.memo(
-  styled(FlatList).attrs({
-    contentContainerStyle: {
-      padding: 16,
-    },
-    overScrollMode: "never",
-  })``,
-  (prevProps, nextProps) => prevProps.data === nextProps.data,
+    styled(FlatList).attrs({
+        contentContainerStyle: {
+            padding: 16,
+        },
+        overScrollMode: "never",
+    })``,
+    (prevProps, nextProps) => prevProps.data === nextProps.data,
 );
 
 const LoadingContainer = styled(View)`
@@ -25,49 +25,49 @@ const LoadingContainer = styled(View)`
 `;
 
 const Loading = () => {
-  return (
-    <LoadingContainer>
-      <ActivityIndicator
-        animating={true}
-        color={MD2Colors.red800}
-        size={"large"}
-      />
-    </LoadingContainer>
-  );
+    return (
+        <LoadingContainer>
+            <ActivityIndicator
+                animating={true}
+                color={MD2Colors.red800}
+                size={"large"}
+            />
+        </LoadingContainer>
+    );
 };
 
 export const RestaurantsScreen = ({ navigation }) => {
-  const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+    const { isLoading, error, restaurants } = useContext(RestaurantsContext);
 
-  const onPressRestaurant = useCallback(
-    (restaurant) => {
-      navigation.navigate("RestaurantDetail", { restaurant });
-    },
-    [navigation],
-  );
+    const onPressRestaurant = useCallback(
+        (restaurant) => {
+            navigation.navigate("RestaurantDetail", { restaurant });
+        },
+        [navigation],
+    );
 
-  if (error) {
-    console.log(error);
-  }
+    if (error) {
+        console.log(error);
+    }
 
-  return (
-    <SafeArea>
-      <Search />
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <RestaurantList
-          data={restaurants}
-          renderItem={({ item }) => (
-            <Pressable onPress={() => onPressRestaurant(item)}>
-              <Spacer position="bottom" size="m">
-                <RestaurantInfoCard restaurant={item} />
-              </Spacer>
-            </Pressable>
-          )}
-          keyExtractor={(item) => item.name}
-        />
-      )}
-    </SafeArea>
-  );
+    return (
+        <SafeArea>
+            <Search />
+            {isLoading ? (
+                <Loading />
+            ) : (
+                <RestaurantList
+                    data={restaurants}
+                    renderItem={({ item }) => (
+                        <TouchableOpacity onPress={() => onPressRestaurant(item)}>
+                            <Spacer position="bottom" size="m">
+                                <RestaurantInfoCard restaurant={item} />
+                            </Spacer>
+                        </TouchableOpacity>
+                    )}
+                    keyExtractor={(item) => item.name}
+                />
+            )}
+        </SafeArea>
+    );
 };
