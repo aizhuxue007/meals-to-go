@@ -1,9 +1,7 @@
 import AppNavigator from "./app.navigator";
 
 const Navigation = () => {
-    return (
-        <AppNavigator />
-    )
-}
+  return <AppNavigator />;
+};
 
-export default Navigation
+export default Navigation;

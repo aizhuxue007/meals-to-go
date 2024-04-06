@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { FlatList, View } from "react-native";
+import React, { useContext, useCallback } from "react";
+import { FlatList, View, Pressable } from "react-native";
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import styled from "styled-components/native";
 import { SafeArea } from "../../../components/utility/safe-area.component";
@@ -36,14 +36,15 @@ const Loading = () => {
   );
 };
 
-const renderItem = ({ item }) => (
-  <Spacer position="bottom" size="m">
-    <RestaurantInfoCard restaurant={item} />
-  </Spacer>
-);
-
-export const RestaurantsScreen = () => {
+export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+
+  const onPressRestaurant = useCallback(
+    (restaurant) => {
+      navigation.navigate("RestaurantDetail", { restaurant });
+    },
+    [navigation],
+  );
 
   if (error) {
     console.log(error);
@@ -57,7 +58,13 @@ export const RestaurantsScreen = () => {
       ) : (
         <RestaurantList
           data={restaurants}
-          renderItem={renderItem}
+          renderItem={({ item }) => (
+            <Pressable onPress={() => onPressRestaurant(item)}>
+              <Spacer position="bottom" size="m">
+                <RestaurantInfoCard restaurant={item} />
+              </Spacer>
+            </Pressable>
+          )}
           keyExtractor={(item) => item.name}
         />
       )}
