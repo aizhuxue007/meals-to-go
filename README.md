@@ -6,6 +6,8 @@ Built with React Native, which runs on both iOS and Android.
 
 
 ## How to Install
-1. git clone 
-2. in working directory run yarn
-3. yarn start
+1. npm i yarn -g
+2. git clone 
+3. in working directory 'run yarn'
+4. yarn start
+5. QR scan or run on iOS or Android emulators
