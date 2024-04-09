@@ -1,33 +1,34 @@
 import React from 'react'
-import { Text, View, Image } from 'react-native'
+import { Text, View, Image, Platform } from 'react-native'
+import { WebView } from 'react-native-webview'
 import { styled } from 'styled-components/native'
 import { Callout } from 'react-native-maps'
-import { mockImages } from '../../../services/restaurants/mock'
 
-const Bubble = styled(Callout)`
-`
+
+const Bubble = styled(Callout)``
 
 const CalloutView = styled(View)`
     max-width: 200px;
-    flex: 1;
     align-items: center;
-    gap: 5px;
 `
 
-const Img = styled(Image)`
+const imgCss = `
     border-radius: 10px;
     width: 100px;
     height: 100px;
+    margin-bottom: 5px;
 `
 
-export const MapCallout = ({ name }) => {
+const Img = Platform.OS === 'android' ? styled(WebView)`${imgCss}` : styled(Image)`${imgCss}`
+
+export const MapCallout = ({ restaurant }) => {
     return (
         <Bubble>
             <CalloutView>
                 <Img
-                    source={{ uri: mockImages[Math.ceil(Math.random() * 6)] }}
+                    source={{ uri: restaurant.photos[0] }}
                 />
-                <Text>{name}</Text>
+                <Text>{restaurant.name}</Text>
             </CalloutView>
         </Bubble>
     )

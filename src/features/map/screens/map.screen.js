@@ -57,7 +57,7 @@ export const MapScreen = () => {
                                             longitude: lng,
                                         }}
                                     >
-                                        <MapCallout name={restaurant.name} />
+                                        <MapCallout restaurant={restaurant} />
                                     </Marker>
                                 );
                             }
