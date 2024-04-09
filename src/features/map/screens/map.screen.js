@@ -26,6 +26,10 @@ export const MapScreen = () => {
         width: 100%;
     `
 
+    const checkNotEmpty = () => {
+        return
+    }
+
     return (
         <SafeArea>
             <Search />
@@ -33,9 +37,9 @@ export const MapScreen = () => {
                 <MapView
                     style={{ height: '100%' }}
                     region={{
-                        latitude: location.lat,
-                        longitude: location.lng,
-                        latitudeDelta: latDelta,
+                        latitude: location?.lat,
+                        longitude: location?.lng,
+                        latitudeDelta: latDelta || 0.003,
                         longitudeDelta: 0.02
                     }}
                 >

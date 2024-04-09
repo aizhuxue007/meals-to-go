@@ -8,25 +8,26 @@ const Bubble = styled(Callout)`
 `
 
 const CalloutView = styled(View)`
-
+    max-width: 200px;
+    flex: 1;
+    align-items: center;
+    gap: 5px;
 `
 
 const Img = styled(Image)`
-    width: 200px;
-    height: 200px;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
 `
 
 export const MapCallout = ({ name }) => {
     return (
         <Bubble>
             <CalloutView>
-                <View>
-                    <Image
-                        source={require('../../../../assets/webdev.jpeg')}
-                        style={{ width: 100, height: 100 }}
-                    />
-                    <Text>{name}</Text>
-                </View>
+                <Img
+                    source={{ uri: mockImages[Math.ceil(Math.random() * 6)] }}
+                />
+                <Text>{name}</Text>
             </CalloutView>
         </Bubble>
     )
