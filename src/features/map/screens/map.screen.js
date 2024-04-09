@@ -13,7 +13,7 @@ export const MapScreen = () => {
     const { restaurants } = useContext(RestaurantsContext)
 
     useEffect(() => {
-        if (location) {
+        if (location && location.viewport) {
             const { viewport } = location
             const neLat = viewport.northeast.lat
             const swLat = viewport.southwest.lat
@@ -27,33 +27,39 @@ export const MapScreen = () => {
     `
 
     return (
-        <SafeArea style={{ position: 'relative' }}>
+        <SafeArea>
             <Search />
-            {location ? <MapView
-                style={{ height: '100%' }}
-                region={{
-                    latitude: location.lat,
-                    longitude: location.lng,
-                    latitudeDelta: latDelta,
-                    longitudeDelta: 0.02
-                }}
-            >
-                {restaurants && restaurants.map(restaurant => {
-                    return (
-                        <Marker
-                            key={restaurant.name}
-                            coordinate={{
-                                latitude: restaurant.geometry.location.lat,
-                                longitude: restaurant.geometry.location.lng
-                            }}
-                        >
-                            <MapCallout
-                                name={restaurant.name}
-                            />
-                        </Marker>
-                    )
-                })}
-            </MapView> : <Map />}
+            {location ?
+                <MapView
+                    style={{ height: '100%' }}
+                    region={{
+                        latitude: location.lat,
+                        longitude: location.lng,
+                        latitudeDelta: latDelta,
+                        longitudeDelta: 0.02
+                    }}
+                >
+                    {restaurants &&
+                        restaurants.map(restaurant => {
+                            const lat = restaurant?.geometry?.location?.lat;
+                            const lng = restaurant?.geometry?.location?.lng;
+
+                            if (lat && lng) {
+                                return (
+                                    <Marker
+                                        key={restaurant.name}
+                                        coordinate={{
+                                            latitude: lat,
+                                            longitude: lng,
+                                        }}
+                                    >
+                                        <MapCallout name={restaurant.name} />
+                                    </Marker>
+                                );
+                            }
+                            return null;
+                        })}
+                </MapView> : <Map />}
 
         </SafeArea>
     )

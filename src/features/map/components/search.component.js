@@ -8,6 +8,7 @@ const SearchContainer = styled.View`
   position: absolute;
   width: 100%;
   z-index: 2;
+  top: 50px;
 `;
 
 const SearchBar = styled(Searchbar)`
