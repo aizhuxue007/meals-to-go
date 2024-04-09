@@ -13,5 +13,5 @@ Built with React Native, which runs on both iOS and Android.
 5. QR scan or run on iOS or Android emulators
 
 ## Progress Screenshots
-![Progress Screenshot 1](../assets/screenshot1o.jpg)
-![Progress Screenshot 2](../assets/screenshot2o.jpg)
+![Progress Screenshot 1](https://github.com/aizhuxue007/meals-to-go/blob/main/assets/screenshot1o.jpg)
+![Progress Screenshot 2](https://github.com/aizhuxue007/meals-to-go/blob/main/assets/screenshot2o.jpg)
