@@ -21,9 +21,13 @@ const imgCss = `
 
 const Img = Platform.OS === 'android' ? styled(WebView)`${imgCss}` : styled(Image)`${imgCss}`
 
-export const MapCallout = ({ restaurant }) => {
+export const MapCallout = ({ restaurant, navigate }) => {
     return (
-        <Bubble>
+        <Bubble
+            onPress={() => {
+                navigate("RestaurantDetail", { restaurant })
+            }}
+        >
             <CalloutView>
                 <Img
                     source={{ uri: restaurant.photos[0] }}

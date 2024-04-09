@@ -7,7 +7,7 @@ import { RestaurantsContext } from '../../../services/restaurants/restaurants.co
 import { MapCallout } from "../components/map-callout.component"
 import { styled } from "styled-components/native"
 
-export const MapScreen = () => {
+export const MapScreen = ({ navigation }) => {
     const [latDelta, setLatDelta] = useState(null)
     const { location } = useContext(LocationContext)
     const { restaurants } = useContext(RestaurantsContext)
@@ -25,10 +25,6 @@ export const MapScreen = () => {
         height: 100%;
         width: 100%;
     `
-
-    const checkNotEmpty = () => {
-        return
-    }
 
     return (
         <SafeArea>
@@ -57,7 +53,10 @@ export const MapScreen = () => {
                                             longitude: lng,
                                         }}
                                     >
-                                        <MapCallout restaurant={restaurant} />
+                                        <MapCallout
+                                            restaurant={restaurant}
+                                            navigate={navigation.navigate}
+                                        />
                                     </Marker>
                                 );
                             }

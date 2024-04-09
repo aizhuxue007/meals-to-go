@@ -34,8 +34,6 @@ const RestaurantDetailScreen = ({ route }) => {
                     <List.Item title="Pickle Soda" />
                 </List.Accordion>
             </ScrollView>
-
-
         </>
     )
 }
