@@ -6,7 +6,7 @@ import { Lato_400Regular, Lato_700Bold } from "@expo-google-fonts/lato";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "styled-components";
 import RestaurantsContextProvider from "./src/services/restaurants/restaurants.context";
-import { LocationContextProvider } from "./src/features/location/location.context";
+import { LocationContextProvider } from "./src/services/location/location.context";
 import Navigation from "./src/infrastructure/navigation";
 import { theme } from "./src/infrastructure/theme";
 

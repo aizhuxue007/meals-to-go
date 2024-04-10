@@ -9,7 +9,7 @@ import {
     restaurantsRequest,
     restaurantsTransform,
 } from "./restaurants.service";
-import { LocationContext } from "../../features/location/location.context";
+import { LocationContext } from "../location/location.context";
 
 export const RestaurantsContext = createContext();
 

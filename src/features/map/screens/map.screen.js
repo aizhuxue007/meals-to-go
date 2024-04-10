@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react"
 import MapView, { Marker } from 'react-native-maps'
 import { SafeArea } from '../../../components/utility/safe-area.component'
 import Search from '../components/search.component'
-import { LocationContext } from '../../location/location.context'
+import { LocationContext } from '../../../services/location/location.context'
 import { RestaurantsContext } from '../../../services/restaurants/restaurants.context'
 import { MapCallout } from "../components/map-callout.component"
 import { styled } from "styled-components/native"
