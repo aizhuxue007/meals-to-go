@@ -13,7 +13,7 @@ import {
 } from "./restaurant-info-card.styles";
 import { Text } from "../../../components/typography/text.component";
 
-import Favourite from "../../favourites/favourites.component";
+import Favourite from "../../favourites/favourite.component";
 import star from "../../../../assets/star";
 import greyStar from "../../../../assets/greyStar";
 import open from "../../../../assets/open";

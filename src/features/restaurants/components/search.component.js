@@ -11,7 +11,7 @@ const SearchBar = styled(Searchbar)`
   background: #f8f9fa;
 `;
 
-const Search = () => {
+const Search = ({ isFavouritesToggled, onFavouritesToggle }) => {
     const { keyword, setKeyword, search } = useContext(LocationContext);
     const [searchTerm, setSearchTerm] = useState(keyword);
 
@@ -23,6 +23,8 @@ const Search = () => {
         <SearchContainer>
             <SearchBar
                 mode="bar"
+                icon={isFavouritesToggled ? 'heart' : 'heart-outline'}
+                onIconPress={onFavouritesToggle}
                 elevation={5}
                 theme={{
                     dark: true,
