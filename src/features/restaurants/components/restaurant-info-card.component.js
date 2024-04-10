@@ -35,7 +35,7 @@ export const RestaurantInfoCard = React.memo(({ restaurant }) => {
 
   return (
     <RestaurantCard elevation={5}>
-      <Favourite />
+      <Favourite restaurant={restaurant} />
       <RestaurantCardCover key={name} source={{ uri: photos && photos[0] }} />
       <RestaurantInfo>
         <RestaurantDescription>
