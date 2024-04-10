@@ -12,6 +12,8 @@ import {
   Star,
 } from "./restaurant-info-card.styles";
 import { Text } from "../../../components/typography/text.component";
+
+import Favourite from "../../favourites/favourites.component";
 import star from "../../../../assets/star";
 import greyStar from "../../../../assets/greyStar";
 import open from "../../../../assets/open";
@@ -33,6 +35,7 @@ export const RestaurantInfoCard = React.memo(({ restaurant }) => {
 
   return (
     <RestaurantCard elevation={5}>
+      <Favourite />
       <RestaurantCardCover key={name} source={{ uri: photos && photos[0] }} />
       <RestaurantInfo>
         <RestaurantDescription>

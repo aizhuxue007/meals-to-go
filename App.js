@@ -5,6 +5,7 @@ import * as Font from "expo-font";
 import { Lato_400Regular, Lato_700Bold } from "@expo-google-fonts/lato";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "styled-components";
+import { FavouritesContextProvider } from './src/services/favourites/favourites.context';
 import RestaurantsContextProvider from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/services/location/location.context";
 import Navigation from "./src/infrastructure/navigation";
@@ -28,13 +29,15 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <LocationContextProvider>
-        <RestaurantsContextProvider>
-          <ThemeProvider theme={theme}>
-            <Navigation />
-          </ThemeProvider>
-        </RestaurantsContextProvider>
-      </LocationContextProvider>
+      <FavouritesContextProvider>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <ThemeProvider theme={theme}>
+              <Navigation />
+            </ThemeProvider>
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
+      </FavouritesContextProvider>
     </SafeAreaProvider>
   );
 }
