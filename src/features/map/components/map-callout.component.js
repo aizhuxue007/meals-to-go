@@ -4,7 +4,6 @@ import { WebView } from 'react-native-webview'
 import { styled } from 'styled-components/native'
 import { Callout } from 'react-native-maps'
 
-
 const Bubble = styled(Callout)``
 
 const CalloutView = styled(View)`
