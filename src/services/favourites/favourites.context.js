@@ -37,6 +37,14 @@ export const FavouritesContextProvider = ({ children }) => {
         setFavourites((prevFavourites) => prevFavourites.filter(item => item.placeId !== restaurant.placeId))
     }
 
+    useEffect(() => {
+        loadFavourites();
+    }, []);
+
+    useEffect(() => {
+        saveFavourites(favourites);
+    }, [favourites]);
+
     return (
         <FavouritesContext.Provider
             value={{
