@@ -17,9 +17,7 @@ export const RestaurantInfo = styled(View)`
 export const RestaurantDescription = styled(View)`
   width: 60%;
 `;
-// font-family: ${props => props.theme.fonts.heading};
-// font-family: ${props => props.theme.fonts.body};
-// font-family: ${props => props.theme.fonts.body};
+
 export const Title = styled(Text)`
   font-size: ${(props) => props.theme.fontSizes.title};
   font-weight: ${(props) => props.theme.fontWeights.bold};

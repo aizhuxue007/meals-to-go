@@ -7,7 +7,7 @@ import Search from "../components/search.component";
 import RestaurantInfoCard from "../components/restaurant-info-card.component";
 import Spacer from "../../../components/spacer/spacer.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
-import Favourites from "../../favourites/favourites.component";
+import FavouritesBar from "../../favourites/favourites.component";
 
 const RestaurantList = React.memo(
     styled(FlatList).attrs({
@@ -58,7 +58,9 @@ export const RestaurantsScreen = ({ navigation }) => {
                 isFavouritesToggled={isToggled}
                 onFavouritesToggle={() => setIsToggled(!isToggled)}
             />
-            {isToggled && <Favourites />}
+
+            {isToggled && <FavouritesBar navigation={navigation} />}
+
             {isLoading ? (
                 <Loading />
             ) : (
