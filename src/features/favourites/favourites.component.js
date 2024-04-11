@@ -23,7 +23,6 @@ const Img = styled(Image)`
 const Name = styled(Text)`
     width: 100px;
     font-size: ${props => props.theme.fontSizes['body']};
-    word-wrap: break-word;
 `
 
 const FavouritesBar = ({ navigation }) => {
@@ -31,7 +30,6 @@ const FavouritesBar = ({ navigation }) => {
     return (
         <HorizontalScroll horizontal>
             {favourites.map(favourite => {
-                console.log(favourite.photos[0])
                 return (
                     <TouchableOpacity onPress={() => navigation.navigate("RestaurantDetail", { restaurant: favourite })}>
                         <SmallCard key={`${favourite.name}-${favourite.placeId}`}>
