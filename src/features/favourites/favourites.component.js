@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ScrollView, Text, Image, View, TouchableOpacity } from 'react-native'
 import { styled } from "styled-components/native";
 import { FavouritesContext } from "../../services/favourites/favourites.context";
@@ -23,24 +24,49 @@ const Img = styled(Image)`
 const Name = styled(Text)`
     width: 100px;
     font-size: ${props => props.theme.fontSizes['body']};
-    word-wrap: break-word;
 `
 
+const storeFavourites = async (value) => {
+    try {
+        const jsonValue = JSON.stringify(value);
+        await AsyncStorage.setItem('favourites', jsonValue);
+    } catch (e) {
+        console.log('from storing favourites', e)
+    }
+};
+
+
+
 const FavouritesBar = ({ navigation }) => {
-    const { favourites } = useContext(FavouritesContext)
+    const { favourites, setFavourites } = useContext(FavouritesContext)
+
+    useEffect(async () => {
+        const getFavourites = async () => {
+            try {
+                const jsonValue = await AsyncStorage.getItem('favourites');
+                return jsonValue != null ? JSON.parse(jsonValue) : null;
+            } catch (e) {
+                console.log('from loading favourites', e)
+            }
+        };
+        const resp = getFavourites()
+        setFavourites(resp)
+    }, [])
+
+    useEffect(() => { storeFavourites(favourites) }, [favourites])
+
     return (
         <HorizontalScroll horizontal>
-            {favourites.map(favourite => {
-                console.log(favourite.photos[0])
+            {favourites.length > 0 ? favourites.map(favourite => {
                 return (
-                    <TouchableOpacity onPress={() => navigation.navigate("RestaurantDetail", { restaurant: favourite })}>
-                        <SmallCard key={`${favourite.name}-${favourite.placeId}`}>
+                    <TouchableOpacity key={`${favourite.name}-${favourite.placeId}`} onPress={() => navigation.navigate("RestaurantDetail", { restaurant: favourite })}>
+                        <SmallCard >
                             <Img source={{ uri: favourite.photos[0] }} />
                             <Name>{favourite.name}</Name>
                         </SmallCard>
                     </TouchableOpacity>
                 )
-            })}
+            }) : <Text>Empty Favourites</Text>}
         </HorizontalScroll>
     )
 }
