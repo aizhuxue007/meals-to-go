@@ -25,34 +25,25 @@ export const FavouritesContextProvider = ({ children }) => {
             console.log("error loading", e);
         }
     };
+    const addToFavourites = (restaurant) => {
+        setFavourites((prevFavourites) => {
+            return [...prevFavourites, restaurant]
+        })
+        console.log('in add')
+    }
 
-    const add = (restaurant) => {
-        setFavourites([...favourites, restaurant]);
-    };
-
-    const remove = (restaurant) => {
-        const newFavourites = favourites.filter(
-            (x) => x.placeId !== restaurant.placeId
-        );
-
-        setFavourites(newFavourites);
-    };
-
-    useEffect(() => {
-        loadFavourites();
-    }, []);
-
-    useEffect(() => {
-        saveFavourites(favourites);
-    }, [favourites]);
+    const removeFromFavourites = (restaurant) => {
+        console.log('in remove')
+        setFavourites((prevFavourites) => prevFavourites.filter(item => item.placeId !== restaurant.placeId))
+    }
 
     return (
         <FavouritesContext.Provider
             value={{
                 favourites,
                 setFavourites,
-                addToFavourites: add,
-                removeFromFavourites: remove,
+                addToFavourites,
+                removeFromFavourites,
             }}
         >
             {children}
