@@ -31,8 +31,8 @@ const FavouritesBar = ({ navigation }) => {
         <HorizontalScroll horizontal>
             {favourites.map ? favourites.map(favourite => {
                 return (
-                    <TouchableOpacity onPress={() => navigation.navigate("RestaurantDetail", { restaurant: favourite })}>
-                        <SmallCard key={`${favourite.name}-${favourite.placeId}`}>
+                    <TouchableOpacity key={`${favourite.name}-${favourite.placeId}`} onPress={() => navigation.navigate("RestaurantDetail", { restaurant: favourite })}>
+                        <SmallCard>
                             <Img source={{ uri: favourite.photos[0] }} />
                             <Name>{favourite.name}</Name>
                         </SmallCard>

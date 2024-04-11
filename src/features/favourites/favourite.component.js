@@ -19,7 +19,7 @@ const Favourite = ({ restaurant }) => {
     return (
         <FavouriteButton
             onPress={() => {
-                !isFavourite ? addToFavourites(restaurant) : removeFromFavourites(restaurant)
+                isFavourite ? removeFromFavourites(restaurant) : addToFavourites(restaurant)
             }}
         >
             <AntDesign
