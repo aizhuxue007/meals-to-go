@@ -35,12 +35,10 @@ const storeFavourites = async (value) => {
     }
 };
 
-
-
 const FavouritesBar = ({ navigation }) => {
     const { favourites, setFavourites } = useContext(FavouritesContext)
 
-    useEffect(async () => {
+    useEffect(() => {
         const getFavourites = async () => {
             try {
                 const jsonValue = await AsyncStorage.getItem('favourites');
