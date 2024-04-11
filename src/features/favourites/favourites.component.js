@@ -29,7 +29,7 @@ const FavouritesBar = ({ navigation }) => {
     const { favourites } = useContext(FavouritesContext)
     return (
         <HorizontalScroll horizontal>
-            {favourites.map(favourite => {
+            {favourites.map ? favourites.map(favourite => {
                 return (
                     <TouchableOpacity onPress={() => navigation.navigate("RestaurantDetail", { restaurant: favourite })}>
                         <SmallCard key={`${favourite.name}-${favourite.placeId}`}>
@@ -38,7 +38,7 @@ const FavouritesBar = ({ navigation }) => {
                         </SmallCard>
                     </TouchableOpacity>
                 )
-            })}
+            }) : <Text>No favourites</Text>}
         </HorizontalScroll>
     )
 }
