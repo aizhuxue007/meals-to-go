@@ -11,11 +11,13 @@ export const AuthContextProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
     const auth = useRef(getAuth()).current;
 
     onAuthStateChanged(auth, (usr) => {
         if (usr) {
             setIsLoading(false)
+            !isAuthenticated && setIsAuthenticated(true)
             setUser(usr)
         } else {
             setIsLoading(false)
@@ -27,6 +29,7 @@ export const AuthContextProvider = ({ children }) => {
         loginRequest(auth, email, password)
             .then(u => {
                 setUser(u)
+                setIsAuthenticated(true)
                 setIsLoading(false)
             })
             .catch(e => {
