@@ -46,6 +46,7 @@ export const AuthContextProvider = ({ children }) => {
                 isLoading,
                 error,
                 onLogin,
+                isAuthenticated,
             }}
         >
             {children}
