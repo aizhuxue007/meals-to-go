@@ -5,28 +5,38 @@ export const FavouritesContext = createContext();
 
 const saveFavourites = async (value) => {
     try {
-        console.log('in save favourites')
+        console.log(value)
         const jsonValue = JSON.stringify(value);
-        await AsyncStorage.setItem("@favourites", jsonValue);
+        await AsyncStorage.setItem("favourites", jsonValue);
+        console.log('in saveFavourites', await AsyncStorage.getItem("favourites"))
     } catch (e) {
         console.log("error storing", e);
     }
 };
 
-const loadFavourites = async () => {
-    try {
-        const value = await AsyncStorage.getItem("@favourites");
-        if (value !== null) {
-            setFavourites(JSON.parse(value));
-        }
-    } catch (e) {
-        console.log("error loading", e);
-    }
-};
 
 export const FavouritesContextProvider = ({ children }) => {
     const [favourites, setFavourites] = useState([])
 
+    useEffect(() => {
+        loadFavourites();
+    }, []);
+
+    useEffect(() => {
+        saveFavourites(favourites);
+    }, [favourites]);
+
+    async function loadFavourites() {
+        try {
+            const value = await AsyncStorage.getItem("favourites");
+            if (value !== null) {
+                console.log('from loadFavourites', value)
+                setFavourites(JSON.parse(value));
+            }
+        } catch (e) {
+            console.log("error loading", e);
+        }
+    };
     const add = (restaurant) => {
         setFavourites([...favourites, restaurant])
     }
@@ -36,14 +46,6 @@ export const FavouritesContextProvider = ({ children }) => {
         setFavourites(newFavourites)
     }
 
-
-    useEffect(() => {
-        loadFavourites();
-    }, []);
-
-    useEffect(() => {
-        saveFavourites(favourites);
-    }, [favourites]);
 
     return (
         <FavouritesContext.Provider
