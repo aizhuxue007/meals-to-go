@@ -1,6 +1,5 @@
 import 'react-native-gesture-handler';
-import React, { useState, useEffect } from "react";
-import { Text } from 'react-native'
+import React, { useEffect } from "react";
 import * as Font from "expo-font";
 import { Lato_400Regular, Lato_700Bold } from "@expo-google-fonts/lato";
 import { initializeApp } from "firebase/app";
