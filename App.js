@@ -10,6 +10,7 @@ import RestaurantsContextProvider from "./src/services/restaurants/restaurants.c
 import { LocationContextProvider } from "./src/services/location/location.context";
 import Navigation from "./src/infrastructure/navigation";
 import { theme } from "./src/infrastructure/theme";
+import { AuthContextProvider } from './src/services/authentification/authentification.context';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBeG4GNj9l0e5ubC3cLOoychBcjwjgJzgs",
@@ -20,12 +21,9 @@ const firebaseConfig = {
   appId: "1:676522891713:web:7d8a809dbf35257ec6f740"
 };
 
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
+initializeApp(firebaseConfig);
 
 export default function App() {
-
   useEffect(() => {
     const loadFonts = async () => {
       try {
@@ -43,15 +41,17 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <FavouritesContextProvider>
-        <LocationContextProvider>
-          <RestaurantsContextProvider>
-            <ThemeProvider theme={theme}>
-              <Navigation />
-            </ThemeProvider>
-          </RestaurantsContextProvider>
-        </LocationContextProvider>
-      </FavouritesContextProvider>
+      <AuthContextProvider>
+        <FavouritesContextProvider>
+          <LocationContextProvider>
+            <RestaurantsContextProvider>
+              <ThemeProvider theme={theme}>
+                <Navigation />
+              </ThemeProvider>
+            </RestaurantsContextProvider>
+          </LocationContextProvider>
+        </FavouritesContextProvider>
+      </AuthContextProvider>
     </SafeAreaProvider>
   );
 }
