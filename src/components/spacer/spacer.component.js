@@ -29,7 +29,7 @@ const Spacer = React.memo(({ position, size, children }) => {
     ${property}: ${(props) => props.theme.space[sizeIndex]};
   `;
 
-  return <SpacerComponent>{children}</SpacerComponent>;
+  return <SpacerComponent>{children}</SpacerComponent>
 });
 
 export default Spacer;
