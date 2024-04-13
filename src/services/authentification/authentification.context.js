@@ -11,7 +11,6 @@ export const AuthContextProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
-    const [isAuthenticated, setIsAuthenticated] = useState(false)
     const auth = useRef(getAuth()).current;
 
     onAuthStateChanged(auth, (usr) => {
@@ -46,7 +45,7 @@ export const AuthContextProvider = ({ children }) => {
                 isLoading,
                 error,
                 onLogin,
-                isAuthenticated,
+                isAuthenticated: !!user,
             }}
         >
             {children}
