@@ -1,14 +1,14 @@
 import React from 'react'
-import { ImgBg, TestView, AccountsCover, AccountsContainer, AuthButton } from '../components/accounts.styles'
+import { AccountBackground, TestView, AccountCover, AccountContainer, AuthButton } from '../components/accounts.styles'
 import Spacer from '../../../components/spacer/spacer.component'
 
 
 const AccountScreen = ({ navigation }) => {
     return (
-        <ImgBg source={{ uri: "/Users/aizhuxue/dev/react-native/ztm/meals-to-go/assets/home_bg.jpg" }} resizeMode="cover">
-            <AccountsCover />
+        <AccountBackground source={{ uri: "/Users/aizhuxue/dev/react-native/ztm/meals-to-go/assets/home_bg.jpg" }} resizeMode="cover">
+            <AccountCover />
             <TestView>
-                <AccountsContainer>
+                <AccountContainer>
                     <AuthButton icon="lock-open-outline" mode="contained"
                         onPress={() => navigation.navigate('Login')}
                     >
@@ -21,9 +21,9 @@ const AccountScreen = ({ navigation }) => {
                             Register
                         </AuthButton>
                     </Spacer>
-                </AccountsContainer>
+                </AccountContainer>
             </TestView>
-        </ImgBg>
+        </AccountBackground>
     )
 }
 
