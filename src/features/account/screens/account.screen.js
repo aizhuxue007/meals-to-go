@@ -5,7 +5,7 @@ import Spacer from '../../../components/spacer/spacer.component'
 
 const AccountScreen = ({ navigation }) => {
     return (
-        <AccountBackground source={{ uri: "/Users/aizhuxue/dev/react-native/ztm/meals-to-go/assets/home_bg.jpg" }} resizeMode="cover">
+        <AccountBackground>
             <AccountCover />
             <TestView>
                 <AccountContainer>

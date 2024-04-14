@@ -4,8 +4,12 @@ import { styled } from 'styled-components/native'
 import { colors } from '../../../infrastructure/theme/colors'
 
 
-export const AccountBackground = styled(ImageBackground)`
-    flex: 1;
+export const AccountBackground = styled(ImageBackground).attrs({
+    source: require("/Users/aizhuxue/dev/react-native/ztm/meals-to-go/assets/home_bg.jpg"),
+    resizeMode: "cover"
+})`
+    width: 100%;
+    height: 100%;
 `
 export const TestView = styled(View)`
     flex: 1;
