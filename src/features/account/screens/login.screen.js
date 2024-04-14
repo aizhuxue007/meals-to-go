@@ -35,10 +35,6 @@ const LoginScreen = () => {
                     secure
                     onChangeText={(p) => setPassword(p)}
                 />
-                {error && (
-                    <Spacer position="top" size="l">
-                    </Spacer>
-                )}
                 <AuthButton
                     icon="lock-open-outline"
                     mode="contained"
