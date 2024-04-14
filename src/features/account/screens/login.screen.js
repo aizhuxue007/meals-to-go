@@ -1,12 +1,13 @@
 import React, { useState, useContext } from "react";
+import { Text } from "react-native-paper";
 import {
     AccountBackground,
     AccountCover,
     AccountContainer,
     AuthButton,
     AuthInput,
+    Heading
 } from "../components/accounts.styles"
-import Spacer from "../../../components/spacer/spacer.component";
 import { AuthContext } from "../../../services/authentification/authentification.context";
 
 const LoginScreen = () => {
@@ -18,6 +19,7 @@ const LoginScreen = () => {
         <AccountBackground>
             <AccountCover />
             <AccountContainer>
+                <Heading>Login</Heading>
                 <AuthInput
                     label="E-mail"
                     value={email}
