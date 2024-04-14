@@ -26,7 +26,6 @@ const LoginScreen = () => {
                     autoCapitalize="none"
                     onChangeText={(u) => setEmail(u)}
                 />
-                {/* <Spacer position="top" size="l"> */}
                 <AuthInput
                     label="Password"
                     value={password}
@@ -36,20 +35,17 @@ const LoginScreen = () => {
                     secure
                     onChangeText={(p) => setPassword(p)}
                 />
-                {/* </Spacer> */}
                 {error && (
                     <Spacer position="top" size="l">
                     </Spacer>
                 )}
-                <Spacer position="top" size="l">
-                    <AuthButton
-                        icon="lock-open-outline"
-                        mode="contained"
-                        onPress={() => onLogin(email, password)}
-                    >
-                        Login
-                    </AuthButton>
-                </Spacer>
+                <AuthButton
+                    icon="lock-open-outline"
+                    mode="contained"
+                    onPress={() => onLogin(email, password)}
+                >
+                    Login
+                </AuthButton>
             </AccountContainer>
         </AccountBackground>
     );
