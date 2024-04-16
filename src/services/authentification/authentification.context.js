@@ -40,6 +40,7 @@ export const AuthContextProvider = ({ children }) => {
     }, [auth]);
 
     const onRegister = ({ email, password, repeatPassword }) => {
+        setIsLoading(true)
         if (password !== repeatPassword) {
             setError('password and repeat password need to match')
             return
@@ -48,12 +49,14 @@ export const AuthContextProvider = ({ children }) => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user, 'just signed up')
+                setIsLoading(false)
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorMessage, errorCode)
                 setError(errorMessage)
+                setIsLoading(false)
             });
     }
 
