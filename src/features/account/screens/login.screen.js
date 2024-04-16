@@ -8,7 +8,6 @@ import {
     Heading
 } from "../components/accounts.styles"
 import { AuthContext } from "../../../services/authentification/authentification.context";
-import Spacer from "../../../components/spacer/spacer.component";
 import { Text, View } from "react-native";
 
 const LoginScreen = () => {
