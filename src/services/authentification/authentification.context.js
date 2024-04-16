@@ -39,10 +39,13 @@ export const AuthContextProvider = ({ children }) => {
             });
     }, [auth]);
 
-    const onRegister = ({ email, password, repeatPassword }) => {
+    const onRegister = (email, password, repeatPassword) => {
         setIsLoading(true)
+        console.log('onRegister')
         if (password !== repeatPassword) {
             setError('password and repeat password need to match')
+            setIsLoading(false)
+            console.log(password, repeatPassword)
             return
         }
         createUserWithEmailAndPassword(auth, email, password)

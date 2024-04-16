@@ -43,17 +43,19 @@ const RegisterScreen = ({ navigation }) => {
                     textContentType="password"
                     secureTextEntry
                     autoCapitalize="none"
-                    onChangeText={(p) => setRepeatedPassword(p)}
+                    onChangeText={(p) =>
+                        setRepeatedPassword(p)
+                    }
                 />
-                {error.message && (
+                {error && (
                     <View>
-                        <Text>{error.message}</Text>
+                        <Text>{error.message || error}</Text>
                     </View>
                 )}
                 <AuthButton
                     icon="lock-open-outline"
                     mode="contained"
-                    onPress={() => onRegister(email, password)}
+                    onPress={() => onRegister(email, password, repeatedPassword)}
                 >
                     Register
                 </AuthButton>
