@@ -3,6 +3,9 @@ import { Ionicons } from "@expo/vector-icons";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
 import SettingScreen from "../../features/restaurants/screens/settings.screen";
+import { FavouritesContextProvider } from "../../services/favourites/favourites.context";
+import RestaurantsContextProvider from '../../services/restaurants/restaurants.context'
+import { LocationContextProvider } from "../../services/location/location.context";
 
 const Tab = createBottomTabNavigator();
 
@@ -28,11 +31,17 @@ export const createScreenOptions = ({ route }) => {
 
 const AppNavigator = () => {
     return (
-        <Tab.Navigator screenOptions={createScreenOptions}>
-            <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
-            <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Setting" component={SettingScreen} />
-        </Tab.Navigator>
+        <FavouritesContextProvider>
+            <LocationContextProvider>
+                <RestaurantsContextProvider>
+                    <Tab.Navigator screenOptions={createScreenOptions}>
+                        <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
+                        <Tab.Screen name="Map" component={MapScreen} />
+                        <Tab.Screen name="Setting" component={SettingScreen} />
+                    </Tab.Navigator>
+                </RestaurantsContextProvider>
+            </LocationContextProvider>
+        </FavouritesContextProvider>
     );
 };
 
