@@ -12,7 +12,7 @@ const tabIcon = {
     Setting: "settings-outline",
 };
 
-const createScreenOptions = ({ route }) => {
+export const createScreenOptions = ({ route }) => {
     const iconName = tabIcon[route.name];
 
     return {
