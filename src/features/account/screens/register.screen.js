@@ -38,7 +38,7 @@ const RegisterScreen = ({ navigation }) => {
                     onChangeText={(p) => setPassword(p)}
                 />
                 <AuthInput
-                    label="RepeatPassword"
+                    label="Repeat Password"
                     value={repeatedPassword}
                     textContentType="password"
                     secureTextEntry
