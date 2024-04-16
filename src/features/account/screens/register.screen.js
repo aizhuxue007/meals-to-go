@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import {
     AccountBackground,
     AccountCover,
@@ -14,7 +15,7 @@ const RegisterScreen = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repeatedPassword, setRepeatedPassword] = useState("");
-    const { onRegister, error } = useContext(AuthContext);
+    const { onRegister, error, isLoading } = useContext(AuthContext);
 
     return (
         <AccountBackground>
@@ -52,20 +53,24 @@ const RegisterScreen = ({ navigation }) => {
                         <Text>{error.message || error}</Text>
                     </View>
                 )}
-                <AuthButton
-                    icon="lock-open-outline"
-                    mode="contained"
-                    onPress={() => onRegister(email, password, repeatedPassword)}
-                >
-                    Register
-                </AuthButton>
-                <AuthButton
-                    icon="lock-open-outline"
-                    mode="contained"
-                    onPress={() => navigation.goBack()}
-                >
-                    Go Back
-                </AuthButton>
+                {isLoading ? <ActivityIndicator animating={true} color={MD2Colors.red800} /> : (
+                    <View>
+                        <AuthButton
+                            icon="lock-open-outline"
+                            mode="contained"
+                            onPress={() => onRegister(email, password, repeatedPassword)}
+                        >
+                            Register
+                        </AuthButton>
+                        <AuthButton
+                            icon="lock-open-outline"
+                            mode="contained"
+                            onPress={() => navigation.goBack()}
+                        >
+                            Go Back
+                        </AuthButton>
+                    </View>)}
+
             </AccountContainer>
         </AccountBackground>
     );
