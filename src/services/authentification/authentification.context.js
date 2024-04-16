@@ -7,7 +7,7 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState([]);
     const auth = useRef(getAuth()).current;
 
     useEffect(() => {
@@ -35,7 +35,7 @@ export const AuthContextProvider = ({ children }) => {
             .catch((e) => {
                 setError(e);
                 setIsLoading(false);
-                console.log(e.toString());
+                console.log(JSON.parse(e));
             });
     }, [auth]);
 

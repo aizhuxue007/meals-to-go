@@ -8,6 +8,8 @@ import {
     Heading
 } from "../components/accounts.styles"
 import { AuthContext } from "../../../services/authentification/authentification.context";
+import Spacer from "../../../components/spacer/spacer.component";
+import { Text, View } from "react-native";
 
 const LoginScreen = () => {
     const [email, setEmail] = useState("");
@@ -36,6 +38,11 @@ const LoginScreen = () => {
                     secure
                     onChangeText={(p) => setPassword(p)}
                 />
+                {error.message && (
+                    <View>
+                        <Text>{error.message}</Text>
+                    </View>
+                )}
                 <AuthButton
                     icon="lock-open-outline"
                     mode="contained"
