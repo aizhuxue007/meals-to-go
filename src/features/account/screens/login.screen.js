@@ -8,13 +8,14 @@ import {
     Heading
 } from "../components/accounts.styles"
 import { AuthContext } from "../../../services/authentification/authentification.context";
+import Spacer from "../../../components/spacer/spacer.component";
 import { Text, View } from "react-native";
 
 const LoginScreen = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { onLogin, error } = useContext(AuthContext);
-
+    console.log(error)
     return (
         <AccountBackground>
             <AccountCover />
@@ -37,11 +38,9 @@ const LoginScreen = () => {
                     secure
                     onChangeText={(p) => setPassword(p)}
                 />
-                {error.message && (
-                    <View>
-                        <Text>{error.message}</Text>
-                    </View>
-                )}
+                {error.length &&
+                    <Text>{`${error[0] || 'hello'}`}</Text>
+                }
                 <AuthButton
                     icon="lock-open-outline"
                     mode="contained"
