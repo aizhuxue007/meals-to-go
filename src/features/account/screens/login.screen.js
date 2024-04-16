@@ -10,7 +10,7 @@ import {
 import { AuthContext } from "../../../services/authentification/authentification.context";
 import { Text, View } from "react-native";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { onLogin, error } = useContext(AuthContext);
@@ -34,7 +34,6 @@ const LoginScreen = () => {
                     textContentType="password"
                     secureTextEntry
                     autoCapitalize="none"
-                    secure
                     onChangeText={(p) => setPassword(p)}
                 />
                 {error.message && (
@@ -48,6 +47,13 @@ const LoginScreen = () => {
                     onPress={() => onLogin(email, password)}
                 >
                     Login
+                </AuthButton>
+                <AuthButton
+                    icon="lock-open-outline"
+                    mode="contained"
+                    onPress={() => navigation.goBack()}
+                >
+                    Go Back
                 </AuthButton>
             </AccountContainer>
         </AccountBackground>
