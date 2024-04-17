@@ -53,3 +53,11 @@ export const Heading = styled(Text)`
     font-weight: bold;
     margin-bottom: 20px;
 `;
+
+export const AnimationWrapper = styled.View`
+    positon: absolute;
+    width: 400px;
+    height: 40%;
+    top: 30px;
+    padding: ${props => props.theme.space[2]};
+`
