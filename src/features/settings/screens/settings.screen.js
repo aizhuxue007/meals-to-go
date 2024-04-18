@@ -18,13 +18,13 @@ const SettingScreen = ({ navigation }) => {
         <List.Item
           title="Favourites"
           description="Liked restaurants"
-          left={props => <List.Icon {...props} icon="folder" />}
+          left={props => <List.Icon {...props} icon="heart" />}
           onPress={() => navigation.navigate('Favorites')}
         />
         <List.Item
           title="Logout"
           description=""
-          left={props => <List.Icon {...props} icon="folder" />}
+          left={props => <List.Icon {...props} icon="door" />}
           onPress={() => onLogout()}
         />
       </List.Section>
