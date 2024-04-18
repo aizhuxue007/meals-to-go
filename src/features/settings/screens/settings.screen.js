@@ -1,9 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Text, TouchableOpacity } from "react-native";
 import { List, Avatar } from "react-native-paper";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/core";
 import { styled } from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AuthContext } from "../../../services/authentification/authentification.context";
+
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -20,15 +23,28 @@ const SettingItem = styled(List.Item)`
 
 const SettingScreen = ({ navigation }) => {
   const { onLogout, user } = useContext(AuthContext)
+  const [photo, setPhoto] = useState()
   let text = ''
+
+  const getProfilePicture = async (currUser) => {
+    const resp = await AsyncStorage.getItem(`${currUser.uid}-photo`)
+    if (typeof resp === 'string') { setPhoto(resp) }
+  }
+
+  useFocusEffect(() => {
+    getProfilePicture(user)
+  })
+
   if (user._tokenResponse) { text = user._tokenResponse }
   else if (user.email) { text = user.email }
   else { null }
+
+
   return (
     <SafeArea>
       <HeaderContainer>
         <TouchableOpacity onPress={() => navigation.navigate('Camera')}>
-          <Avatar.Icon size={150} icon="human" />
+          {photo ? <Avatar.Image size={150} source={{ uri: photo }} /> : <Avatar.Icon size={150} icon="human" />}
         </TouchableOpacity>
         <Text>{`${text}`}</Text>
       </HeaderContainer>
