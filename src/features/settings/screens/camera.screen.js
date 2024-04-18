@@ -1,6 +1,17 @@
 import React, { useRef } from 'react'
-import { View, TouchableOpacity, Text, Button } from 'react-native'
+import { View, TouchableOpacity, Text } from 'react-native'
+import { Button } from "react-native-paper";
 import { Camera, CameraType } from 'expo-camera';
+import { styled } from 'styled-components/native';
+
+const CameraButton = styled(Button).attrs({
+    mode: "contained",
+    icon: "camera"
+})`
+    position: absolute;
+    top: 525px;
+    left: 140px;
+ `;
 
 const CameraScreen = () => {
     const [permission, requestPermission] = Camera.useCameraPermissions();
@@ -22,7 +33,6 @@ const CameraScreen = () => {
     }
 
     const snap = async () => {
-        console.log('cam pressed')
         if (!camRef) return null
         const photo = await camRef.current.takePictureAsync()
         console.log(photo)
@@ -36,6 +46,7 @@ const CameraScreen = () => {
                 ref={camera => (camRef.current = camera)}
             >
             </Camera>
+            <CameraButton onPress={snap}>Snap!</CameraButton>
         </TouchableOpacity>
     )
 }
