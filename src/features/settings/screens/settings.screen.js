@@ -24,7 +24,7 @@ const SettingScreen = ({ navigation }) => {
     <SafeArea>
       <HeaderContainer>
         <Avatar.Icon size={150} icon="human" />
-        <Text>{user._tokenResponse.email}</Text>
+        <Text>{user.email}</Text>
       </HeaderContainer>
       <List.Section>
         <SettingItem

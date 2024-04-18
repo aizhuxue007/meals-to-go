@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useCallback } from 'react'
 import { FlatList, TouchableOpacity, Text } from "react-native";
 import { styled } from "styled-components/native";
 styled;
@@ -10,8 +10,15 @@ const FavouritesList = styled(FlatList).attrs({
     contentContainerStyle: { padding: 16 },
 })``;
 
-const FavouritesScreen = ({ }) => {
+const FavouritesScreen = ({ navigation }) => {
     const { favourites } = useContext(FavouritesContext)
+
+    const onPressRestaurant = useCallback(
+        (restaurant) => {
+            navigation.navigate("RestaurantDetail", { restaurant });
+        },
+        [navigation],
+    );
 
     return (
         <>
