@@ -8,6 +8,7 @@ import RestaurantInfoCard from "../components/restaurant-info-card.component";
 import Spacer from "../../../components/spacer/spacer.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import FavouritesBar from "../../favourites/favourites.component";
+import FadeInView from "../../../components/animation/FadeInView.animation";
 
 const RestaurantList = React.memo(
     styled(FlatList).attrs({
@@ -67,10 +68,13 @@ export const RestaurantsScreen = ({ navigation }) => {
                 <RestaurantList
                     data={restaurants}
                     renderItem={({ item }) => (
+
                         <TouchableOpacity onPress={() => onPressRestaurant(item)}>
-                            <Spacer position="bottom" size="m">
-                                <RestaurantInfoCard restaurant={item} />
-                            </Spacer>
+                            <FadeInView>
+                                <Spacer position="bottom" size="m">
+                                    <RestaurantInfoCard restaurant={item} />
+                                </Spacer>
+                            </FadeInView>
                         </TouchableOpacity>
                     )}
                     keyExtractor={(item) => item.name}
