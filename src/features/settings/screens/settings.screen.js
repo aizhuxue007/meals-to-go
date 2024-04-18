@@ -19,12 +19,12 @@ const SettingItem = styled(List.Item)`
 `
 
 const SettingScreen = ({ navigation }) => {
-  const { onLogout } = useContext(AuthContext)
+  const { onLogout, user } = useContext(AuthContext)
   return (
     <SafeArea>
       <HeaderContainer>
         <Avatar.Icon size={150} icon="human" />
-        <Text>Settings</Text>
+        <Text>{user._tokenResponse.email}</Text>
       </HeaderContainer>
       <List.Section>
         <SettingItem
