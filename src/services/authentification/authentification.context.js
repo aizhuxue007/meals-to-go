@@ -28,7 +28,6 @@ export const AuthContextProvider = ({ children }) => {
         setIsLoading(true);
         loginRequest(auth, email, password)
             .then((u) => {
-                console.log(email, password, u)
                 setUser(u);
                 setIsLoading(false);
             })
