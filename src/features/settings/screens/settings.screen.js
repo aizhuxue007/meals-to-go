@@ -21,7 +21,7 @@ const SettingItem = styled(List.Item)`
 const SettingScreen = ({ navigation }) => {
   const { onLogout, user } = useContext(AuthContext)
   let text = ''
-  if (user._tokenResponse) { text = user._tokenResponse }
+  if (user._tokenResponse) { text = user._tokenResponse.email }
   else if (user.email) { text = user.email }
   else { null }
   return (
