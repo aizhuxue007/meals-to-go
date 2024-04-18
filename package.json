@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@expo-google-fonts/lato": "^0.2.3",
-    "@expo-google-fonts/oswald": "^0.2.3",
     "@react-native-async-storage/async-storage": "1.21.0",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
@@ -21,6 +20,7 @@
     "expo": "~50.0.8",
     "expo-font": "~11.10.3",
     "expo-status-bar": "~1.11.1",
+    "expo-updates": "~0.24.12",
     "firebase": "^10.11.0",
     "lottie-react-native": "^6.7.2",
     "react": "18.2.0",

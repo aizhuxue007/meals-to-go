@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "mealstogo"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,6 +30,17 @@
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "c9f3c05b-b6a0-4c7f-855d-9122f44dfb24"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c9f3c05b-b6a0-4c7f-855d-9122f44dfb24"
+    }
   }
 }
