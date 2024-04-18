@@ -9,13 +9,24 @@ const SafeArea = styled(SafeAreaView)`
   flex: 1;
 `;
 
-const SettingScreen = () => {
+const SettingScreen = ({ navigation }) => {
   const { onLogout } = useContext(AuthContext)
   return (
     <SafeArea>
       <Text>Settings</Text>
       <List.Section>
-
+        <List.Item
+          title="Favourites"
+          description="Liked restaurants"
+          left={props => <List.Icon {...props} icon="folder" />}
+          onPress={() => navigation.navigate('Favorites')}
+        />
+        <List.Item
+          title="Logout"
+          description=""
+          left={props => <List.Icon {...props} icon="folder" />}
+          onPress={() => onLogout()}
+        />
       </List.Section>
     </SafeArea>
   );
