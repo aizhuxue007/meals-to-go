@@ -1,10 +1,14 @@
 import React from 'react'
 import { Text, View } from 'react-native'
+import { Camera, CameraType } from 'expo-camera';
 
 const CameraScreen = () => {
     return (
         <View>
-            <Text>In camera view</Text>
+            <Camera
+                style={{ flex: 1 }}
+                type={CameraType.front}
+            ></Camera>
         </View>
     )
 }
