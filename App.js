@@ -15,10 +15,10 @@ const firebaseConfig = {
   projectId: "meals-to-go-38736",
   storageBucket: "meals-to-go-38736.appspot.com",
   messagingSenderId: "676522891713",
-  appId: "1:676522891713:web:7d8a809dbf35257ec6f740"
+  appId: "1:676522891713:web:7d8a809dbf35257ec6f740",
 };
 
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 export default function App() {
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-        <AuthContextProvider>
+        <AuthContextProvider app={app}>
           <Navigation />
 
         </AuthContextProvider>

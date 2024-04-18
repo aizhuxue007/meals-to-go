@@ -1,28 +1,30 @@
-import React, { createContext, useState, useEffect, useCallback, useRef } from 'react';
+import React, { createContext, useState, useEffect, useCallback } from 'react';
 import { onAuthStateChanged, getAuth, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 import { loginRequest } from './authentification.service';
+import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
+import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
 export const AuthContext = createContext();
 
-export const AuthContextProvider = ({ children }) => {
+export const AuthContextProvider = ({ app, children }) => {
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState([]);
-    const auth = useRef(getAuth()).current;
+    const auth =
 
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (usr) => {
-            if (usr) {
-                setUser(usr);
-                setIsLoading(false);
-            } else {
-                setUser(null);
-                setIsLoading(false);
-            }
-        });
+        useEffect(() => {
+            const unsubscribe = onAuthStateChanged(auth, (usr) => {
+                if (usr) {
+                    setUser(usr);
+                    setIsLoading(false);
+                } else {
+                    setUser(null);
+                    setIsLoading(false);
+                }
+            });
 
-        return () => unsubscribe();
-    }, [auth]);
+            return () => unsubscribe();
+        }, [auth]);
 
     const onLogin = useCallback((email, password) => {
         setIsLoading(true);
@@ -47,13 +49,10 @@ export const AuthContextProvider = ({ children }) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user, 'just signed up')
                 setIsLoading(false)
             })
             .catch((error) => {
-                const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorMessage, errorCode)
                 setError(errorMessage)
                 setIsLoading(false)
             });
