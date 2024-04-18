@@ -14,7 +14,9 @@ const SettingScreen = () => {
   return (
     <SafeArea>
       <Text>Settings</Text>
+      <List.Section>
 
+      </List.Section>
     </SafeArea>
   );
 };
