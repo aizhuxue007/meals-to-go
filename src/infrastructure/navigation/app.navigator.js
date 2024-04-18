@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
-import SettingScreen from "../../features/restaurants/screens/settings.screen";
+import SettingScreen from "../../features/settings/screens/settings.screen";
 import { FavouritesContextProvider } from "../../services/favourites/favourites.context";
 import RestaurantsContextProvider from '../../services/restaurants/restaurants.context'
 import { LocationContextProvider } from "../../services/location/location.context";
