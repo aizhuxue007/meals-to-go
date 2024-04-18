@@ -5,6 +5,7 @@ import { Camera, CameraType } from 'expo-camera';
 import { styled } from 'styled-components/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../../../services/authentification/authentification.context';
+import Navigation from '../../../infrastructure/navigation';
 
 const CameraButton = styled(Button).attrs({
     mode: "contained",
@@ -15,7 +16,7 @@ const CameraButton = styled(Button).attrs({
     left: 140px;
  `;
 
-const CameraScreen = () => {
+const CameraScreen = ({ navigation }) => {
     const [permission, requestPermission] = Camera.useCameraPermissions();
     const camRef = useRef()
     const { user } = useContext(AuthContext)
@@ -37,7 +38,7 @@ const CameraScreen = () => {
         if (!camRef) return null
         const photo = await camRef.current.takePictureAsync()
         await AsyncStorage.setItem(`${user.uid}-photo`, photo.uri)
-        console.log('snap', await AsyncStorage.getItem(`${user.uid}-photo`))
+        navigation.goBack()
     }
 
     return (
