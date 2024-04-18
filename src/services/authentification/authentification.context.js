@@ -28,14 +28,12 @@ export const AuthContextProvider = ({ children }) => {
         setIsLoading(true);
         loginRequest(auth, email, password)
             .then((u) => {
-                console.log(email, password, u)
                 setUser(u);
                 setIsLoading(false);
             })
             .catch((e) => {
                 setError(e);
                 setIsLoading(false);
-                console.log(JSON.parse(e));
             });
     }, [auth]);
 
@@ -49,13 +47,11 @@ export const AuthContextProvider = ({ children }) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user, 'just signed up')
                 setIsLoading(false)
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorMessage, errorCode)
                 setError(errorMessage)
                 setIsLoading(false)
             });
