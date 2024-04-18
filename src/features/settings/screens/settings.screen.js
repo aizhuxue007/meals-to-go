@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Text } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import { List, Avatar } from "react-native-paper";
 import { styled } from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -27,8 +27,10 @@ const SettingScreen = ({ navigation }) => {
   return (
     <SafeArea>
       <HeaderContainer>
-        <Avatar.Icon size={150} icon="human" />
-        <Text>{text}</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('Camera')}>
+          <Avatar.Icon size={150} icon="human" />
+        </TouchableOpacity>
+        <Text>{`${text}`}</Text>
       </HeaderContainer>
       <List.Section>
         <SettingItem
