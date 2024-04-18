@@ -34,7 +34,6 @@ export const AuthContextProvider = ({ children }) => {
             .catch((e) => {
                 setError(e);
                 setIsLoading(false);
-                console.log(JSON.parse(e));
             });
     }, [auth]);
 
