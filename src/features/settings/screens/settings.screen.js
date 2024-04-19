@@ -3,8 +3,6 @@ import { Text, TouchableOpacity } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
 import { List, Avatar } from "react-native-paper";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useFocusEffect } from "@react-navigation/core";
 import { styled } from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AuthContext } from "../../../services/authentification/authentification.context";
