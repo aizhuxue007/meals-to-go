@@ -3,6 +3,8 @@ import { Text, TouchableOpacity } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
 import { List, Avatar } from "react-native-paper";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/core";
 import { styled } from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AuthContext } from "../../../services/authentification/authentification.context";
@@ -22,22 +24,18 @@ const SettingItem = styled(List.Item)`
 `
 
 const SettingScreen = ({ navigation }) => {
-  const [photo, setPhoto] = useState(null)
   const { onLogout, user } = useContext(AuthContext)
+  const [photo, setPhoto] = useState()
   let text = ''
 
-  const getProfilePicture = async (currentUser) => {
-    console.log('settings screen', currentUser._tokenResponse.uid || currentUser.uid)
-    const photoURI = AsyncStorage.getItem(`${currentUser.uid}-photo]`)
-    if (typeof photoURI === 'string') setPhoto(photoURI)
-    // console.log('settings screen', photoURI)
+  const getProfilePicture = async (currUser) => {
+    const resp = await AsyncStorage.getItem(`${currUser.uid}-photo`)
+    if (typeof resp === 'string') { setPhoto(resp) }
   }
 
-  useFocusEffect(
-    React.useCallback(() => {
-      getProfilePicture(user);
-    }, [user])
-  );
+  useFocusEffect(() => {
+    getProfilePicture(user)
+  })
 
   if (user._tokenResponse) { text = user._tokenResponse }
   else if (user.email) { text = user.email }

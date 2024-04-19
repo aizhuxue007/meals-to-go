@@ -1,10 +1,11 @@
 import React, { useRef, useContext } from 'react'
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { View, TouchableOpacity, Text } from 'react-native'
-import { Button } from 'react-native-paper';
+import { Button } from "react-native-paper";
 import { Camera, CameraType } from 'expo-camera';
 import { styled } from 'styled-components/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../../../services/authentification/authentification.context';
+import Navigation from '../../../infrastructure/navigation';
 
 const CameraButton = styled(Button).attrs({
     mode: "contained",
@@ -36,8 +37,7 @@ const CameraScreen = ({ navigation }) => {
     const snap = async () => {
         if (!camRef) return null
         const photo = await camRef.current.takePictureAsync()
-        // await AsyncStorage.setItem(`${user.uid}-photo`, photo.uri)
-        navigation.goBack()
+        console.log(photo)
     }
 
     return (
