@@ -1,0 +1,387 @@
+[debug] [2024-04-20T11:13:04.719Z] ----------------------------------------------------------------------
+[debug] [2024-04-20T11:13:04.721Z] Command:       /usr/local/bin/node /Users/aizhuxue/.npm-global/bin/firebase emulators:start --only functions
+[debug] [2024-04-20T11:13:04.721Z] CLI Version:   13.7.3
+[debug] [2024-04-20T11:13:04.721Z] Platform:      darwin
+[debug] [2024-04-20T11:13:04.721Z] Node Version:  v18.17.1
+[debug] [2024-04-20T11:13:04.730Z] Time:          Sat Apr 20 2024 07:13:04 GMT-0400 (Eastern Daylight Time)
+[debug] [2024-04-20T11:13:04.730Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-20T11:13:04.788Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-20T11:13:04.789Z] > authorizing via signed-in user (aizhudeveloper@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2024-04-20T11:13:05.423Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-04-20T11:13:05.423Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-04-20T11:13:05.428Z] [hub] writing locator at /var/folders/x3/4yvd8k9n22jg27np0qnncvqm0000gn/T/hub-meals-to-go-38736.json
+[debug] [2024-04-20T11:13:05.831Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-04-20T11:13:05.832Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-04-20T11:13:05.832Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2024-04-20T11:13:05.835Z] defaultcredentials: writing to file /Users/aizhuxue/.config/firebase/aizhudeveloper_gmail_com_application_default_credentials.json
+[debug] [2024-04-20T11:13:05.840Z] Setting GAC to /Users/aizhuxue/.config/firebase/aizhudeveloper_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/aizhuxue/.config/firebase/aizhudeveloper_gmail_com_application_default_credentials.json"}}
+[debug] [2024-04-20T11:13:05.841Z] > refreshing access token with scopes: []
+[debug] [2024-04-20T11:13:05.843Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-04-20T11:13:05.843Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-04-20T11:13:06.064Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-04-20T11:13:06.064Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-04-20T11:13:06.108Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/meals-to-go-38736/adminSdkConfig [none]
+[debug] [2024-04-20T11:13:06.624Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/meals-to-go-38736/adminSdkConfig 200
+[debug] [2024-04-20T11:13:06.625Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/meals-to-go-38736/adminSdkConfig {"projectId":"meals-to-go-38736","storageBucket":"meals-to-go-38736.appspot.com"}
+[info] i  ui: downloading ui-v1.11.8.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.11.8.zip..."}}
+[debug] [2024-04-20T11:13:06.657Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.8.zip 
+[debug] [2024-04-20T11:13:06.812Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.8.zip 200
+[debug] [2024-04-20T11:13:06.813Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.8.zip [stream]
+[debug] [2024-04-20T11:13:07.005Z] Data is 3523907
+[debug] [2024-04-20T11:13:07.005Z] [unzip] Entry: client/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-04-20T11:13:07.005Z] [unzip] Processing entry: client/
+[debug] [2024-04-20T11:13:07.005Z] [unzip] mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/
+[debug] [2024-04-20T11:13:07.006Z] [unzip] Entry: client/favicon.ico (compressed_size=2497 bytes, uncompressed_size=7406 bytes)
+[debug] [2024-04-20T11:13:07.006Z] [unzip] Processing entry: client/favicon.ico
+[debug] [2024-04-20T11:13:07.006Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.006Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/favicon.ico
+[debug] [2024-04-20T11:13:07.009Z] [unzip] Entry: client/apple-touch-icon.png (compressed_size=7231 bytes, uncompressed_size=7367 bytes)
+[debug] [2024-04-20T11:13:07.009Z] [unzip] Processing entry: client/apple-touch-icon.png
+[debug] [2024-04-20T11:13:07.009Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.010Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/apple-touch-icon.png
+[debug] [2024-04-20T11:13:07.010Z] [unzip] Entry: client/android-chrome-512x512.png (compressed_size=16987 bytes, uncompressed_size=18186 bytes)
+[debug] [2024-04-20T11:13:07.011Z] [unzip] Processing entry: client/android-chrome-512x512.png
+[debug] [2024-04-20T11:13:07.011Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.011Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/android-chrome-512x512.png
+[debug] [2024-04-20T11:13:07.012Z] [unzip] Entry: client/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-04-20T11:13:07.012Z] [unzip] Processing entry: client/assets/
+[debug] [2024-04-20T11:13:07.012Z] [unzip] mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/
+[debug] [2024-04-20T11:13:07.012Z] [unzip] Entry: client/assets/extensions/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-04-20T11:13:07.012Z] [unzip] Processing entry: client/assets/extensions/
+[debug] [2024-04-20T11:13:07.012Z] [unzip] mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/extensions/
+[debug] [2024-04-20T11:13:07.012Z] [unzip] Entry: client/assets/extensions/default-extension.png (compressed_size=1646 bytes, uncompressed_size=1657 bytes)
+[debug] [2024-04-20T11:13:07.013Z] [unzip] Processing entry: client/assets/extensions/default-extension.png
+[debug] [2024-04-20T11:13:07.013Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/extensions
+[debug] [2024-04-20T11:13:07.013Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/extensions/default-extension.png
+[debug] [2024-04-20T11:13:07.013Z] [unzip] Entry: client/assets/index-Z4-ilXvq.js.map (compressed_size=2229704 bytes, uncompressed_size=9599487 bytes)
+[debug] [2024-04-20T11:13:07.013Z] [unzip] Processing entry: client/assets/index-Z4-ilXvq.js.map
+[debug] [2024-04-20T11:13:07.014Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets
+[debug] [2024-04-20T11:13:07.014Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/index-Z4-ilXvq.js.map
+[debug] [2024-04-20T11:13:07.051Z] [unzip] Entry: client/assets/provider-icons/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-04-20T11:13:07.051Z] [unzip] Processing entry: client/assets/provider-icons/
+[debug] [2024-04-20T11:13:07.051Z] [unzip] mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/
+[debug] [2024-04-20T11:13:07.052Z] [unzip] Entry: client/assets/provider-icons/auth_service_oidc.svg (compressed_size=414 bytes, uncompressed_size=858 bytes)
+[debug] [2024-04-20T11:13:07.052Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2024-04-20T11:13:07.052Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.052Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2024-04-20T11:13:07.052Z] [unzip] Entry: client/assets/provider-icons/auth_service_yahoo.svg (compressed_size=577 bytes, uncompressed_size=1182 bytes)
+[debug] [2024-04-20T11:13:07.052Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2024-04-20T11:13:07.052Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.053Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2024-04-20T11:13:07.053Z] [unzip] Entry: client/assets/provider-icons/auth_service_phone.svg (compressed_size=261 bytes, uncompressed_size=414 bytes)
+[debug] [2024-04-20T11:13:07.053Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_phone.svg
+[debug] [2024-04-20T11:13:07.053Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.053Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_phone.svg
+[debug] [2024-04-20T11:13:07.054Z] [unzip] Entry: client/assets/provider-icons/auth_service_saml.svg (compressed_size=575 bytes, uncompressed_size=1226 bytes)
+[debug] [2024-04-20T11:13:07.054Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_saml.svg
+[debug] [2024-04-20T11:13:07.054Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.054Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_saml.svg
+[debug] [2024-04-20T11:13:07.055Z] [unzip] Entry: client/assets/provider-icons/auth_service_mslive.svg (compressed_size=203 bytes, uncompressed_size=378 bytes)
+[debug] [2024-04-20T11:13:07.055Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2024-04-20T11:13:07.055Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.055Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2024-04-20T11:13:07.055Z] [unzip] Entry: client/assets/provider-icons/auth_service_facebook.svg (compressed_size=289 bytes, uncompressed_size=457 bytes)
+[debug] [2024-04-20T11:13:07.055Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2024-04-20T11:13:07.055Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.056Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2024-04-20T11:13:07.056Z] [unzip] Entry: client/assets/provider-icons/auth_service_play_games.svg (compressed_size=565 bytes, uncompressed_size=1173 bytes)
+[debug] [2024-04-20T11:13:07.056Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2024-04-20T11:13:07.056Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.056Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2024-04-20T11:13:07.057Z] [unzip] Entry: client/assets/provider-icons/auth_service_github.svg (compressed_size=466 bytes, uncompressed_size=838 bytes)
+[debug] [2024-04-20T11:13:07.057Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_github.svg
+[debug] [2024-04-20T11:13:07.057Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.057Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_github.svg
+[debug] [2024-04-20T11:13:07.058Z] [unzip] Entry: client/assets/provider-icons/auth_service_apple.svg (compressed_size=230 bytes, uncompressed_size=334 bytes)
+[debug] [2024-04-20T11:13:07.058Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_apple.svg
+[debug] [2024-04-20T11:13:07.058Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.058Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_apple.svg
+[debug] [2024-04-20T11:13:07.058Z] [unzip] Entry: client/assets/provider-icons/auth_service_google.svg (compressed_size=409 bytes, uncompressed_size=720 bytes)
+[debug] [2024-04-20T11:13:07.058Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_google.svg
+[debug] [2024-04-20T11:13:07.058Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.059Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_google.svg
+[debug] [2024-04-20T11:13:07.059Z] [unzip] Entry: client/assets/provider-icons/auth_service_email.svg (compressed_size=228 bytes, uncompressed_size=326 bytes)
+[debug] [2024-04-20T11:13:07.059Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_email.svg
+[debug] [2024-04-20T11:13:07.059Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.059Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_email.svg
+[debug] [2024-04-20T11:13:07.060Z] [unzip] Entry: client/assets/provider-icons/auth_service_twitter.svg (compressed_size=444 bytes, uncompressed_size=751 bytes)
+[debug] [2024-04-20T11:13:07.060Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2024-04-20T11:13:07.060Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.060Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2024-04-20T11:13:07.060Z] [unzip] Entry: client/assets/provider-icons/auth_service_game_center.svg (compressed_size=991 bytes, uncompressed_size=3921 bytes)
+[debug] [2024-04-20T11:13:07.060Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2024-04-20T11:13:07.060Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons
+[debug] [2024-04-20T11:13:07.060Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2024-04-20T11:13:07.061Z] [unzip] Entry: client/assets/img/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-04-20T11:13:07.061Z] [unzip] Processing entry: client/assets/img/
+[debug] [2024-04-20T11:13:07.061Z] [unzip] mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/img/
+[debug] [2024-04-20T11:13:07.061Z] [unzip] Entry: client/assets/img/database.png (compressed_size=29449 bytes, uncompressed_size=29988 bytes)
+[debug] [2024-04-20T11:13:07.061Z] [unzip] Processing entry: client/assets/img/database.png
+[debug] [2024-04-20T11:13:07.061Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/img
+[debug] [2024-04-20T11:13:07.061Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/img/database.png
+[debug] [2024-04-20T11:13:07.062Z] [unzip] Entry: client/assets/index-Cj5I7867.css (compressed_size=35786 bytes, uncompressed_size=297937 bytes)
+[debug] [2024-04-20T11:13:07.062Z] [unzip] Processing entry: client/assets/index-Cj5I7867.css
+[debug] [2024-04-20T11:13:07.062Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets
+[debug] [2024-04-20T11:13:07.062Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/index-Cj5I7867.css
+[debug] [2024-04-20T11:13:07.063Z] [unzip] Entry: client/assets/index-Z4-ilXvq.js (compressed_size=563876 bytes, uncompressed_size=2021818 bytes)
+[debug] [2024-04-20T11:13:07.063Z] [unzip] Processing entry: client/assets/index-Z4-ilXvq.js
+[debug] [2024-04-20T11:13:07.063Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets
+[debug] [2024-04-20T11:13:07.063Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/assets/index-Z4-ilXvq.js
+[debug] [2024-04-20T11:13:07.071Z] [unzip] Entry: client/safari-pinned-tab.svg (compressed_size=838 bytes, uncompressed_size=1504 bytes)
+[debug] [2024-04-20T11:13:07.071Z] [unzip] Processing entry: client/safari-pinned-tab.svg
+[debug] [2024-04-20T11:13:07.071Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.072Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/safari-pinned-tab.svg
+[debug] [2024-04-20T11:13:07.072Z] [unzip] Entry: client/mstile-150x150.png (compressed_size=5406 bytes, uncompressed_size=5723 bytes)
+[debug] [2024-04-20T11:13:07.072Z] [unzip] Processing entry: client/mstile-150x150.png
+[debug] [2024-04-20T11:13:07.072Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.072Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/mstile-150x150.png
+[debug] [2024-04-20T11:13:07.073Z] [unzip] Entry: client/browserconfig.xml (compressed_size=491 bytes, uncompressed_size=822 bytes)
+[debug] [2024-04-20T11:13:07.073Z] [unzip] Processing entry: client/browserconfig.xml
+[debug] [2024-04-20T11:13:07.073Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.073Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/browserconfig.xml
+[debug] [2024-04-20T11:13:07.073Z] [unzip] Entry: client/robots.txt (compressed_size=26 bytes, uncompressed_size=26 bytes)
+[debug] [2024-04-20T11:13:07.073Z] [unzip] Processing entry: client/robots.txt
+[debug] [2024-04-20T11:13:07.073Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.074Z] [unzip] Writing file: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/robots.txt
+[debug] [2024-04-20T11:13:07.074Z] [unzip] Entry: client/index.html (compressed_size=1365 bytes, uncompressed_size=3071 bytes)
+[debug] [2024-04-20T11:13:07.074Z] [unzip] Processing entry: client/index.html
+[debug] [2024-04-20T11:13:07.074Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.074Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/index.html
+[debug] [2024-04-20T11:13:07.075Z] [unzip] Entry: client/favicon-16x16.png (compressed_size=757 bytes, uncompressed_size=777 bytes)
+[debug] [2024-04-20T11:13:07.075Z] [unzip] Processing entry: client/favicon-16x16.png
+[debug] [2024-04-20T11:13:07.075Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.075Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/favicon-16x16.png
+[debug] [2024-04-20T11:13:07.075Z] [unzip] Entry: client/manifest.json (compressed_size=246 bytes, uncompressed_size=551 bytes)
+[debug] [2024-04-20T11:13:07.075Z] [unzip] Processing entry: client/manifest.json
+[debug] [2024-04-20T11:13:07.076Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.076Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/manifest.json
+[debug] [2024-04-20T11:13:07.076Z] [unzip] Entry: client/favicon-32x32.png (compressed_size=1175 bytes, uncompressed_size=1175 bytes)
+[debug] [2024-04-20T11:13:07.076Z] [unzip] Processing entry: client/favicon-32x32.png
+[debug] [2024-04-20T11:13:07.076Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.076Z] [unzip] Writing file: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/favicon-32x32.png
+[debug] [2024-04-20T11:13:07.076Z] [unzip] Entry: client/android-chrome-192x192.png (compressed_size=7602 bytes, uncompressed_size=7834 bytes)
+[debug] [2024-04-20T11:13:07.076Z] [unzip] Processing entry: client/android-chrome-192x192.png
+[debug] [2024-04-20T11:13:07.077Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client
+[debug] [2024-04-20T11:13:07.077Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/client/android-chrome-192x192.png
+[debug] [2024-04-20T11:13:07.077Z] [unzip] Entry: server/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-04-20T11:13:07.077Z] [unzip] Processing entry: server/
+[debug] [2024-04-20T11:13:07.077Z] [unzip] mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/
+[debug] [2024-04-20T11:13:07.077Z] [unzip] Entry: server/server.mjs (compressed_size=311497 bytes, uncompressed_size=1147307 bytes)
+[debug] [2024-04-20T11:13:07.077Z] [unzip] Processing entry: server/server.mjs
+[debug] [2024-04-20T11:13:07.077Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server
+[debug] [2024-04-20T11:13:07.077Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/server.mjs
+[debug] [2024-04-20T11:13:07.082Z] [unzip] Entry: server/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-04-20T11:13:07.082Z] [unzip] Processing entry: server/assets/
+[debug] [2024-04-20T11:13:07.082Z] [unzip] mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/assets/
+[debug] [2024-04-20T11:13:07.082Z] [unzip] Entry: server/assets/multipart-parser-n20ATYm_.mjs.map (compressed_size=4790 bytes, uncompressed_size=17920 bytes)
+[debug] [2024-04-20T11:13:07.082Z] [unzip] Processing entry: server/assets/multipart-parser-n20ATYm_.mjs.map
+[debug] [2024-04-20T11:13:07.082Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/assets
+[debug] [2024-04-20T11:13:07.082Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/assets/multipart-parser-n20ATYm_.mjs.map
+[debug] [2024-04-20T11:13:07.083Z] [unzip] Entry: server/assets/multipart-parser-n20ATYm_.mjs (compressed_size=2625 bytes, uncompressed_size=10428 bytes)
+[debug] [2024-04-20T11:13:07.083Z] [unzip] Processing entry: server/assets/multipart-parser-n20ATYm_.mjs
+[debug] [2024-04-20T11:13:07.083Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/assets
+[debug] [2024-04-20T11:13:07.083Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/assets/multipart-parser-n20ATYm_.mjs
+[debug] [2024-04-20T11:13:07.083Z] [unzip] Entry: server/server.mjs.map (compressed_size=286219 bytes, uncompressed_size=1310517 bytes)
+[debug] [2024-04-20T11:13:07.083Z] [unzip] Processing entry: server/server.mjs.map
+[debug] [2024-04-20T11:13:07.083Z] [unzip] else mkdir: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server
+[debug] [2024-04-20T11:13:07.083Z] [unzip] deflating: /Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/server.mjs.map
+[debug] [2024-04-20T11:13:07.088Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-04-20T11:13:07.088Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-04-20T11:13:07.089Z] Starting Emulator UI with command {"binary":"node","args":["/Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/server.mjs"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/server.mjs\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-04-20T11:13:07.232Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2024-04-20T11:13:07.232Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions\" for Cloud Functions..."}}
+[debug] [2024-04-20T11:13:07.347Z] Validating nodejs source
+[debug] [2024-04-20T11:13:08.937Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-20T11:13:08.937Z] Building nodejs source
+[debug] [2024-04-20T11:13:08.938Z] Failed to find version of module node: reached end of search path /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2024-04-20T11:13:08.939Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-20T11:13:08.948Z] Found firebase-functions binary at '/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8521
+
+[debug] [2024-04-20T11:13:09.374Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: helloWorld. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld."}}
+[info] ✔  functions[us-central1-helloWorld]: http function initialized (http://127.0.0.1:5001/meals-to-go-38736/us-central1/helloWorld). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/meals-to-go-38736/us-central1/helloWorld)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2024-04-20T11:13:42.347Z] [work-queue] {"queuedWork":["/meals-to-go-38736/us-central1/helloWorld-2024-04-20T11:13:42.347Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-20T11:13:42.347Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/meals-to-go-38736/us-central1/helloWorld-2024-04-20T11:13:42.347Z"],"workRunningCount":1}
+[debug] [2024-04-20T11:13:42.348Z] Accepted request GET /meals-to-go-38736/us-central1/helloWorld --> us-central1-helloWorld
+[debug] [2024-04-20T11:13:42.348Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-20T11:13:42.349Z] [functions] Got req.url=/meals-to-go-38736/us-central1/helloWorld, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/meals-to-go-38736/us-central1/helloWorld, mapping to path=/"}}
+[debug] [2024-04-20T11:13:42.353Z] [worker-pool] addWorker(us-central1-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-helloWorld)"}}
+[debug] [2024-04-20T11:13:42.354Z] [worker-pool] Adding worker with key us-central1-helloWorld, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-helloWorld, total=1"}}
+[debug] [2024-04-20T11:13:43.854Z] [runtime-status] [344] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2024-04-20T11:13:43.854Z] [runtime-status] [344] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-20T11:13:43.855Z] [runtime-status] [344] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2024-04-20T11:13:43.855Z] [runtime-status] [344] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-20T11:13:44.135Z] [runtime-status] [344] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] Checked functions.config() {\"config\":{}}"}}
+[debug] [2024-04-20T11:13:44.135Z] [runtime-status] [344] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
+[debug] [2024-04-20T11:13:44.135Z] [runtime-status] [344] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-20T11:13:44.136Z] [runtime-status] [344] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2024-04-20T11:13:44.139Z] [runtime-status] [344] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-20T11:13:44.139Z] [runtime-status] [344] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2024-04-20T11:13:44.149Z] [runtime-status] [344] Functions runtime initialized. {"cwd":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions","node_version":"18.17.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] Functions runtime initialized. {\"cwd\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions\",\"node_version\":\"18.17.1\"}"}}
+[debug] [2024-04-20T11:13:44.149Z] [runtime-status] [344] Listening to port: /var/folders/x3/4yvd8k9n22jg27np0qnncvqm0000gn/T/fire_emu_1b72bd4d0d795356.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [344] Listening to port: /var/folders/x3/4yvd8k9n22jg27np0qnncvqm0000gn/T/fire_emu_1b72bd4d0d795356.sock"}}
+[debug] [2024-04-20T11:13:44.179Z] [worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: IDLE"}}
+[debug] [2024-04-20T11:13:44.180Z] [worker-pool] submitRequest(triggerId=us-central1-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-helloWorld)"}}
+[info] i  functions: Beginning execution of "us-central1-helloWorld" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Beginning execution of \"us-central1-helloWorld\""}}
+[debug] [2024-04-20T11:13:44.180Z] [worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: BUSY"}}
+[info] >  {"structuredData":true,"severity":"INFO","message":"Hello logs!"} {"user":{"structuredData":true,"severity":"INFO","message":"Hello logs!"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"structuredData\":true,\"severity\":\"INFO\",\"message\":\"Hello logs!\"}"}}
+[debug] [2024-04-20T11:13:44.188Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-helloWorld" in 7.945682ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Finished \"us-central1-helloWorld\" in 7.945682ms"}}
+[debug] [2024-04-20T11:13:44.189Z] [worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: IDLE"}}
+[debug] [2024-04-20T11:13:44.189Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-20T11:13:44.189Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-20T11:13:44.190Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-20T11:13:44.453Z] Functions emulator received unknown request at path /favicon.ico
+[debug] [2024-04-20T11:17:11.397Z] File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/geocode/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/geocode/index.js changed, reloading triggers"}}
+[debug] [2024-04-20T11:17:12.398Z] Validating nodejs source
+[debug] [2024-04-20T11:17:13.346Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-20T11:17:13.346Z] Building nodejs source
+[debug] [2024-04-20T11:17:13.346Z] Failed to find version of module node: reached end of search path /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2024-04-20T11:17:13.347Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-20T11:17:13.348Z] Found firebase-functions binary at '/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8873
+
+[debug] [2024-04-20T11:17:13.750Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: helloWorld. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld."}}
+[debug] [2024-04-20T11:17:13.764Z] [worker-pool] Shutting down IDLE worker (us-central1-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-helloWorld)"}}
+[debug] [2024-04-20T11:17:13.764Z] [worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: FINISHING"}}
+[debug] [2024-04-20T11:17:13.773Z] [worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: exited"}}
+[debug] [2024-04-20T11:17:13.773Z] [worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-1d8f606a-3e2c-48ed-a409-e649974c3a8f]: FINISHED"}}
+[debug] [2024-04-20T11:18:44.157Z] File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/geocode/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/geocode/index.js changed, reloading triggers"}}
+[debug] [2024-04-20T11:18:45.157Z] Validating nodejs source
+[debug] [2024-04-20T11:18:45.858Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-20T11:18:45.858Z] Building nodejs source
+[debug] [2024-04-20T11:18:45.858Z] Failed to find version of module node: reached end of search path /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2024-04-20T11:18:45.859Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-20T11:18:45.860Z] Found firebase-functions binary at '/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/.bin/firebase-functions'
+[debug] [2024-04-20T11:18:45.862Z] File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/index.js changed, reloading triggers"}}
+[info] Serving at port 8588
+
+[debug] [2024-04-20T11:18:46.142Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"geocode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: geocode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode."}}
+[info] ✔  functions[us-central1-geocode]: http function initialized (http://127.0.0.1:5001/meals-to-go-38736/us-central1/geocode). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/meals-to-go-38736/us-central1/geocode)."}}
+[debug] [2024-04-20T11:18:46.863Z] Validating nodejs source
+[debug] [2024-04-20T11:18:47.522Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-20T11:18:47.522Z] Building nodejs source
+[debug] [2024-04-20T11:18:47.523Z] Failed to find version of module node: reached end of search path /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2024-04-20T11:18:47.524Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-20T11:18:47.525Z] Found firebase-functions binary at '/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8452
+
+[debug] [2024-04-20T11:18:47.805Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"geocode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: geocode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode."}}
