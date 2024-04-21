@@ -1,11 +1,9 @@
 import camelize from "camelize";
+import axios from 'axios'
 
-export const locationRequest = (searchTerm) => {
-    return fetch(`https://jsonplaceholder.typicode.com/todos/1`)
-        .then(res => {
-            return res.json()
-        })
-        .then(json => console.log(json))
+export const locationRequest = async (searchTerm) => {
+    return await axios.get(`http://127.0.0.1:5001/meals-to-go-38736/us-central1/geocode?city=antwerp`)
+        .then(res => { console.log(res.data) })
         .catch(err => console.log('from locationreq catch method', err))
 };
 
