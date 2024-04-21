@@ -1,10 +1,11 @@
 import camelize from "camelize";
 
 export const locationRequest = (searchTerm) => {
-    return fetch(`http://127.0.0.1:5001/meals-to-go-38736/us-central1/geocode?city=antwerp`)
+    return fetch(`https://jsonplaceholder.typicode.com/todos/1`)
         .then(res => {
             return res.json()
         })
+        .then(json => console.log(json))
         .catch(err => console.log('from locationreq catch method', err))
 };
 
