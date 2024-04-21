@@ -1,9 +1,10 @@
 import camelize from "camelize";
 import axios from 'axios'
+import { API_URL } from 'react-native-dotenv';
 
 export const locationRequest = async (searchTerm) => {
     try {
-        const resp = await axios.get(`https://3a74-2601-18d-4a7f-d8c0-b08d-77ca-7533-b36.ngrok-free.app/meals-to-go-38736/us-central1/geocode?city=${searchTerm}`)
+        const resp = await axios.get(`${API_URL}/meals-to-go-38736/us-central1/geocode?city=${searchTerm}`)
             .then(res => res.data.results)
         return resp
     } catch (error) {
