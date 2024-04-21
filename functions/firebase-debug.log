@@ -1076,3 +1076,37 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2024-04-20T12:35:40.369Z] [worker-us-central1-geocode-7824a996-c7ef-4e5e-8852-d4815e761b7b]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[worker-us-central1-geocode-7824a996-c7ef-4e5e-8852-d4815e761b7b]: FINISHING"}}
 [debug] [2024-04-20T12:35:40.377Z] [worker-us-central1-geocode-7824a996-c7ef-4e5e-8852-d4815e761b7b]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[worker-us-central1-geocode-7824a996-c7ef-4e5e-8852-d4815e761b7b]: exited"}}
 [debug] [2024-04-20T12:35:40.377Z] [worker-us-central1-geocode-7824a996-c7ef-4e5e-8852-d4815e761b7b]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[worker-us-central1-geocode-7824a996-c7ef-4e5e-8852-d4815e761b7b]: FINISHED"}}
+[debug] [2024-04-21T01:49:55.038Z] File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/geocode/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/geocode/index.js changed, reloading triggers"}}
+[debug] [2024-04-21T01:49:56.039Z] Validating nodejs source
+[debug] [2024-04-21T01:49:57.175Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-21T01:49:57.175Z] Building nodejs source
+[debug] [2024-04-21T01:49:57.175Z] Failed to find version of module node: reached end of search path /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2024-04-21T01:49:57.176Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-21T01:49:57.177Z] Found firebase-functions binary at '/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8929
+
+[debug] [2024-04-21T01:49:57.680Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"geocode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: geocode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode."}}
