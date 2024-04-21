@@ -1646,3 +1646,106 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 
 [debug] [2024-04-21T09:50:48.549Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"geocode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
 [info] ✔  functions: Loaded functions definitions from source: geocode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode."}}
+[debug] [2024-04-21T10:01:28.738Z] File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/geocode/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/geocode/index.js changed, reloading triggers"}}
+[debug] [2024-04-21T10:01:29.740Z] Validating nodejs source
+[debug] [2024-04-21T10:01:30.427Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-21T10:01:30.427Z] Building nodejs source
+[debug] [2024-04-21T10:01:30.427Z] Failed to find version of module node: reached end of search path /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2024-04-21T10:01:30.428Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-21T10:01:30.429Z] Found firebase-functions binary at '/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8729
+
+[debug] [2024-04-21T10:01:30.792Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"geocode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: geocode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode."}}
+[debug] [2024-04-21T10:02:47.300Z] [work-queue] {"queuedWork":["/meals-to-go-38736/us-central1/geocode-2024-04-21T10:02:47.300Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-21T10:02:47.300Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/meals-to-go-38736/us-central1/geocode-2024-04-21T10:02:47.300Z"],"workRunningCount":1}
+[debug] [2024-04-21T10:02:47.300Z] Accepted request GET /meals-to-go-38736/us-central1/geocode?city=antwerp --> us-central1-geocode
+[debug] [2024-04-21T10:02:47.301Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2024-04-21T10:02:47.301Z] [functions] Got req.url=/meals-to-go-38736/us-central1/geocode?city=antwerp, mapping to path=/?city=antwerp {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/meals-to-go-38736/us-central1/geocode?city=antwerp, mapping to path=/?city=antwerp"}}
+[debug] [2024-04-21T10:02:47.301Z] [worker-pool] Cleaned up workers for us-central1-geocode: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-geocode: 1 --> 0"}}
+[debug] [2024-04-21T10:02:47.303Z] [worker-pool] addWorker(us-central1-geocode) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-geocode)"}}
+[debug] [2024-04-21T10:02:47.303Z] [worker-pool] Adding worker with key us-central1-geocode, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-geocode, total=1"}}
+[debug] [2024-04-21T10:02:49.062Z] [runtime-status] [9172] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2024-04-21T10:02:49.063Z] [runtime-status] [9172] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-21T10:02:49.063Z] [runtime-status] [9172] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2024-04-21T10:02:49.064Z] [runtime-status] [9172] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-21T10:02:49.272Z] [runtime-status] [9172] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] Checked functions.config() {\"config\":{}}"}}
+[debug] [2024-04-21T10:02:49.272Z] [runtime-status] [9172] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
+[debug] [2024-04-21T10:02:49.273Z] [runtime-status] [9172] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-21T10:02:49.274Z] [runtime-status] [9172] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2024-04-21T10:02:49.277Z] [runtime-status] [9172] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.9.0","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.9.0\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2024-04-21T10:02:49.278Z] [runtime-status] [9172] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.11.1","resolution":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.11.1\",\"resolution\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2024-04-21T10:02:49.287Z] [runtime-status] [9172] Functions runtime initialized. {"cwd":"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions","node_version":"18.17.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] Functions runtime initialized. {\"cwd\":\"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions\",\"node_version\":\"18.17.1\"}"}}
+[debug] [2024-04-21T10:02:49.287Z] [runtime-status] [9172] Listening to port: /var/folders/x3/4yvd8k9n22jg27np0qnncvqm0000gn/T/fire_emu_1d107e2f7ec602a7.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [9172] Listening to port: /var/folders/x3/4yvd8k9n22jg27np0qnncvqm0000gn/T/fire_emu_1d107e2f7ec602a7.sock"}}
+[debug] [2024-04-21T10:02:49.324Z] [worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: IDLE"}}
+[debug] [2024-04-21T10:02:49.325Z] [worker-pool] submitRequest(triggerId=us-central1-geocode) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-geocode)"}}
+[info] i  functions: Beginning execution of "us-central1-geocode" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"Beginning execution of \"us-central1-geocode\""}}
+[debug] [2024-04-21T10:02:49.325Z] [worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: BUSY"}}
+[info] >  [Object: null prototype] { city: 'antwerp' } {"user":"[Object: null prototype] { city: 'antwerp' }","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"\u001b[90m> \u001b[39m [Object: null prototype] { city: 'antwerp' }"}}
+[debug] [2024-04-21T10:02:49.334Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-geocode" in 8.950182ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"Finished \"us-central1-geocode\" in 8.950182ms"}}
+[debug] [2024-04-21T10:02:49.334Z] [worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: IDLE"}}
+[debug] [2024-04-21T10:02:49.334Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2024-04-21T10:02:49.334Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2024-04-21T10:02:49.335Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2024-04-21T10:03:24.386Z] File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/geocode/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/geocode/index.js changed, reloading triggers"}}
+[debug] [2024-04-21T10:03:25.386Z] Validating nodejs source
+[debug] [2024-04-21T10:03:26.365Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-21T10:03:26.365Z] Building nodejs source
+[debug] [2024-04-21T10:03:26.365Z] Failed to find version of module node: reached end of search path /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2024-04-21T10:03:26.366Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-21T10:03:26.367Z] Found firebase-functions binary at '/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8640
+
+[debug] [2024-04-21T10:03:26.638Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"geocode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: geocode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode."}}
+[debug] [2024-04-21T10:03:26.651Z] [worker-pool] Shutting down IDLE worker (us-central1-geocode) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-geocode)"}}
+[debug] [2024-04-21T10:03:26.651Z] [worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: FINISHING"}}
+[debug] [2024-04-21T10:03:26.660Z] [worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: exited"}}
+[debug] [2024-04-21T10:03:26.660Z] [worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[worker-us-central1-geocode-c603a06c-d4d0-4fcd-8c7e-6e3fdf0733b3]: FINISHED"}}
