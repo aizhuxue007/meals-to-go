@@ -1303,3 +1303,7 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [info] ✔  functions: Using node@18 from host. 
 [debug] [2024-04-23T01:26:30.082Z] Could not find functions.yaml. Must use http discovery
 [debug] [2024-04-23T01:26:30.083Z] Found firebase-functions binary at '/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8037
+
+[debug] [2024-04-23T01:26:30.475Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"geocode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: geocode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode."}}
