@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const locationRequest = async (searchTerm) => {
     try {
-        const resp = await axios.get(`https://5b2d-2601-18d-4a7f-d8c0-b08d-77ca-7533-b36.ngrok-free.app/meals-to-go-38736/us-central1/geocode?city=${searchTerm}`)
+        const resp = await axios.get(`https://geocode-lskqsnyqga-uc.a.run.app/meals-to-go-38736/us-central1/geocode?city=${searchTerm}`)
             .then(res => res.data.results)
         return resp
     } catch (error) {

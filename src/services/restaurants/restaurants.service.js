@@ -3,7 +3,7 @@ import camelize from "camelize";
 
 export const restaurantsRequest = async (location = "37.7749295,-122.4194155") => {
   try {
-    const resp = await axios.get(`https://5b2d-2601-18d-4a7f-d8c0-b08d-77ca-7533-b36.ngrok-free.app/meals-to-go-38736/us-central1/placesNearby?location=${location}`)
+    const resp = await axios.get(`https://placesnearby-lskqsnyqga-uc.a.run.app/meals-to-go-38736/us-central1/placesNearby?location=${location}`)
       .then(res => res.data.results)
     return resp
   } catch (error) {
