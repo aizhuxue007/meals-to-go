@@ -36,3 +36,5 @@ yarn-error.*
 
 install-state.gz
 node_modules
+
+.env
