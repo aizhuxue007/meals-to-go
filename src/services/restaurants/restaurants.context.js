@@ -21,7 +21,6 @@ const RestaurantsContextProvider = ({ children }) => {
 
     function retrieveRestaurants(loc) {
         setIsLoading(true);
-
         restaurantsRequest(loc)
             .then(restaurantsTransform)
             .then((results) => {
@@ -30,7 +29,6 @@ const RestaurantsContextProvider = ({ children }) => {
             })
             .catch((err) => {
                 setIsLoading(false);
-                console.log('in here')
                 setError(err);
             });
     };
