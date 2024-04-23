@@ -1,9 +1,10 @@
 import camelize from "camelize";
 import axios from 'axios'
+import { host } from "../../components/utility/env";
 
 export const locationRequest = async (searchTerm) => {
     try {
-        const resp = await axios.get(`https://geocode-lskqsnyqga-uc.a.run.app/meals-to-go-38736/us-central1/geocode?city=${searchTerm}`)
+        const resp = await axios.get(`${host}/meals-to-go-38736/us-central1/geocode?city=${searchTerm}`)
             .then(res => res.data.results)
         return resp
     } catch (error) {
