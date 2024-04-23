@@ -15,6 +15,5 @@ Built with React Native, which runs on both iOS and Android.
 ## Progress Screenshots
 ![Progress Screenshot 1](https://github.com/aizhuxue007/meals-to-go/blob/main/assets/screenshot1o.jpg)
 ![Progress Screenshot 2](https://github.com/aizhuxue007/meals-to-go/blob/main/assets/screenshot2o.jpg)
-![Progress Screenshot 3](https://github.com/aizhuxue007/meals-to-go/blob/main/assets/screenshot2o.jpg)
-![Progress Screenshot 4](https://github.com/aizhuxue007/meals-to-go/blob/main/assets/screenshot2o.jpg)
-![Progress Screenshot 5](https://github.com/aizhuxue007/meals-to-go/blob/main/assets/screenshot2o.jpg)
+![Progress Screenshot 3](https://github.com/aizhuxue007/meals-to-go/blob/main/assets/settingsScreen.png)
+![Progress Screenshot 4](https://github.com/aizhuxue007/meals-to-go/blob/main/assets/accountscreen.png)
