@@ -1273,3 +1273,33 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 
 [debug] [2024-04-23T01:25:12.514Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"geocode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
 [info] ✔  functions: Loaded functions definitions from source: geocode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode."}}
+[debug] [2024-04-23T01:26:27.892Z] File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/places/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/places/index.js changed, reloading triggers"}}
+[debug] [2024-04-23T01:26:28.894Z] Validating nodejs source
+[debug] [2024-04-23T01:26:30.081Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-23T01:26:30.081Z] Building nodejs source
+[debug] [2024-04-23T01:26:30.081Z] Failed to find version of module node: reached end of search path /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2024-04-23T01:26:30.082Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-23T01:26:30.083Z] Found firebase-functions binary at '/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/.bin/firebase-functions'
