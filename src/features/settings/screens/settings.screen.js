@@ -35,7 +35,7 @@ const SettingScreen = ({ navigation }) => {
     getProfilePicture(user)
   })
 
-  if (user._tokenResponse) { text = user._tokenResponse }
+  if (user._tokenResponse) { text = user._tokenResponse.email }
   else if (user.email) { text = user.email }
   else { null }
 
