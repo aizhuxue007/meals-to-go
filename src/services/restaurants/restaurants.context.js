@@ -19,20 +19,20 @@ const RestaurantsContextProvider = ({ children }) => {
     const [error, setError] = useState(null);
     const { location } = useContext(LocationContext);
 
-    const retrieveRestaurants = (loc) => {
+    function retrieveRestaurants(loc) {
         setIsLoading(true);
-        setTimeout(() => {
-            restaurantsRequest(loc)
-                .then(restaurantsTransform)
-                .then((results) => {
-                    setIsLoading(false);
-                    setRestaurants(results);
-                })
-                .catch((err) => {
-                    setIsLoading(false);
-                    setError(err);
-                });
-        }, 500);
+
+        restaurantsRequest(loc)
+            .then(restaurantsTransform)
+            .then((results) => {
+                setIsLoading(false);
+                setRestaurants(results);
+            })
+            .catch((err) => {
+                setIsLoading(false);
+                console.log('in here')
+                setError(err);
+            });
     };
 
     useEffect(() => {

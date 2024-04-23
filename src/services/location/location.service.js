@@ -9,7 +9,6 @@ export const locationRequest = async (searchTerm) => {
     } catch (error) {
         console.log('from locationRequest', error)
     }
-    return
 };
 
 export const locationTransform = (location) => {
