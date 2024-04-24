@@ -1,7 +1,7 @@
 const { mocks, addMockImages } = require('./mock')
 const url = require('url')
 
-module.exports.placesRequest = (req, res) => {
+module.exports.placesRequest = (req, res, client) => {
     const { location } = url.parse(req.url, true).query;
     const data = mocks[location]
     if (data) {
