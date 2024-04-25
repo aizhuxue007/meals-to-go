@@ -1,7 +1,6 @@
 import axios from "axios";
 import camelize from "camelize";
 
-// paramater location = "37.7749295,-122.4194155"
 export const restaurantsRequest = async (location = "37.7749295,-122.4194155") => {
   try {
     const resp = await axios.get(`https://placesnearby-lskqsnyqga-uc.a.run.app/us-central1/placesNearby?location=${location}`)
