@@ -6,7 +6,6 @@ export const locationRequest = async (searchTerm) => {
     try {
         const resp = await axios.get(`${host}/us-central1/geocode?city=${searchTerm}&mock=true`)
             .then(res => res.data.results)
-        console.log(resp)
         return resp
     } catch (error) {
         console.log('from locationRequest', error)

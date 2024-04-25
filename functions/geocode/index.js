@@ -11,6 +11,7 @@ module.exports.geocodeRequest = (request, response, client) => {
         return response.json(location);
     }
 
+    console.log(client)
     client.geocode({
         params: {
             address: city,
@@ -18,7 +19,9 @@ module.exports.geocodeRequest = (request, response, client) => {
         },
         timeout: 1000,
     })
-        .then(res => response.json(res.data))
+        .then(res => {
+            return response.json(res.data)
+        })
         .catch(err => {
             response.status(400)
             return response.send(err.response.data.error_message)
