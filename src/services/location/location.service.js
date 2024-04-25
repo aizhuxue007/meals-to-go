@@ -14,7 +14,6 @@ export const locationRequest = async (searchTerm) => {
 
 export const locationTransform = (location) => {
     const formattedResult = camelize(location[0]);
-    console.log(formattedResult)
     const { geometry } = formattedResult;
     const { lat, lng } = geometry.location;
     return { lat, lng, viewport: geometry.viewport };

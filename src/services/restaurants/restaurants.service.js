@@ -4,7 +4,7 @@ import { host } from "../../components/utility/env";
 
 export const restaurantsRequest = async (location = "37.7749295,-122.4194155") => {
   try {
-    const resp = await axios.get(`$https://placesnearby-lskqsnyqga-uc.a.run.app/us-central1/placesNearby?location=${location}`)
+    const resp = await axios.get(`https://placesnearby-lskqsnyqga-uc.a.run.app/us-central1/placesNearby?location=${location}`)
       .then(res => res.data.results)
     return resp
   } catch (error) {
