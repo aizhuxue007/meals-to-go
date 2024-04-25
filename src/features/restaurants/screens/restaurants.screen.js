@@ -45,7 +45,7 @@ export const RestaurantsScreen = ({ navigation }) => {
     const [isToggled, setIsToggled] = useState(false);
     const { error: locationError } = useContext(LocationContext)
 
-    const hasError = error || locationError
+    const hasError = !!error || !!locationError;
 
     const onPressRestaurant = useCallback(
         (restaurant) => {
@@ -53,10 +53,6 @@ export const RestaurantsScreen = ({ navigation }) => {
         },
         [navigation],
     );
-
-    if (error) {
-        console.log(error);
-    }
 
     return (
         <SafeArea>
@@ -67,7 +63,7 @@ export const RestaurantsScreen = ({ navigation }) => {
 
             {isToggled && <FavouritesBar navigation={navigation} />}
 
-            {isLoading ? (
+            {isLoading && !hasError ? (
                 <Loading />
             ) : (
                 <RestaurantList
@@ -86,7 +82,11 @@ export const RestaurantsScreen = ({ navigation }) => {
                 />
             )}
 
-            {hasError && <Text variant="error">{'Something went wrong'}</Text>}
+            {hasError &&
+                <Spacer position="bottom" size="m">
+                    <Text variant="error">Something went wrong</Text>
+                </Spacer>
+            }
         </SafeArea>
     );
 };
