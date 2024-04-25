@@ -4,7 +4,7 @@ import { host } from "../../components/utility/env";
 
 export const locationRequest = async (searchTerm) => {
     try {
-        const resp = await axios.get(`${host}/us-central1/geocode?city=${searchTerm}&mock=true`)
+        const resp = await axios.get(`https://geocode-lskqsnyqga-uc.a.run.app?city=${searchTerm}`)
             .then(res => res.data.results)
         return resp
     } catch (error) {
