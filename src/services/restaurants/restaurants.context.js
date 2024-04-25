@@ -23,7 +23,8 @@ const RestaurantsContextProvider = ({ children }) => {
         setIsLoading(true);
         restaurantsRequest(loc)
             .then(restaurantsTransform)
-            .then((results) => {
+            .then(results => {
+                setError(null)
                 setIsLoading(false);
                 setRestaurants(results);
             })

@@ -7,8 +7,10 @@ import Search from "../components/search.component";
 import RestaurantInfoCard from "../components/restaurant-info-card.component";
 import Spacer from "../../../components/spacer/spacer.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
+import { LocationContext } from "../../../services/location/location.context";
 import FavouritesBar from "../../favourites/favourites.component";
 import FadeInView from "../../../components/animation/FadeInView.animation";
+import { Text } from "../../../components/typography/text.component";
 
 const RestaurantList = React.memo(
     styled(FlatList).attrs({
@@ -41,6 +43,9 @@ const Loading = () => {
 export const RestaurantsScreen = ({ navigation }) => {
     const { isLoading, error, restaurants } = useContext(RestaurantsContext);
     const [isToggled, setIsToggled] = useState(false);
+    const { error: locationError } = useContext(LocationContext)
+
+    const hasError = error || locationError
 
     const onPressRestaurant = useCallback(
         (restaurant) => {
@@ -80,6 +85,8 @@ export const RestaurantsScreen = ({ navigation }) => {
                     keyExtractor={(item) => item.name}
                 />
             )}
+
+            {hasError && <Text variant="error">{'Something went wrong'}</Text>}
         </SafeArea>
     );
 };

@@ -2,7 +2,6 @@ import camelize from "camelize";
 import axios from 'axios'
 
 export const locationRequest = async (searchTerm) => {
-    if (mockMode) return
     try {
         const resp = await axios.get(`https://geocode-lskqsnyqga-uc.a.run.app?city=${searchTerm}`)
             .then(res => res.data.results)
