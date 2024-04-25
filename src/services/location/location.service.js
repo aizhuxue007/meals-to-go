@@ -1,6 +1,5 @@
 import camelize from "camelize";
 import axios from 'axios'
-import { host } from "../../components/utility/env";
 
 export const locationRequest = async (searchTerm) => {
     try {
