@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
+import CheckoutScreen from "../../features/checkout/screens/checkout.screen";
 import SettingsNavigator from "./settings.navigator";
 import { FavouritesContextProvider } from "../../services/favourites/favourites.context";
 import RestaurantsContextProvider from '../../services/restaurants/restaurants.context'
@@ -12,6 +13,7 @@ const Tab = createBottomTabNavigator();
 const tabIcon = {
     Restaurants: "storefront-outline",
     Map: "map-outline",
+    Checkout: "cart-outline",
     Setting: "settings-outline",
 };
 
@@ -37,6 +39,7 @@ const AppNavigator = () => {
                     <Tab.Navigator screenOptions={createScreenOptions}>
                         <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
                         <Tab.Screen name="Map" component={MapScreen} />
+                        <Tab.Screen name="Checkout" component={CheckoutScreen} />
                         <Tab.Screen name="Setting" component={SettingsNavigator} />
                     </Tab.Navigator>
                 </RestaurantsContextProvider>
