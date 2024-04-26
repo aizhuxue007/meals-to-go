@@ -2,7 +2,7 @@ import React from 'react'
 import { Text } from '../../../components/typography/text.component'
 import { SafeArea } from '../../../components/utility/safe-area.component'
 
-const CheckoutScreen = ({ }) => {
+const CheckoutScreen = ({ navigation }) => {
     return (
         <SafeArea>
             <Text variant="body" >Hello Checkout</Text>
