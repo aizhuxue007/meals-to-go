@@ -27,11 +27,11 @@ const getPropertyAndSizeIndex = (position, size) => {
 const Spacer = React.memo(({ position, size, children }) => {
   let [property, sizeIndex] = getPropertyAndSizeIndex(position, size);
   const SpacerComponent = styled(View)`
-      ${property}: ${props => {
-      props.theme.space[sizeIndex]
+    ${property}: ${(props) => {
+      props.theme.space[sizeIndex];
     }};
-  `
-  return <SpacerComponent>{children}</SpacerComponent>
+  `;
+  return <SpacerComponent>{children}</SpacerComponent>;
 });
 
 export default Spacer;

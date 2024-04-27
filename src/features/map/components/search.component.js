@@ -16,36 +16,35 @@ const SearchBar = styled(Searchbar)`
 `;
 
 const Search = () => {
-    const { keyword, setKeyword, search } = useContext(LocationContext);
-    const [searchTerm, setSearchTerm] = useState(keyword);
+  const { keyword, setKeyword, search } = useContext(LocationContext);
+  const [searchTerm, setSearchTerm] = useState(keyword);
 
-    useEffect(() => {
-        setSearchTerm(keyword)
-    }, [keyword])
+  useEffect(() => {
+    setSearchTerm(keyword);
+  }, [keyword]);
 
-    return (
-        <SearchContainer>
-            <SearchBar
-                mode="bar"
-                elevation={5}
-                icon="map"
-                placeholder="Search for a location"
-                value={searchTerm}
-                onChangeText={(term) => {
-                    setSearchTerm(term)
-                    setKeyword(term)
-                }
-                }
-                onSubmitEditing={() => {
-                    if (searchTerm) {
-                        search(searchTerm);
-                        setSearchTerm("");
-                        setKeyword("")
-                    }
-                }}
-            />
-        </SearchContainer>
-    );
+  return (
+    <SearchContainer>
+      <SearchBar
+        mode="bar"
+        elevation={5}
+        icon="map"
+        placeholder="Search for a location"
+        value={searchTerm}
+        onChangeText={(term) => {
+          setSearchTerm(term);
+          setKeyword(term);
+        }}
+        onSubmitEditing={() => {
+          if (searchTerm) {
+            search(searchTerm);
+            setSearchTerm("");
+            setKeyword("");
+          }
+        }}
+      />
+    </SearchContainer>
+  );
 };
 
 export default Search;

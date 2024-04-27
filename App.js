@@ -1,4 +1,4 @@
-import 'react-native-gesture-handler';
+import "react-native-gesture-handler";
 import React, { useEffect } from "react";
 import * as Font from "expo-font";
 import { Lato_400Regular, Lato_700Bold } from "@expo-google-fonts/lato";
@@ -7,7 +7,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "styled-components";
 import Navigation from "./src/infrastructure/navigation";
 import { theme } from "./src/infrastructure/theme";
-import { AuthContextProvider } from './src/services/authentification/authentification.context';
+import { AuthContextProvider } from "./src/services/authentification/authentification.context";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBeG4GNj9l0e5ubC3cLOoychBcjwjgJzgs",
@@ -41,7 +41,6 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <AuthContextProvider app={app}>
           <Navigation />
-
         </AuthContextProvider>
       </ThemeProvider>
     </SafeAreaProvider>

@@ -20,7 +20,9 @@ import open from "../../../../assets/open";
 import Spacer from "../../../components/spacer/spacer.component";
 
 export const RestaurantInfoCard = React.memo(({ restaurant }) => {
-  if (!restaurant) return <Text>No restaurants</Text>;
+  if (!restaurant) {
+    return <Text>No restaurants</Text>;
+  }
 
   const {
     name,
