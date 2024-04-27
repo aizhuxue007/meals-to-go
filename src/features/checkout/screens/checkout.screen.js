@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-native";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
-import { checkoutRequest } from "../../../services/checkout/checkout.service";
+import { cardTokenRequest } from "../../../services/checkout/checkout.service";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 
 const testCardInfo = {
@@ -15,13 +15,16 @@ const testCardInfo = {
 };
 
 async function onPayment() {
-    const token = await checkoutRequest()
-    console.log(token);
+    try {
+        const token = await cardTokenRequest(testCardInfo.card);
+        console.log(token);
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 const CheckoutScreen = ({ navigation }) => {
     const [formValid, setFormValid] = useState(false);
-    onPayment();
 
     const _onChange = form => {
         console.log(form);
@@ -32,7 +35,7 @@ const CheckoutScreen = ({ navigation }) => {
         <SafeArea>
             <LiteCreditCardInput onChange={_onChange} />
             {formValid && <Button
-                onPress={() => null}
+                onPress={onPayment}
                 title="Form Validated"
                 color="#841584"
                 accessibilityLabel="Testing complete credit card form"
