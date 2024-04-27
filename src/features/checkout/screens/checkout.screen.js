@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "react-native";
 import StripeClient from "stripe-client";
-import { Text } from "../../../components/typography/text.component";
+import { LiteCreditCardInput } from "react-native-credit-card-input";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 
 const stripe = new StripeClient(
@@ -24,11 +25,23 @@ async function onPayment() {
 }
 
 const CheckoutScreen = ({ navigation }) => {
+    const [formValid, setFormValid] = useState(false);
     onPayment();
+
+    const _onChange = form => {
+        console.log(form);
+        if (form.valid) setFormValid(true)
+    }
 
     return (
         <SafeArea>
-            <Text variant="body">Hello Checkout</Text>
+            <LiteCreditCardInput onChange={_onChange} />
+            {formValid && <Button
+                onPress={() => null}
+                title="Form Validated"
+                color="#841584"
+                accessibilityLabel="Testing complete credit card form"
+            />}
         </SafeArea>
     );
 };

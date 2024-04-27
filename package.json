@@ -27,7 +27,7 @@
     "lottie-react-native": "^6.7.2",
     "react": "18.2.0",
     "react-native": "0.73.6",
-    "react-native-credit-card": "^0.1.9",
+    "react-native-credit-card-input": "^0.4.1",
     "react-native-gesture-handler": "~2.14.0",
     "react-native-maps": "1.10.0",
     "react-native-paper": "^5.12.3",
