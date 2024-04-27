@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "react-native";
-import StripeClient from "stripe-client";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
+import { checkoutRequest } from "../../../services/checkout/checkout.service";
 import { SafeArea } from "../../../components/utility/safe-area.component";
-
-const stripe = new StripeClient(
-    "pk_test_51P9cbB2KSPzI80Hq6Svegs307KgR56TlaOFE7rls0qBXChu1FzkPtAyWIlDe4tm000zlFwQv5ZZ4N7PjG8Yk7CQQ00ZDCnWqxQ",
-);
 
 const testCardInfo = {
     card: {
@@ -19,8 +15,7 @@ const testCardInfo = {
 };
 
 async function onPayment() {
-    const card = await stripe.createToken(testCardInfo);
-    const token = card.id;
+    const token = await checkoutRequest()
     console.log(token);
 }
 
