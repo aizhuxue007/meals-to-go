@@ -5,7 +5,7 @@ export const liveHost = "lskqsnyqga-uc.a.run.app/meals-to-go-38736";
 
 export const isDevelopment = process.env.NODE_ENV === "development";
 
-export const mockMode = true;
+export const mockMode = false;
 
 export const isAndroid = Platform.OS === "android";
 

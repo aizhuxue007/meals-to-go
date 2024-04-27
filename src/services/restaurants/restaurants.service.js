@@ -39,10 +39,8 @@ export const restaurantsRequest = async (location = defaultLocation) => {
 };
 
 export const restaurantsTransform = ({ results }) => {
-  // console.log('in restTransform', results)
   const mappedResults = results.map((restaurant) => {
     const randomIndex = Math.floor(Math.random() * 6);
-    console.log('in restTransform', randomIndex)
     const photos = [mockImages[randomIndex]]
     return {
       ...restaurant,

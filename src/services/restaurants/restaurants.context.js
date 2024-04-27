@@ -21,17 +21,17 @@ const RestaurantsContextProvider = ({ children }) => {
 
   function retrieveRestaurants(loc) {
     setIsLoading(true);
+    setTimeout(() => { }, 1000)
     restaurantsRequest(loc)
       .then(restaurantsTransform)
       .then((results) => {
-        setError(null);
         setIsLoading(false);
+        setError(null);
         setRestaurants(results);
       })
       .catch((err) => {
         setIsLoading(false);
         setError(err);
-        console.log(err)
       });
   }
 

@@ -34,7 +34,6 @@ export const RestaurantInfoCard = React.memo(({ restaurant }) => {
     isClosedTemporarily,
     placeId,
   } = restaurant;
-  console.log('rest-info-card', photos)
   const starRatings = [...Array(5)].map((_, i) => i);
   return (
     <RestaurantCard elevation={5}>
