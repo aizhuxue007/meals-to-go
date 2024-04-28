@@ -32,8 +32,6 @@ const CheckoutScreen = ({ navigation }) => {
         if (form.valid) setFormValid(true)
     }
 
-    console.log("checkout.screen.js", cart)
-
     return (
         <SafeArea>
             <LiteCreditCardInput onChange={_onChange} />
