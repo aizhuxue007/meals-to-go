@@ -1,5 +1,6 @@
 import React from "react";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+import { OrderButton } from "../components/restaurant-info-card.styles";
 import { ScrollView } from "react-native";
 import { List } from "react-native-paper";
 
@@ -40,6 +41,7 @@ const RestaurantDetailScreen = ({ route }) => {
           <List.Item title="Pickle Soda" />
         </List.Accordion>
       </ScrollView>
+      <OrderButton>Order Special Only $12.99</OrderButton>
     </>
   );
 };
