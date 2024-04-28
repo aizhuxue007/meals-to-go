@@ -27,7 +27,6 @@ const CheckoutScreen = ({ navigation }) => {
     const [formValid, setFormValid] = useState(false);
 
     const _onChange = form => {
-        console.log(form);
         if (form.valid) setFormValid(true)
     }
 
