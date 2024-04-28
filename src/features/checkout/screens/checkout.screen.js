@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Button } from "react-native";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
 import { cardTokenRequest } from "../../../services/checkout/checkout.service";
 import { SafeArea } from "../../../components/utility/safe-area.component";
+import { CartContext } from "../../../services/cart/cart.context";
 
 const testCardInfo = {
     card: {
@@ -25,10 +26,13 @@ async function onPayment() {
 
 const CheckoutScreen = ({ navigation }) => {
     const [formValid, setFormValid] = useState(false);
+    const cart = useContext(CartContext)
 
     const _onChange = form => {
         if (form.valid) setFormValid(true)
     }
+
+    console.log("checkout.screen.js", cart)
 
     return (
         <SafeArea>

@@ -1,9 +1,9 @@
 import React, { useState, useContext, createContext } from "react";
 import { AuthContext } from "../authentification/authentification.context";
 
-const CartContext = createContext();
+export const CartContext = createContext();
 
-const CardContextProvider = ({ children }) => {
+export const CartContextProvider = ({ children }) => {
     const { user } = useContext(AuthContext);
     const [cart, setCart] = useState(null);
     const [restaurant, setRestaurant] = useState(null)
@@ -33,6 +33,4 @@ const CardContextProvider = ({ children }) => {
             {children}
         </CartContext.Provider>
     )
-}
-
-export default CardContextProvider;
+};
