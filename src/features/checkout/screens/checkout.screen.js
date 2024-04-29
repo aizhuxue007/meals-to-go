@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
-import { Button, Text } from "react-native";
+import { Button } from "react-native";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
 import { cardTokenRequest } from "../../../services/checkout/checkout.service";
 import { SafeArea } from "../../../components/utility/safe-area.component";
+import { Text } from "../../../components/typography/text.component";
 import { CartContext } from "../../../services/cart/cart.context";
+import { CartIconContainer, CartIcon } from "../checkout.styles";
 
 const testCardInfo = {
     card: {
@@ -30,6 +32,17 @@ const CheckoutScreen = ({ navigation }) => {
 
     const _onChange = form => {
         if (form.valid) setFormValid(true)
+    }
+
+    if (!cart.length || !restaurant) {
+        return (
+            <SafeArea>
+                <CartIconContainer>
+                    <CartIcon icon="cart-off" />
+                    <Text variant="error">Cart is empty.</Text>
+                </CartIconContainer>
+            </SafeArea>
+        )
     }
 
     return (
