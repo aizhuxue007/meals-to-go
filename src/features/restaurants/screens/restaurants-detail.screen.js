@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { List } from "react-native-paper";
+import { ScrollView } from "react-native";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { OrderButton } from "../components/restaurant-info-card.styles";
-import { ScrollView } from "react-native";
-import { List } from "react-native-paper";
+import { CartContext } from "../../../services/cart/cart.context";
 
 const RestaurantDetailScreen = ({ route }) => {
   const { restaurant } = route.params;
+  const { addToCart } = useContext(CartContext)
   return (
     <>
       <RestaurantInfoCard restaurant={restaurant} />
@@ -41,7 +43,9 @@ const RestaurantDetailScreen = ({ route }) => {
           <List.Item title="Pickle Soda" />
         </List.Accordion>
       </ScrollView>
-      <OrderButton>Order Special Only $12.99</OrderButton>
+      <OrderButton onPress={() => addToCart({
+        item: 'special', price: 1299
+      }, restaurant)}>Order Special Only $12.99</OrderButton>
     </>
   );
 };

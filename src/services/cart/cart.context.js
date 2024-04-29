@@ -1,11 +1,11 @@
 import React, { useState, useContext, createContext } from "react";
-import { AuthContext } from "../authentification/authentification.context";
+// import { AuthContext } from "../authentification/authentification.context";
 
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
-    const { user } = useContext(AuthContext);
-    const [cart, setCart] = useState(null);
+    // const { user } = useContext(AuthContext);
+    const [cart, setCart] = useState([]);
     const [restaurant, setRestaurant] = useState(null)
 
     const add = (item, rst) => {
