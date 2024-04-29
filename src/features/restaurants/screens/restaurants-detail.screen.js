@@ -5,7 +5,7 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 import { OrderButton } from "../components/restaurant-info-card.styles";
 import { CartContext } from "../../../services/cart/cart.context";
 
-const RestaurantDetailScreen = ({ route }) => {
+const RestaurantDetailScreen = ({ navigation, route }) => {
   const { restaurant } = route.params;
   const { addToCart } = useContext(CartContext)
   return (
@@ -43,9 +43,11 @@ const RestaurantDetailScreen = ({ route }) => {
           <List.Item title="Pickle Soda" />
         </List.Accordion>
       </ScrollView>
-      <OrderButton onPress={() => addToCart({
-        item: 'special', price: 1299
-      }, restaurant)}>Order Special Only $12.99</OrderButton>
+      <OrderButton onPress={() => {
+        addToCart({ item: 'special', price: 1299 }, restaurant)
+        navigation.navigate('Checkout')
+      }
+      }>Order Special Only $12.99</OrderButton>
     </>
   );
 };
