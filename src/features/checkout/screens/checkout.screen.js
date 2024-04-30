@@ -41,7 +41,7 @@ const CheckoutScreen = ({ navigation }) => {
             <SafeArea>
                 <CartIconContainer>
                     <CartIcon icon="cart-off" />
-                    <Text variant="heading">Cart is empty.</Text>
+                    <IndentedText variant="heading">Cart is empty.</IndentedText>
                 </CartIconContainer>
             </SafeArea>
         )
