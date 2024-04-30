@@ -30,7 +30,7 @@ async function onPayment() {
 
 const CheckoutScreen = ({ navigation }) => {
     const [formValid, setFormValid] = useState(false);
-    const { cart, restaurant } = useContext(CartContext)
+    const { cart, restaurant, sum } = useContext(CartContext)
 
     const _onChange = form => {
         if (form.valid) setFormValid(true)
@@ -65,8 +65,7 @@ const CheckoutScreen = ({ navigation }) => {
                     )
                 })}
             </List.Section>
-            <IndentedText variant="body">Total: $12.99</IndentedText>
-
+            <IndentedText variant="body">{`Total - $${sum / 100}`}</IndentedText>
             <LiteCreditCardInput onChange={_onChange} />
         </SafeArea>
     );

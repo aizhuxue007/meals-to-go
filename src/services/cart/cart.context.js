@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext } from "react";
+import React, { useState, useContext, useEffect, createContext } from "react";
 // import { AuthContext } from "../authentification/authentification.context";
 
 export const CartContext = createContext();
@@ -7,6 +7,15 @@ export const CartContextProvider = ({ children }) => {
     // const { user } = useContext(AuthContext);
     const [cart, setCart] = useState([]);
     const [restaurant, setRestaurant] = useState(null)
+    const [sum, setSum] = useState(0);
+
+    useEffect(() => {
+        if (!cart.length) {
+            return;
+        }
+        const newSum = cart.reduce((acc, { price }) => acc += price, 0);
+        setSum(newSum);
+    }, [cart]);
 
     const add = (item, rst) => {
         if (!restaurant || restaurant.placeId !== rst.placeId) {
@@ -30,6 +39,7 @@ export const CartContextProvider = ({ children }) => {
                 clearCart: clear,
                 restaurant,
                 cart,
+                sum
             }}
         >
             {children}
