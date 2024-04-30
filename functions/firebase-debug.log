@@ -1,0 +1,845 @@
+[debug] [2024-04-30T12:37:17.897Z] ----------------------------------------------------------------------
+[debug] [2024-04-30T12:37:17.900Z] Command:       /usr/local/bin/node /Users/aizhuxue/.npm-global/bin/firebase emulators:start --only functions
+[debug] [2024-04-30T12:37:17.900Z] CLI Version:   13.7.3
+[debug] [2024-04-30T12:37:17.900Z] Platform:      darwin
+[debug] [2024-04-30T12:37:17.901Z] Node Version:  v18.17.1
+[debug] [2024-04-30T12:37:17.902Z] Time:          Tue Apr 30 2024 08:37:17 GMT-0400 (Eastern Daylight Time)
+[debug] [2024-04-30T12:37:17.902Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-30T12:37:17.904Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-04-30T12:37:17.999Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-30T12:37:17.999Z] > authorizing via signed-in user (aizhudeveloper@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2024-04-30T12:37:18.678Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-04-30T12:37:18.678Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-04-30T12:37:18.683Z] [hub] writing locator at /var/folders/x3/4yvd8k9n22jg27np0qnncvqm0000gn/T/hub-meals-to-go-38736.json
+[debug] [2024-04-30T12:37:19.141Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-04-30T12:37:19.142Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-04-30T12:37:19.142Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2024-04-30T12:37:19.144Z] defaultcredentials: writing to file /Users/aizhuxue/.config/firebase/aizhudeveloper_gmail_com_application_default_credentials.json
+[debug] [2024-04-30T12:37:19.150Z] Setting GAC to /Users/aizhuxue/.config/firebase/aizhudeveloper_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/aizhuxue/.config/firebase/aizhudeveloper_gmail_com_application_default_credentials.json"}}
+[debug] [2024-04-30T12:37:19.151Z] > refreshing access token with scopes: []
+[debug] [2024-04-30T12:37:19.152Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-04-30T12:37:19.152Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-04-30T12:37:19.325Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-04-30T12:37:19.325Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-04-30T12:37:19.369Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/meals-to-go-38736/adminSdkConfig [none]
+[debug] [2024-04-30T12:37:19.612Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-04-30T12:37:19.612Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-04-30T12:37:20.070Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/meals-to-go-38736/adminSdkConfig 200
+[debug] [2024-04-30T12:37:20.070Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/meals-to-go-38736/adminSdkConfig {"projectId":"meals-to-go-38736","storageBucket":"meals-to-go-38736.appspot.com"}
+[debug] [2024-04-30T12:37:20.098Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-04-30T12:37:20.098Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-04-30T12:37:20.098Z] Starting Emulator UI with command {"binary":"node","args":["/Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/server.mjs"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/aizhuxue/.cache/firebase/emulators/ui-v1.11.8/server/server.mjs\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-04-30T12:37:20.245Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2024-04-30T12:37:20.245Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions\" for Cloud Functions..."}}
+[debug] [2024-04-30T12:37:20.361Z] Validating nodejs source
+[debug] [2024-04-30T12:37:21.366Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.4.0",
+    "core-js": "^3.37.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "stripe": "^15.4.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-30T12:37:21.366Z] Building nodejs source
+[debug] [2024-04-30T12:37:21.366Z] Failed to find version of module node: reached end of search path /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env.meals-to-go-38736, .env.local. 
+[debug] [2024-04-30T12:37:21.370Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-30T12:37:21.379Z] Found firebase-functions binary at '/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8915
+
+[info] <ref *1> {
+  _platformFunctions: NodePlatformFunctions {
+    _fetchFn: null,
+    _agent: null,
+    _exec: [Function: exec],
+    _UNAME_CACHE: null
+  },
+  VERSION: '15.4.0',
+  on: [Function: bound addListener],
+  once: [Function: bound once],
+  off: [Function: bound removeListener],
+  _api: {
+    auth: 'Bearer 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',
+    host: 'api.stripe.com',
+    port: '443',
+    protocol: 'https',
+    basePath: '/v1/',
+    version: '2024-04-10',
+    timeout: 80000,
+    maxNetworkRetries: 1,
+    agent: null,
+    httpClient: NodeHttpClient { _agent: undefined },
+    dev: false,
+    stripeAccount: null
+  },
+  account: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  accountLinks: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  accountSessions: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  accounts: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  applePayDomains: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  applicationFees: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  balance: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  balanceTransactions: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  charges: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  confirmationTokens: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  countrySpecs: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  coupons: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  creditNotes: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  customerSessions: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  customers: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  disputes: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  ephemeralKeys: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  events: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  exchangeRates: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  fileLinks: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  files: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  invoiceItems: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  invoices: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  mandates: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  oauth: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  paymentIntents: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  paymentLinks: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  paymentMethodConfigurations: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  paymentMethodDomains: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  paymentMethods: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  payouts: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  plans: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  prices: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  products: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  promotionCodes: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  quotes: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  refunds: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  reviews: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  setupAttempts: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  setupIntents: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  shippingRates: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  sources: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  subscriptionItems: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  subscriptionSchedules: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  subscriptions: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  taxCodes: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  taxIds: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  taxRates: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  tokens: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  topups: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  transfers: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  webhookEndpoints: {
+    _stripe: [Circular *1],
+    basePath: [Function (anonymous)],
+    resourcePath: '',
+    path: [Function (anonymous)]
+  },
+  apps: ResourceNamespace {
+    secrets: {
+      _stripe: [Ci
+[debug] [2024-04-30T12:37:22.095Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"geocode"},"placesNearby":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"placesNearby"}},"specVersion":"v1alpha1","requiredAPIs":[],"params":[{"name":"GOOGLE_API_KEY","type":"string"}]}
+[info] rcular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  billing: ResourceNamespace {
+    meterEventAdjustments: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    meterEvents: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    meters: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  billingPortal: ResourceNamespace {
+    configurations: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    sessions: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  checkout: ResourceNamespace {
+    sessions: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  climate: ResourceNamespace {
+    orders: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    products: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    suppliers: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  entitlements: ResourceNamespace {
+    activeEntitlements: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    features: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  financialConnections: ResourceNamespace {
+    accounts: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    sessions: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    transactions: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  forwarding: ResourceNamespace {
+    requests: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  identity: ResourceNamespace {
+    verificationReports: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    verificationSessions: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  issuing: ResourceNamespace {
+    authorizations: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    cardholders: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    cards: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    disputes: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    personalizationDesigns: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    physicalBundles: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    tokens: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    transactions: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  radar: ResourceNamespace {
+    earlyFraudWarnings: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    valueListItems: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    valueLists: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  reporting: ResourceNamespace {
+    reportRuns: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    reportTypes: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  sigma: ResourceNamespace {
+    scheduledQueryRuns: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  tax: ResourceNamespace {
+    calculations: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    registrations: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    settings: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    transactions: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  terminal: ResourceNamespace {
+    configurations: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    connectionTokens: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    locations: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    readers: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  testHelpers: ResourceNamespace {
+    confirmationTokens: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    customers: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    refunds: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    testClocks: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    issuing: ResourceNamespace {
+      authorizations: [Object],
+      cards: [Object],
+      personalizationDesigns: [Object],
+      transactions: [Object]
+    },
+    terminal: ResourceNamespace { readers: [Object] },
+    treasury: ResourceNamespace {
+      inboundTransfers: [Object],
+      outboundPayments: [Object],
+      outboundTransfers: [Object],
+      receivedCredits: [Object],
+      receivedDebits: [Object]
+    }
+  },
+  treasury: ResourceNamespace {
+    creditReversals: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    debitReversals: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    financialAccounts: {
+      _stripe: [Circula
+[info] r *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    inboundTransfers: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    outboundPayments: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    outboundTransfers: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    receivedCredits: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    receivedDebits: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    transactionEntries: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    },
+    transactions: {
+      _stripe: [Circular *1],
+      basePath: [Function (anonymous)],
+      resourcePath: '',
+      path: [Function (anonymous)]
+    }
+  },
+  errors: {
+    generate: [Function: generate],
+    StripeError: [class StripeError extends Error] { generate: [Function: generate] },
+    StripeCardError: [class StripeCardError extends StripeError],
+    StripeInvalidRequestError: [class StripeInvalidRequestError extends StripeError],
+    StripeAPIError: [class StripeAPIError extends StripeError],
+    StripeAuthenticationError: [class StripeAuthenticationError extends StripeError],
+    StripePermissionError: [class StripePermissionError extends StripeError],
+    StripeRateLimitError: [class StripeRateLimitError extends StripeError],
+    StripeConnectionError: [class StripeConnectionError extends StripeError],
+    StripeSignatureVerificationError: [class StripeSignatureVerificationError extends StripeError],
+    StripeIdempotencyError: [class StripeIdempotencyError extends StripeError],
+    StripeInvalidGrantError: [class StripeInvalidGrantError extends StripeError],
+    StripeUnknownError: [class StripeUnknownError extends StripeError]
+  },
+  webhooks: {
+    DEFAULT_TOLERANCE: 300,
+    signature: {
+      EXPECTED_SCHEME: 'v1',
+      verifyHeader: [Function: verifyHeader],
+      verifyHeaderAsync: [AsyncFunction: verifyHeaderAsync]
+    },
+    constructEvent: [Function: constructEvent],
+    constructEventAsync: [AsyncFunction: constructEventAsync],
+    generateTestHeaderString: [Function: generateTestHeaderString]
+  },
+  _prevRequestMetrics: [],
+  _enableTelemetry: true,
+  _requestSender: RequestSender {
+    _stripe: [Circular *1],
+    _maxBufferedRequestMetric: 100
+  },
+  StripeResource: [Function: StripeResource] {
+    extend: [Function: protoExtend],
+    method: [Function: stripeMethod],
+    MAX_BUFFERED_REQUEST_METRICS: 100
+  }
+}
+
+[info] ✔  functions: Loaded functions definitions from source: geocode, placesNearby. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode, placesNearby."}}
+[info] ✔  functions[us-central1-geocode]: http function initialized (http://127.0.0.1:5001/meals-to-go-38736/us-central1/geocode). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/meals-to-go-38736/us-central1/geocode)."}}
+[info] ✔  functions[us-central1-placesNearby]: http function initialized (http://127.0.0.1:5001/meals-to-go-38736/us-central1/placesNearby). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/meals-to-go-38736/us-central1/placesNearby)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
