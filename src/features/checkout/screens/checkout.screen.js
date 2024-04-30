@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import { Button } from "react-native";
+import { Button, ScrollView } from "react-native";
 import { List } from "react-native-paper";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
 import { cardTokenRequest } from "../../../services/checkout/checkout.service";
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import { IndentedText, IndentedListItem, NameInput } from "../checkout.styles";
+import { IndentedText, IndentedListItem, NameInput, PayButton, ClearButton } from "../checkout.styles";
 import { CartContext } from "../../../services/cart/cart.context";
 import { CartIconContainer, CartIcon } from "../checkout.styles";
 import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
@@ -31,7 +31,7 @@ async function onPayment() {
 const CheckoutScreen = ({ navigation }) => {
     const [formValid, setFormValid] = useState(false);
     const [name, setName] = useState("");
-    const { cart, restaurant, sum } = useContext(CartContext)
+    const { cart, restaurant, sum, clearCart } = useContext(CartContext)
 
     const _onChange = form => {
         if (form.valid) setFormValid(true)
@@ -57,20 +57,24 @@ const CheckoutScreen = ({ navigation }) => {
                 color="#841584"
                 accessibilityLabel="Testing complete credit card form"
             />}
-            <IndentedText variant="bold">Your Order</IndentedText>
-            <List.Section>
-                {cart.map(product => {
-                    const { item, price } = product;
-                    return (
-                        <IndentedListItem title={`${item} - $${price / 100}`} />
-                    )
-                })}
-            </List.Section>
-            <IndentedText variant="bold">Total</IndentedText>
-            <IndentedText variant="body">{`$${sum / 100}`}</IndentedText>
-            <IndentedText variant="bold">Payment</IndentedText>
-            <NameInput label="name" value={name} onChangeText={t => setName(t)} />
-            {name.length > 0 && <LiteCreditCardInput onChange={_onChange} name={name} />}
+            <ScrollView>
+                <IndentedText variant="bold">Your Order</IndentedText>
+                <List.Section>
+                    {cart.map(product => {
+                        const { item, price } = product;
+                        return (
+                            <IndentedListItem title={`${item} - $${price / 100}`} />
+                        )
+                    })}
+                </List.Section>
+                <IndentedText variant="bold">Total</IndentedText>
+                <IndentedText variant="body">{`$${sum / 100}`}</IndentedText>
+                <IndentedText variant="bold">Payment</IndentedText>
+                <NameInput label="name" value={name} onChangeText={t => setName(t)} />
+                {name.length > 0 && <LiteCreditCardInput onChange={_onChange} name={name} />}
+                <PayButton onPress={() => console.log('pay successful')}>Pay</PayButton>
+                <ClearButton onPress={() => clearCart()}>Clear Cart</ClearButton>
+            </ScrollView>
         </SafeArea>
     );
 };
