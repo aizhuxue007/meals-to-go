@@ -1,11 +1,13 @@
 import React, { useState, useContext } from "react";
 import { Button } from "react-native";
+import { List } from "react-native-paper";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
 import { cardTokenRequest } from "../../../services/checkout/checkout.service";
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import { Text } from "../../../components/typography/text.component";
+import { IndentedText } from "../checkout.styles";
 import { CartContext } from "../../../services/cart/cart.context";
 import { CartIconContainer, CartIcon } from "../checkout.styles";
+import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
 
 const testCardInfo = {
     card: {
@@ -47,14 +49,24 @@ const CheckoutScreen = ({ navigation }) => {
 
     return (
         <SafeArea>
-            <LiteCreditCardInput onChange={_onChange} />
+            <RestaurantInfoCard restaurant={restaurant} />
             {formValid && <Button
                 onPress={onPayment}
                 title="Form Validated"
                 color="#841584"
                 accessibilityLabel="Testing complete credit card form"
             />}
-            <Text>{JSON.stringify(cart)}</Text>
+            <List.Section>
+                {cart.map(product => {
+                    const { item, price } = product;
+                    return (
+                        <List.Item title={`${item} - $${price / 100}`} />
+                    )
+                })}
+            </List.Section>
+            <IndentedText variant="body">Total: $12.99</IndentedText>
+
+            <LiteCreditCardInput onChange={_onChange} />
         </SafeArea>
     );
 };
