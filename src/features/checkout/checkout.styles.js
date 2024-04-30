@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { styled } from "styled-components/native";
-import { Avatar, List } from "react-native-paper";
+import { Avatar, List, TextInput } from "react-native-paper";
 import { Text } from "../../components/typography/text.component";
 
 export const CartIconContainer = styled(View)`
@@ -23,3 +23,8 @@ export const IndentedText = styled(Text)`
 export const IndentedListItem = styled(List.Item)`
     margin-left: ${props => props.theme.space[3]};
 `;
+
+export const NameInput = styled(TextInput)`
+    margin: ${props => props.theme.space[3]} auto;
+    width: 93%;
+`

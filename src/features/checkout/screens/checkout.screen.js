@@ -4,7 +4,7 @@ import { List } from "react-native-paper";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
 import { cardTokenRequest } from "../../../services/checkout/checkout.service";
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import { IndentedText, IndentedListItem } from "../checkout.styles";
+import { IndentedText, IndentedListItem, NameInput } from "../checkout.styles";
 import { CartContext } from "../../../services/cart/cart.context";
 import { CartIconContainer, CartIcon } from "../checkout.styles";
 import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
@@ -30,6 +30,7 @@ async function onPayment() {
 
 const CheckoutScreen = ({ navigation }) => {
     const [formValid, setFormValid] = useState(false);
+    const [name, setName] = useState("");
     const { cart, restaurant, sum } = useContext(CartContext)
 
     const _onChange = form => {
@@ -67,7 +68,9 @@ const CheckoutScreen = ({ navigation }) => {
             </List.Section>
             <IndentedText variant="bold">Total</IndentedText>
             <IndentedText variant="body">{`$${sum / 100}`}</IndentedText>
-            <LiteCreditCardInput onChange={_onChange} />
+            <IndentedText variant="bold">Payment</IndentedText>
+            <NameInput label="name" value={name} onChangeText={t => setName(t)} />
+            {name.length > 0 && <LiteCreditCardInput onChange={_onChange} />}
         </SafeArea>
     );
 };
