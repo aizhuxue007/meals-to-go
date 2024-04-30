@@ -4,7 +4,7 @@ import { List } from "react-native-paper";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
 import { cardTokenRequest } from "../../../services/checkout/checkout.service";
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import { IndentedText } from "../checkout.styles";
+import { IndentedText, IndentedListItem } from "../checkout.styles";
 import { CartContext } from "../../../services/cart/cart.context";
 import { CartIconContainer, CartIcon } from "../checkout.styles";
 import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
@@ -61,7 +61,7 @@ const CheckoutScreen = ({ navigation }) => {
                 {cart.map(product => {
                     const { item, price } = product;
                     return (
-                        <List.Item title={`${item} - $${price / 100}`} />
+                        <IndentedListItem title={`${item} - $${price / 100}`} />
                     )
                 })}
             </List.Section>
