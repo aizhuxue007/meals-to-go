@@ -70,7 +70,7 @@ const CheckoutScreen = ({ navigation }) => {
             <IndentedText variant="body">{`$${sum / 100}`}</IndentedText>
             <IndentedText variant="bold">Payment</IndentedText>
             <NameInput label="name" value={name} onChangeText={t => setName(t)} />
-            {name.length > 0 && <LiteCreditCardInput onChange={_onChange} />}
+            {name.length > 0 && <LiteCreditCardInput onChange={_onChange} name={name} />}
         </SafeArea>
     );
 };
