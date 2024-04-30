@@ -56,7 +56,7 @@ const CheckoutScreen = ({ navigation }) => {
                 color="#841584"
                 accessibilityLabel="Testing complete credit card form"
             />}
-            <IndentedText variant="body">Your Order</IndentedText>
+            <IndentedText variant="bold">Your Order</IndentedText>
             <List.Section>
                 {cart.map(product => {
                     const { item, price } = product;
@@ -65,7 +65,8 @@ const CheckoutScreen = ({ navigation }) => {
                     )
                 })}
             </List.Section>
-            <IndentedText variant="body">{`Total - $${sum / 100}`}</IndentedText>
+            <IndentedText variant="bold">Total</IndentedText>
+            <IndentedText variant="body">{`$${sum / 100}`}</IndentedText>
             <LiteCreditCardInput onChange={_onChange} />
         </SafeArea>
     );
