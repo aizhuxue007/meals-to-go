@@ -843,3 +843,41 @@
 
 Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
  
+[debug] [2024-04-30T12:37:51.772Z] File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/index.js changed, reloading triggers"}}
+[debug] [2024-04-30T12:37:52.775Z] Validating nodejs source
+[debug] [2024-04-30T12:37:53.454Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.4.0",
+    "core-js": "^3.37.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "stripe": "^15.4.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-30T12:37:53.454Z] Building nodejs source
+[debug] [2024-04-30T12:37:53.454Z] Failed to find version of module node: reached end of search path /Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env.meals-to-go-38736, .env.local. 
+[debug] [2024-04-30T12:37:53.457Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-30T12:37:53.459Z] Found firebase-functions binary at '/Users/aizhuxue/dev/react-native/ztm/meals-to-go/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8356
+
+[debug] [2024-04-30T12:37:53.949Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"geocode"},"placesNearby":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"placesNearby"}},"specVersion":"v1alpha1","requiredAPIs":[],"params":[{"name":"GOOGLE_API_KEY","type":"string"}]}
+[info] ✔  functions: Loaded functions definitions from source: geocode, placesNearby. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode, placesNearby."}}
