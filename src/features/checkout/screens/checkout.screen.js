@@ -56,6 +56,7 @@ const CheckoutScreen = ({ navigation }) => {
                 color="#841584"
                 accessibilityLabel="Testing complete credit card form"
             />}
+            <IndentedText variant="body">Your Order</IndentedText>
             <List.Section>
                 {cart.map(product => {
                     const { item, price } = product;
