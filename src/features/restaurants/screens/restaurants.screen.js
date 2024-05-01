@@ -43,7 +43,7 @@ const Loading = () => {
 export const RestaurantsScreen = ({ navigation }) => {
     const { isLoading, error, restaurants } = useContext(RestaurantsContext);
     const [isToggled, setIsToggled] = useState(false);
-    const { error: locationError } = useContext(LocationContext)
+    const { error: locationError } = useContext(LocationContext);
 
     const hasError = !!error || !!locationError;
 
@@ -53,7 +53,7 @@ export const RestaurantsScreen = ({ navigation }) => {
         },
         [navigation],
     );
-
+    { console.log('rest screen', !hasError, isLoading) }
     return (
         <SafeArea>
             <Search
@@ -63,13 +63,12 @@ export const RestaurantsScreen = ({ navigation }) => {
 
             {isToggled && <FavouritesBar navigation={navigation} />}
 
-            {isLoading && !hasError ? (
+            {isLoading ? (
                 <Loading />
             ) : (
                 <RestaurantList
                     data={restaurants}
                     renderItem={({ item }) => (
-
                         <TouchableOpacity onPress={() => onPressRestaurant(item)}>
                             <FadeInView>
                                 <Spacer position="bottom" size="m">
@@ -82,11 +81,12 @@ export const RestaurantsScreen = ({ navigation }) => {
                 />
             )}
 
-            {hasError &&
+            {hasError && (
                 <Spacer position="bottom" size="m">
                     <Text variant="error">Something went wrong</Text>
                 </Spacer>
-            }
+            )}
+
         </SafeArea>
     );
 };

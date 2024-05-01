@@ -20,7 +20,9 @@ import open from "../../../../assets/open";
 import Spacer from "../../../components/spacer/spacer.component";
 
 export const RestaurantInfoCard = React.memo(({ restaurant }) => {
-  if (!restaurant) return <Text>No restaurants</Text>;
+  if (!restaurant) {
+    return <Text>No restaurants</Text>;
+  }
 
   const {
     name,
@@ -32,7 +34,6 @@ export const RestaurantInfoCard = React.memo(({ restaurant }) => {
     isClosedTemporarily,
     placeId,
   } = restaurant;
-
   const starRatings = [...Array(5)].map((_, i) => i);
   return (
     <RestaurantCard elevation={5}>
