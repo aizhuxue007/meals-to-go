@@ -7,9 +7,11 @@ import { AuthContext } from "../../services/authentification/authentification.co
 
 const Navigation = () => {
   const { isAuthenticated } = useContext(AuthContext);
+  const development = true;
+
   return (
     <NavigationContainer>
-      {isAuthenticated ? <AppNavigator /> : <AccountsNavigator />}
+      {development || isAuthenticated ? <AppNavigator /> : <AccountsNavigator />}
     </NavigationContainer>
   );
 };

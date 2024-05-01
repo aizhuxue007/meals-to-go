@@ -1,7 +1,8 @@
 import { styled } from "styled-components/native";
 import { SvgXml } from "react-native-svg";
 import { Text, View, Image } from "react-native";
-import { Card } from "react-native-paper";
+import { Card, Button } from "react-native-paper";
+import { colors } from "../../../infrastructure/theme/colors";
 
 export const RestaurantCard = styled(Card)`
   background: ${(props) => props.theme.colors.bg.primary};
@@ -58,3 +59,10 @@ export const Ratings = styled(View)`
 export const Star = styled(SvgXml)``;
 
 export const Open = styled(SvgXml)``;
+
+export const OrderButton = styled(Button).attrs({ buttonColors: colors.brand.primary, mode: 'contained', icon: 'cash' })`
+  width: 80%;
+  align-self: center;
+  padding: ${props => props.theme.space[2]};
+  margin-bottom: ${props => props.theme.space[4]};
+`;

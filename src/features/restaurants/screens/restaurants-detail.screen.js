@@ -1,10 +1,13 @@
-import React from "react";
-import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
-import { ScrollView } from "react-native";
+import React, { useContext } from "react";
 import { List } from "react-native-paper";
+import { ScrollView } from "react-native";
+import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+import { OrderButton } from "../components/restaurant-info-card.styles";
+import { CartContext } from "../../../services/cart/cart.context";
 
-const RestaurantDetailScreen = ({ route }) => {
+const RestaurantDetailScreen = ({ navigation, route }) => {
   const { restaurant } = route.params;
+  const { addToCart } = useContext(CartContext)
   return (
     <>
       <RestaurantInfoCard restaurant={restaurant} />
@@ -40,6 +43,11 @@ const RestaurantDetailScreen = ({ route }) => {
           <List.Item title="Pickle Soda" />
         </List.Accordion>
       </ScrollView>
+      <OrderButton onPress={() => {
+        addToCart({ item: 'special', price: 1299 }, restaurant)
+        navigation.navigate('Checkout')
+      }
+      }>Order Special Only $12.99</OrderButton>
     </>
   );
 };
