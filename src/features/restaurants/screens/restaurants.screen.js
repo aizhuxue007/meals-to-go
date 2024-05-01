@@ -53,7 +53,6 @@ export const RestaurantsScreen = ({ navigation }) => {
         },
         [navigation],
     );
-    { console.log('rest screen', !hasError, isLoading) }
     return (
         <SafeArea>
             <Search
