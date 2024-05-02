@@ -8,3 +8,20 @@ export const cardTokenRequest = async (card) => {
     const response = await stripe.createToken({ card });
     return response.id;
 };
+
+export const payRequest = async (token, price, name) => {
+    console.log('payRequest', token, price, name)
+    return fetch(`http://127.0.0.1:5001/meals-to-go-38736/us-central1/pay`, {
+        body: JSON.stringify({
+            token,
+            name,
+            price,
+        }),
+        method: "POST",
+    }).then((res) => {
+        if (res.status > 200) {
+            return Promise.reject("something went wrong processing your payment");
+        }
+        return res.json();
+    });
+}

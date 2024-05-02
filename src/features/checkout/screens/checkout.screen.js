@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Button, ScrollView } from "react-native";
 import { List } from "react-native-paper";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
-import { cardTokenRequest } from "../../../services/checkout/checkout.service";
+import { cardTokenRequest, payRequest } from "../../../services/checkout/checkout.service";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { IndentedText, IndentedListItem, NameInput, PayButton, ClearButton } from "../checkout.styles";
 import { CartContext } from "../../../services/cart/cart.context";
@@ -72,7 +72,7 @@ const CheckoutScreen = ({ navigation }) => {
                 <IndentedText variant="bold">Payment</IndentedText>
                 <NameInput label="name" value={name} onChangeText={t => setName(t)} />
                 {name.length > 0 && <LiteCreditCardInput onChange={_onChange} name={name} />}
-                <PayButton onPress={() => console.log('pay successful')}>Pay</PayButton>
+                <PayButton onPress={async () => await payRequest('abc123', 1299, 'Aizhu')}>Pay</PayButton>
                 <ClearButton onPress={() => clearCart()}>Clear Cart</ClearButton>
             </ScrollView>
         </SafeArea>
