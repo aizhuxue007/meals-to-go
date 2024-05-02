@@ -1,19 +1,23 @@
 import React, { createContext, useState, useEffect, useCallback } from "react";
 import {
   onAuthStateChanged,
-  getAuth,
   createUserWithEmailAndPassword,
   signOut,
+  initializeAuth,
+  getReactNativePersistence
 } from "firebase/auth";
+import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 import { loginRequest } from "./authentification.service";
 
 export const AuthContext = createContext();
 
-export const AuthContextProvider = ({ children }) => {
+export const AuthContextProvider = ({ children, app }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState([]);
-  const auth = getAuth();
+  const auth = initializeAuth(app, {
+    persistence: getReactNativePersistence(ReactNativeAsyncStorage)
+  });
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (usr) => {
