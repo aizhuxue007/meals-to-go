@@ -5,10 +5,9 @@ const { payRequest } = require("./pay")
 const { placesRequest } = require("./places")
 const { Client } = require("@googlemaps/google-maps-services-js");
 
-const STRIPE_SK = defineString('STRIPE_SK');
-
-const stripeClient = require('stripe')(STRIPE_SK);
-const googleClient = new Client({})
+const stripeSK = defineString("STRIPE_SK");
+const googleClient = new Client({});
+const stripeClient = require("stripe")(stripeSK.value());
 
 exports.pay = onRequest((request, response) => {
   payRequest(request, response, stripeClient)

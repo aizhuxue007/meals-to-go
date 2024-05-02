@@ -8,3 +8,16 @@ export const cardTokenRequest = async (card) => {
     const response = await stripe.createToken({ card });
     return response.id;
 };
+
+export const payRequest = async (token, price, name) => {
+    return fetch(`https://pay-lskqsnyqga-uc.a.run.app`, {
+        body: JSON.stringify({
+            token,
+            name,
+            price,
+        }),
+        method: "POST",
+    }).then(res => {
+        return res.json();
+    }).catch(e => console.log('checkout service', e.message));
+}

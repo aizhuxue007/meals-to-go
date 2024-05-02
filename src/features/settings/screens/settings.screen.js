@@ -36,12 +36,17 @@ const SettingScreen = ({ navigation }) => {
     getProfilePicture(user);
   });
 
-  if (user._tokenResponse) {
-    text = user._tokenResponse.email;
-  } else if (user.email) {
-    text = user.email;
-  } else {
-    null;
+  if (user) {
+    if (user._tokenResponse) {
+      console.log('in first')
+      text = user._tokenResponse.email;
+    } else if (user.email) {
+      console.log('in second')
+      text = user.email;
+    } else {
+      console.log('in third')
+      null;
+    }
   }
 
   return (

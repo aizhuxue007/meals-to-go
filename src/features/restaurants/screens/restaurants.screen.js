@@ -7,10 +7,12 @@ import Search from "../components/search.component";
 import RestaurantInfoCard from "../components/restaurant-info-card.component";
 import Spacer from "../../../components/spacer/spacer.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
+import { FavouritesContext } from "../../../services/favourites/favourites.context";
 import { LocationContext } from "../../../services/location/location.context";
-import FavouritesBar from "../../favourites/favourites.component";
+import { FavouritesBar } from "../../favourites/favourites.component"
 import FadeInView from "../../../components/animation/FadeInView.animation";
 import { Text } from "../../../components/typography/text.component";
+
 
 const RestaurantList = React.memo(
     styled(FlatList).attrs({
@@ -42,6 +44,7 @@ const Loading = () => {
 
 export const RestaurantsScreen = ({ navigation }) => {
     const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+    const { favourites } = useContext(FavouritesContext);
     const [isToggled, setIsToggled] = useState(false);
     const { error: locationError } = useContext(LocationContext);
 
@@ -53,6 +56,7 @@ export const RestaurantsScreen = ({ navigation }) => {
         },
         [navigation],
     );
+
     return (
         <SafeArea>
             <Search
@@ -60,9 +64,9 @@ export const RestaurantsScreen = ({ navigation }) => {
                 onFavouritesToggle={() => setIsToggled(!isToggled)}
             />
 
-            {isToggled && <FavouritesBar navigation={navigation} />}
+            {isToggled && <FavouritesBar navigation={navigation} favourites={favourites} />}
 
-            {isLoading ? (
+            {isLoading && !hasError ? (
                 <Loading />
             ) : (
                 <RestaurantList
@@ -85,7 +89,6 @@ export const RestaurantsScreen = ({ navigation }) => {
                     <Text variant="error">Something went wrong</Text>
                 </Spacer>
             )}
-
         </SafeArea>
     );
 };

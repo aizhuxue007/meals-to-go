@@ -1,40 +1,51 @@
 import React, { useState, useContext } from "react";
-import { Button, ScrollView } from "react-native";
+import { ScrollView } from "react-native";
 import { List } from "react-native-paper";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
-import { cardTokenRequest } from "../../../services/checkout/checkout.service";
+import { cardTokenRequest, payRequest } from "../../../services/checkout/checkout.service";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { IndentedText, IndentedListItem, NameInput, PayButton, ClearButton } from "../checkout.styles";
 import { CartContext } from "../../../services/cart/cart.context";
-import { CartIconContainer, CartIcon } from "../checkout.styles";
+import { CartIconContainer, CartIcon, PaymentProcessing } from "../checkout.styles";
 import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
 
-const testCardInfo = {
-    card: {
-        number: "4242424242424242",
-        exp_month: "02",
-        exp_year: "26",
-        cvc: "999",
-        name: "Billy Joe",
-    },
-};
-
-async function onPayment() {
-    try {
-        const token = await cardTokenRequest(testCardInfo.card);
-        console.log(token);
-    } catch (error) {
-        console.log(error)
-    }
-}
-
 const CheckoutScreen = ({ navigation }) => {
-    const [formValid, setFormValid] = useState(false);
     const [name, setName] = useState("");
-    const { cart, restaurant, sum, clearCart } = useContext(CartContext)
+    const [token, setToken] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const { cart, restaurant, sum, clearCart } = useContext(CartContext);
 
-    const _onChange = form => {
-        if (form.valid) setFormValid(true)
+    async function onPayment() {
+        if (!token) {
+            navigation.navigate("CheckoutErrorScreen", { error: "need valid credit card!" })
+            return;
+        }
+        setIsLoading(true);
+        try {
+            const resp = await payRequest(token, sum, name);
+            setIsLoading(false);
+            clearCart();
+            navigation.navigate("CheckoutSuccessScreen");
+        } catch (error) {
+            console.log(error);
+            setIsLoading(false);
+            navigation.navigate("CheckoutErrorScreen", { error });
+        }
+    }
+
+    const _onChange = async (form) => {
+        if (form.valid) {
+            const { name, expiry, cvc, number } = form.values;
+            const [exp_month, exp_year] = expiry.split('/');
+            const resp = await cardTokenRequest({
+                name,
+                exp_month,
+                exp_year,
+                cvc,
+                number,
+            });
+            setToken(resp);
+        };
     }
 
     if (!cart.length || !restaurant) {
@@ -51,12 +62,6 @@ const CheckoutScreen = ({ navigation }) => {
     return (
         <SafeArea>
             <RestaurantInfoCard restaurant={restaurant} />
-            {formValid && <Button
-                onPress={onPayment}
-                title="Form Validated"
-                color="#841584"
-                accessibilityLabel="Testing complete credit card form"
-            />}
             <ScrollView>
                 <IndentedText variant="bold">Your Order</IndentedText>
                 <List.Section>
@@ -67,13 +72,14 @@ const CheckoutScreen = ({ navigation }) => {
                         )
                     })}
                 </List.Section>
+                {isLoading && <PaymentProcessing />}
                 <IndentedText variant="bold">Total</IndentedText>
                 <IndentedText variant="body">{`$${sum / 100}`}</IndentedText>
                 <IndentedText variant="bold">Payment</IndentedText>
                 <NameInput label="name" value={name} onChangeText={t => setName(t)} />
                 {name.length > 0 && <LiteCreditCardInput onChange={_onChange} name={name} />}
-                <PayButton onPress={() => console.log('pay successful')}>Pay</PayButton>
-                <ClearButton onPress={() => clearCart()}>Clear Cart</ClearButton>
+                <PayButton onPress={() => onPayment()} disabled={isLoading}>Pay</PayButton>
+                <ClearButton onPress={() => clearCart()} disabled={isLoading}>Clear Cart</ClearButton>
             </ScrollView>
         </SafeArea>
     );

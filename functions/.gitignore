@@ -1,3 +1,5 @@
 node_modules/
 .env
+.env.meals-to-go-38736
 .gitignore
+firebase-debug.log
