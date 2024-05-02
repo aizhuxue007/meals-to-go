@@ -1,85 +1,38 @@
-import React, { useContext, useEffect } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { ScrollView, Text, Image, View, TouchableOpacity } from "react-native";
-import { styled } from "styled-components/native";
-import { FavouritesContext } from "../../services/favourites/favourites.context";
+import React from "react";
+import { ScrollView, TouchableOpacity } from "react-native";
+import styled from "styled-components/native";
+import { RestaurantInfoCard } from "../restaurants/components/restaurant-info-card.component";
+import { Text } from "../../components/typography/text.component";
 
-const HorizontalScroll = styled(ScrollView)`
-  width: 90%;
-  margin: 0 auto 10px auto;
-  height: 200px;
+const FavouritesWrapper = styled.View`
+  padding: 10px;
 `;
 
-const SmallCard = styled(View)`
-  margin-right: 10px;
-  height: 160px;
-`;
-
-const Img = styled(Image)`
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-`;
-
-const Name = styled(Text)`
-  width: 100px;
-  font-size: ${(props) => props.theme.fontSizes.body};
-`;
-
-const storeFavourites = async (value) => {
-  try {
-    const jsonValue = JSON.stringify(value);
-    await AsyncStorage.setItem("favourites", jsonValue);
-  } catch (e) {
-    console.log("from storing favourites", e);
+export const FavouritesBar = ({ favourites, onNavigate }) => {
+  if (!favourites.length) {
+    return null;
   }
-};
-
-const FavouritesBar = ({ navigation }) => {
-  const { favourites, setFavourites } = useContext(FavouritesContext);
-
-  useEffect(() => {
-    const getFavourites = async () => {
-      try {
-        const jsonValue = await AsyncStorage.getItem("favourites");
-        return jsonValue != null ? JSON.parse(jsonValue) : null;
-      } catch (e) {
-        console.log("from loading favourites", e);
-      }
-    };
-    const resp = getFavourites();
-    setFavourites(resp);
-  }, [setFavourites]);
-
-  useEffect(() => {
-    storeFavourites(favourites);
-  }, [favourites]);
-
   return (
-    <HorizontalScroll horizontal>
-      {favourites.map ? (
-        favourites.map((favourite) => {
+    <FavouritesWrapper>
+      <Text variant="caption">Favourites</Text>
+
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        {favourites.map((restaurant) => {
+          const key = restaurant.name;
           return (
             <TouchableOpacity
-              key={`${favourite.name}-${favourite.placeId}`}
+              key={key}
               onPress={() =>
-                navigation.navigate("RestaurantDetail", {
-                  restaurant: favourite,
+                onNavigate("RestaurantDetail", {
+                  restaurant,
                 })
               }
             >
-              <SmallCard>
-                <Img source={{ uri: favourite.photos[0] }} />
-                <Name>{favourite.name}</Name>
-              </SmallCard>
+              <RestaurantInfoCard restaurant={restaurant} />
             </TouchableOpacity>
           );
-        })
-      ) : (
-        <Text>No favourites</Text>
-      )}
-    </HorizontalScroll>
+        })}
+      </ScrollView>
+    </FavouritesWrapper>
   );
 };
-
-export default FavouritesBar;
