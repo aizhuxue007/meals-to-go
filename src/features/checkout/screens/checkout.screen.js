@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Button, ScrollView } from "react-native";
 import { List } from "react-native-paper";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
@@ -9,32 +9,34 @@ import { CartContext } from "../../../services/cart/cart.context";
 import { CartIconContainer, CartIcon } from "../checkout.styles";
 import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
 
-const testCardInfo = {
-    card: {
-        number: "4242424242424242",
-        exp_month: "02",
-        exp_year: "26",
-        cvc: "999",
-        name: "Billy Joe",
-    },
-};
-
-async function onPayment() {
-    try {
-        const response = await payRequest('abc123', 1299, 'Aizhu')
-        console.log(response)
-    } catch (error) {
-        console.log(error)
-    }
-}
-
 const CheckoutScreen = ({ navigation }) => {
-    const [formValid, setFormValid] = useState(false);
     const [name, setName] = useState("");
-    const { cart, restaurant, sum, clearCart } = useContext(CartContext)
+    const [token, setToken] = useState(null);
+    const { cart, restaurant, sum, clearCart } = useContext(CartContext);
 
-    const _onChange = form => {
-        if (form.valid) setFormValid(true)
+    async function onPayment() {
+        if (!token) return
+        try {
+            const response = await payRequest(token, sum, name)
+            console.log('onPayment', response)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const _onChange = async (form) => {
+        if (form.valid) {
+            const { name, expiry, cvc, number } = form.values;
+            const [exp_month, exp_year] = expiry.split('/');
+            const resp = await cardTokenRequest({
+                name,
+                exp_month,
+                exp_year,
+                cvc,
+                number,
+            });
+            setToken(resp);
+        };
     }
 
     if (!cart.length || !restaurant) {
@@ -51,12 +53,6 @@ const CheckoutScreen = ({ navigation }) => {
     return (
         <SafeArea>
             <RestaurantInfoCard restaurant={restaurant} />
-            {formValid && <Button
-                onPress={onPayment}
-                title="Form Validated"
-                color="#841584"
-                accessibilityLabel="Testing complete credit card form"
-            />}
             <ScrollView>
                 <IndentedText variant="bold">Your Order</IndentedText>
                 <List.Section>
