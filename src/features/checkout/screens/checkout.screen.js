@@ -16,15 +16,20 @@ const CheckoutScreen = ({ navigation }) => {
     const { cart, restaurant, sum, clearCart } = useContext(CartContext);
 
     async function onPayment() {
-        if (!token) return
+        if (!token) {
+            navigation.navigate("CheckoutErrorScreen", { error: "need valid credit card!" })
+            return;
+        }
         setIsLoading(true);
         try {
             const resp = await payRequest(token, sum, name);
-            console.log(resp)
             setIsLoading(false);
+            clearCart();
+            navigation.navigate("CheckoutSuccessScreen");
         } catch (error) {
             console.log(error);
             setIsLoading(false);
+            navigation.navigate("CheckoutErrorScreen", { error });
         }
     }
 
