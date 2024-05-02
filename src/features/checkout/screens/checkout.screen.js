@@ -21,8 +21,8 @@ const testCardInfo = {
 
 async function onPayment() {
     try {
-        const token = await cardTokenRequest(testCardInfo.card);
-        console.log(token);
+        const response = await payRequest('abc123', 1299, 'Aizhu')
+        console.log(response)
     } catch (error) {
         console.log(error)
     }
@@ -72,7 +72,7 @@ const CheckoutScreen = ({ navigation }) => {
                 <IndentedText variant="bold">Payment</IndentedText>
                 <NameInput label="name" value={name} onChangeText={t => setName(t)} />
                 {name.length > 0 && <LiteCreditCardInput onChange={_onChange} name={name} />}
-                <PayButton onPress={async () => await payRequest('abc123', 1299, 'Aizhu')}>Pay</PayButton>
+                <PayButton onPress={() => onPayment()}>Pay</PayButton>
                 <ClearButton onPress={() => clearCart()}>Clear Cart</ClearButton>
             </ScrollView>
         </SafeArea>

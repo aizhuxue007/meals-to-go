@@ -10,8 +10,7 @@ export const cardTokenRequest = async (card) => {
 };
 
 export const payRequest = async (token, price, name) => {
-    console.log('payRequest', token, price, name)
-    return fetch(`http://127.0.0.1:5001/meals-to-go-38736/us-central1/pay`, {
+    return fetch(`https://pay-lskqsnyqga-uc.a.run.app`, {
         body: JSON.stringify({
             token,
             name,
