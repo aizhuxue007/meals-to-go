@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import * as Font from "expo-font";
 import { Lato_400Regular, Lato_700Bold } from "@expo-google-fonts/lato";
 import { initializeApp } from "firebase/app";
+import { initializeAuth, getReactNativePersistence } from "firebase/auth";
+import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "styled-components";
 import Navigation from "./src/infrastructure/navigation";
@@ -19,6 +21,9 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = initializeAuth(app, {
+  persistence: getReactNativePersistence(ReactNativeAsyncStorage),
+});
 
 export default function App() {
   useEffect(() => {
@@ -39,7 +44,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-        <AuthContextProvider app={app}>
+        <AuthContextProvider auth={auth}>
           <Navigation />
         </AuthContextProvider>
       </ThemeProvider>
