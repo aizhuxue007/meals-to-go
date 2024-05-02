@@ -10,7 +10,6 @@ export const cardTokenRequest = async (card) => {
 };
 
 export const payRequest = async (token, price, name) => {
-    console.log('payRequest', token)
     return fetch(`https://pay-lskqsnyqga-uc.a.run.app`, {
         body: JSON.stringify({
             token,

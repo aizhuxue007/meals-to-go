@@ -6,21 +6,25 @@ import { cardTokenRequest, payRequest } from "../../../services/checkout/checkou
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { IndentedText, IndentedListItem, NameInput, PayButton, ClearButton } from "../checkout.styles";
 import { CartContext } from "../../../services/cart/cart.context";
-import { CartIconContainer, CartIcon } from "../checkout.styles";
+import { CartIconContainer, CartIcon, PaymentProcessing } from "../checkout.styles";
 import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
 
 const CheckoutScreen = ({ navigation }) => {
     const [name, setName] = useState("");
     const [token, setToken] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     const { cart, restaurant, sum, clearCart } = useContext(CartContext);
 
     async function onPayment() {
         if (!token) return
+        setIsLoading(true);
         try {
-            const response = await payRequest(token, sum, name)
-            console.log('onPayment', response, response.message)
+            const resp = await payRequest(token, sum, name);
+            console.log(resp)
+            setIsLoading(false);
         } catch (error) {
-            console.log(error)
+            console.log(error);
+            setIsLoading(false);
         }
     }
 
@@ -63,13 +67,14 @@ const CheckoutScreen = ({ navigation }) => {
                         )
                     })}
                 </List.Section>
+                {isLoading && <PaymentProcessing />}
                 <IndentedText variant="bold">Total</IndentedText>
                 <IndentedText variant="body">{`$${sum / 100}`}</IndentedText>
                 <IndentedText variant="bold">Payment</IndentedText>
                 <NameInput label="name" value={name} onChangeText={t => setName(t)} />
                 {name.length > 0 && <LiteCreditCardInput onChange={_onChange} name={name} />}
-                <PayButton onPress={() => onPayment()}>Pay</PayButton>
-                <ClearButton onPress={() => clearCart()}>Clear Cart</ClearButton>
+                <PayButton onPress={() => onPayment()} disabled={isLoading}>Pay</PayButton>
+                <ClearButton onPress={() => clearCart()} disabled={isLoading}>Clear Cart</ClearButton>
             </ScrollView>
         </SafeArea>
     );
