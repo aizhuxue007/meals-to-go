@@ -1,19 +1,20 @@
 import React, { useState, useContext, useEffect, createContext } from "react";
-// import { AuthContext } from "../authentification/authentification.context";
+import { AuthContext } from "../authentification/authentification.context";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
-    // const { user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [cart, setCart] = useState([]);
     const [restaurant, setRestaurant] = useState(null)
     const [sum, setSum] = useState(0);
 
     useEffect(() => {
         async function fetchCart() {
-            const cartResp = await AsyncStorage.getItem('cart')
-            console.log('fetchCart', JSON.parse(cartResp))
+            console.log(user)
+            const cartResp = await AsyncStorage.getItem(`${user.uid}-cart`)
+            console.log('fetchCart', `${user.uid}-cart`, JSON.parse(cartResp))
             if (cartResp) {
                 const parsedCart = JSON.parse(cartResp);
                 setCart(parsedCart);
@@ -21,9 +22,10 @@ export const CartContextProvider = ({ children }) => {
         }
         async function storeCart() {
             try {
-                await AsyncStorage.setItem('cart', JSON.stringify(cart))
-                const tryFetch = await AsyncStorage.getItem('cart')
-                console.log('cartContext useeffect storecart fetch', tryFetch)
+                await AsyncStorage.setItem(
+                    'cart', JSON.stringify(cart))
+                const tryFetch = await AsyncStorage.getItem(`${user.uid}-cart`)
+                console.log('cartContext useeffect storecart fetch', `${user.uid}-cart`, tryFetch)
 
             } catch (error) {
                 console.log('cartContext useeffect', error);

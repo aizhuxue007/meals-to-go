@@ -16,6 +16,7 @@
     "@googlemaps/google-maps-services-js": "^3.4.0",
     "@react-native-async-storage/async-storage": "^1.23.1",
     "core-js": "^3.37.0",
+    "firebase": "^10.11.1",
     "firebase-admin": "^11.8.0",
     "firebase-functions": "^4.3.1",
     "stripe": "^15.4.0"
