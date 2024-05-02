@@ -10,6 +10,7 @@ export const cardTokenRequest = async (card) => {
 };
 
 export const payRequest = async (token, price, name) => {
+    console.log('payRequest', token)
     return fetch(`https://pay-lskqsnyqga-uc.a.run.app`, {
         body: JSON.stringify({
             token,
@@ -17,10 +18,7 @@ export const payRequest = async (token, price, name) => {
             price,
         }),
         method: "POST",
-    }).then((res) => {
-        if (res.status > 200) {
-            return Promise.reject("something went wrong processing your payment");
-        }
+    }).then(res => {
         return res.json();
-    });
+    }).catch(e => console.log('checkout service', e.message));
 }

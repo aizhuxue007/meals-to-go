@@ -1,5 +1,23 @@
-module.exports.payRequest = (request, response, client) => {
+module.exports.payRequest = (request, response, stripe) => {
     const body = JSON.parse(request.body)
-    console.log(body.token, body.price, body.name)
-    response.json({ "message": "Hello from server", "status": "success", "timestamp": "2023-05-02T12:34:56Z", "token": body.token, "name": body.name, "price": body.price })
+    const { price, token } = body;
+    console.log('payRequest', price, token);
+    stripe.paymentIntents.create({
+        amount: body.price,
+        currency: 'usd',
+        payment_method_types: ['card'],
+        payment_method_data: {
+            type: "card",
+            card: {
+                token: body.token
+            }
+        },
+        confirm: true,
+    }).then(paymentIntent => {
+        response.json(paymentIntent)
+    }).catch(e => {
+        console.log(e)
+        response.status(400);
+        response.send(e)
+    });
 };

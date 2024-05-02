@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
-import { Button, ScrollView } from "react-native";
+import React, { useState, useContext } from "react";
+import { ScrollView } from "react-native";
 import { List } from "react-native-paper";
 import { LiteCreditCardInput } from "react-native-credit-card-input";
 import { cardTokenRequest, payRequest } from "../../../services/checkout/checkout.service";
@@ -18,7 +18,7 @@ const CheckoutScreen = ({ navigation }) => {
         if (!token) return
         try {
             const response = await payRequest(token, sum, name)
-            console.log('onPayment', response)
+            console.log('onPayment', response, response.message)
         } catch (error) {
             console.log(error)
         }
