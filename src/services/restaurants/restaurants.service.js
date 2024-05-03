@@ -39,7 +39,6 @@ export const restaurantsRequest = async (location = defaultLocation) => {
 };
 
 export const restaurantsTransform = (results) => {
-  console.log('rest Trans', results)
   const mappedResults = results.map((restaurant) => {
     return {
       ...restaurant,
