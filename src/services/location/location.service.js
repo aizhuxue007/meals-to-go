@@ -7,8 +7,7 @@ const liveRequest = async (searchTerm) => {
   try {
     const resp = await axios
       .get(`https://geocode-lskqsnyqga-uc.a.run.app?city=${searchTerm}`)
-      .then((res) => res.data.results);
-    return resp;
+    return resp.data;
   } catch (error) {
     console.log("from locationRequest", error);
   }
@@ -28,7 +27,6 @@ export const locationRequest = async (searchTerm) => {
   let resp;
   if (mockMode) {
     resp = await mockRequest(searchTerm);
-    // console.log('in mock locationreq', resp.results)
   } else {
     resp = await liveRequest(searchTerm);
   }
@@ -37,7 +35,6 @@ export const locationRequest = async (searchTerm) => {
 
 export const locationTransform = (location) => {
   const formattedResult = camelize(location[0]);
-  // console.log('from locationTransform', formattedResult)
   const { geometry } = formattedResult;
   const { lat, lng } = geometry.location;
   return { lat, lng, viewport: geometry.viewport };

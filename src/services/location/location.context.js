@@ -20,7 +20,7 @@ export const LocationContextProvider = ({ children }) => {
       .catch((err) => {
         setIsLoading(false);
         setError(err);
-        console.log(err)
+        console.log("from onSearch location", err)
       });
   }
 

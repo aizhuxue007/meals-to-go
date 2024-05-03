@@ -86,7 +86,7 @@ export const RestaurantsScreen = ({ navigation }) => {
 
             {hasError && (
                 <Spacer position="bottom" size="m">
-                    <Text variant="error">Something went wrong</Text>
+                    <Text variant="error">{`error: ${error}, locationError: ${locationError}`}</Text>
                 </Spacer>
             )}
         </SafeArea>

@@ -25,6 +25,7 @@ const RestaurantsContextProvider = ({ children }) => {
     restaurantsRequest(loc)
       .then(restaurantsTransform)
       .then((results) => {
+        console.log('retrieveRests', results)
         setIsLoading(false);
         setError(null);
         setRestaurants(results);
@@ -39,6 +40,7 @@ const RestaurantsContextProvider = ({ children }) => {
     if (location) {
       const { lat, lng } = location;
       const locationString = `${lat},${lng}`;
+      console.log('useFfect rest context', locationString)
       retrieveRestaurants(locationString);
     }
   }, [location]);

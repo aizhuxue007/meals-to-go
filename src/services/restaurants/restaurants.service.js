@@ -38,16 +38,14 @@ export const restaurantsRequest = async (location = defaultLocation) => {
   return resp;
 };
 
-export const restaurantsTransform = ({ results }) => {
+export const restaurantsTransform = (results) => {
+  console.log('rest Trans', results)
   const mappedResults = results.map((restaurant) => {
-    const randomIndex = Math.floor(Math.random() * 6);
-    const photos = [mockImages[randomIndex]]
     return {
       ...restaurant,
       isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,
       isClosedTemporarily: restaurant.business_status
         === "CLOSED_TEMPORARILY",
-      photos
     };
   });
 
