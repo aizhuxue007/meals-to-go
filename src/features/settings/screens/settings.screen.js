@@ -38,13 +38,10 @@ const SettingScreen = ({ navigation }) => {
 
   if (user) {
     if (user._tokenResponse) {
-      console.log('in first')
       text = user._tokenResponse.email;
     } else if (user.email) {
-      console.log('in second')
       text = user.email;
     } else {
-      console.log('in third')
       null;
     }
   }
