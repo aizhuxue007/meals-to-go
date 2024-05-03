@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
-import { RestaurantInfoCard } from "../restaurants/components/restaurant-info-card.component";
+import { CompactRestaurantInfo } from "../restaurants/components/compact-restaurant-info.component";
 import { Text } from "../../components/typography/text.component";
 
 const FavouritesWrapper = styled.View`
@@ -28,7 +28,7 @@ export const FavouritesBar = ({ favourites, onNavigate }) => {
                 })
               }
             >
-              <RestaurantInfoCard restaurant={restaurant} />
+              <CompactRestaurantInfo restaurant={restaurant} />
             </TouchableOpacity>
           );
         })}
