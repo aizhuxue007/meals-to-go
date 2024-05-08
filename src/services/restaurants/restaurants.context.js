@@ -21,7 +21,7 @@ const RestaurantsContextProvider = ({ children }) => {
 
   function retrieveRestaurants(loc) {
     setIsLoading(true);
-    setTimeout(() => { }, 1000)
+    setTimeout(() => {}, 1000);
     restaurantsRequest(loc)
       .then(restaurantsTransform)
       .then((results) => {

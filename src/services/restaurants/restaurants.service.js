@@ -26,12 +26,12 @@ const mockRequest = (location) => {
     }
     resolve(mock);
   });
-}
+};
 
 export const restaurantsRequest = async (location = defaultLocation) => {
   let resp;
   if (mockMode) {
-    resp = await mockRequest(location);;
+    resp = await mockRequest(location);
   } else {
     resp = await liveRequest(location);
   }
@@ -43,8 +43,7 @@ export const restaurantsTransform = (results) => {
     return {
       ...restaurant,
       isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,
-      isClosedTemporarily: restaurant.business_status
-        === "CLOSED_TEMPORARILY",
+      isClosedTemporarily: restaurant.business_status === "CLOSED_TEMPORARILY",
     };
   });
 

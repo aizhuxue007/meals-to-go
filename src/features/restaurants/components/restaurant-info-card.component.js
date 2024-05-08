@@ -43,18 +43,16 @@ export const RestaurantInfoCard = React.memo(({ restaurant }) => {
         <RestaurantInfo>
           <RestaurantDescription>
             <Spacer position={"bottom"} size={"s"}>
-              < Text variant={"bold"} > {name}</Text >
-            </Spacer >
+              <Text variant={"bold"}> {name}</Text>
+            </Spacer>
             <Spacer position={"bottom"} size={"m"}>
               <Text variant={"body"}>{vicinity}</Text>
             </Spacer>
 
-            {
-              isClosedTemporarily && (
-                <Text variant={"error"}>Temporarily Closed</Text>
-              )
-            }
-          </RestaurantDescription >
+            {isClosedTemporarily && (
+              <Text variant={"error"}>Temporarily Closed</Text>
+            )}
+          </RestaurantDescription>
           <Icons>
             <Ratings>
               {starRatings.map((i) =>
@@ -84,9 +82,9 @@ export const RestaurantInfoCard = React.memo(({ restaurant }) => {
               <Icon source={{ uri: icon }} />
             </Status>
           </Icons>
-        </RestaurantInfo >
-      </RestaurantCard >
-    </Spacer >
+        </RestaurantInfo>
+      </RestaurantCard>
+    </Spacer>
   );
 });
 

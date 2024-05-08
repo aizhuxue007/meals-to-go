@@ -11,7 +11,11 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      {development || isAuthenticated ? <AppNavigator /> : <AccountsNavigator />}
+      {development || isAuthenticated ? (
+        <AppNavigator />
+      ) : (
+        <AccountsNavigator />
+      )}
     </NavigationContainer>
   );
 };

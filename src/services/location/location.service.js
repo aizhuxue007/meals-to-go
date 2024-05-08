@@ -5,13 +5,14 @@ import { locations } from "./location.mock";
 
 const liveRequest = async (searchTerm) => {
   try {
-    const resp = await axios
-      .get(`https://geocode-lskqsnyqga-uc.a.run.app?city=${searchTerm}`)
+    const resp = await axios.get(
+      `https://geocode-lskqsnyqga-uc.a.run.app?city=${searchTerm}`,
+    );
     return resp.data;
   } catch (error) {
     console.log("from locationRequest", error);
   }
-}
+};
 
 const mockRequest = async (searchTerm) => {
   return new Promise((resolve, reject) => {
@@ -21,7 +22,7 @@ const mockRequest = async (searchTerm) => {
     }
     resolve(locationMock);
   });
-}
+};
 
 export const locationRequest = async (searchTerm) => {
   let resp;

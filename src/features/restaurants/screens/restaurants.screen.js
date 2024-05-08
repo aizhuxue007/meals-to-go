@@ -9,19 +9,18 @@ import Spacer from "../../../components/spacer/spacer.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
 import { LocationContext } from "../../../services/location/location.context";
-import { FavouritesBar } from "../../favourites/favourites.component"
+import { FavouritesBar } from "../../favourites/favourites.component";
 import FadeInView from "../../../components/animation/FadeInView.animation";
 import { Text } from "../../../components/typography/text.component";
 
-
 const RestaurantList = React.memo(
-    styled(FlatList).attrs({
-        contentContainerStyle: {
-            padding: 16,
-        },
-        overScrollMode: "never",
-    })``,
-    (prevProps, nextProps) => prevProps.data === nextProps.data,
+  styled(FlatList).attrs({
+    contentContainerStyle: {
+      padding: 16,
+    },
+    overScrollMode: "never",
+  })``,
+  (prevProps, nextProps) => prevProps.data === nextProps.data,
 );
 
 const LoadingContainer = styled(View)`
@@ -31,64 +30,66 @@ const LoadingContainer = styled(View)`
 `;
 
 const Loading = () => {
-    return (
-        <LoadingContainer>
-            <ActivityIndicator
-                animating={true}
-                color={MD2Colors.red800}
-                size={"large"}
-            />
-        </LoadingContainer>
-    );
+  return (
+    <LoadingContainer>
+      <ActivityIndicator
+        animating={true}
+        color={MD2Colors.red800}
+        size={"large"}
+      />
+    </LoadingContainer>
+  );
 };
 
 export const RestaurantsScreen = ({ navigation }) => {
-    const { isLoading, error, restaurants } = useContext(RestaurantsContext);
-    const { favourites } = useContext(FavouritesContext);
-    const [isToggled, setIsToggled] = useState(false);
-    const { error: locationError } = useContext(LocationContext);
+  const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+  const { favourites } = useContext(FavouritesContext);
+  const [isToggled, setIsToggled] = useState(false);
+  const { error: locationError } = useContext(LocationContext);
 
-    const hasError = !!error || !!locationError;
+  const hasError = !!error || !!locationError;
 
-    const onPressRestaurant = useCallback(
-        (restaurant) => {
-            navigation.navigate("RestaurantDetail", { restaurant });
-        },
-        [navigation],
-    );
+  const onPressRestaurant = useCallback(
+    (restaurant) => {
+      navigation.navigate("RestaurantDetail", { restaurant });
+    },
+    [navigation],
+  );
 
-    return (
-        <SafeArea>
-            <Search
-                isFavouritesToggled={isToggled}
-                onFavouritesToggle={() => setIsToggled(!isToggled)}
-            />
+  return (
+    <SafeArea>
+      <Search
+        isFavouritesToggled={isToggled}
+        onFavouritesToggle={() => setIsToggled(!isToggled)}
+      />
 
-            {isToggled && <FavouritesBar navigation={navigation} favourites={favourites} />}
+      {isToggled && (
+        <FavouritesBar navigation={navigation} favourites={favourites} />
+      )}
 
-            {isLoading && !hasError ? (
-                <Loading />
-            ) : (
-                <RestaurantList
-                    data={restaurants}
-                    renderItem={({ item }) => (
-                        <TouchableOpacity onPress={() => onPressRestaurant(item)}>
-                            <FadeInView>
-                                <Spacer position="bottom" size="m">
-                                    <RestaurantInfoCard restaurant={item} />
-                                </Spacer>
-                            </FadeInView>
-                        </TouchableOpacity>
-                    )}
-                    keyExtractor={(item) => item.name}
-                />
-            )}
-
-            {hasError && (
+      {isLoading && !hasError ? (
+        <Loading />
+      ) : (
+        <RestaurantList
+          data={restaurants}
+          renderItem={({ item }) => (
+            <TouchableOpacity onPress={() => onPressRestaurant(item)}>
+              <FadeInView>
                 <Spacer position="bottom" size="m">
-                    <Text variant="error">{`error: ${error}, locationError: ${locationError}`}</Text>
+                  <RestaurantInfoCard restaurant={item} />
                 </Spacer>
-            )}
-        </SafeArea>
-    );
+              </FadeInView>
+            </TouchableOpacity>
+          )}
+          keyExtractor={(item) => item.name}
+        />
+      )}
+
+      {hasError && (
+        <Spacer position="bottom" size="m">
+          <Text variant="error">{`error: ${error}, locationError: ${locationError}`}</Text>
+        </Spacer>
+      )}
+    </SafeArea>
+  );
 };

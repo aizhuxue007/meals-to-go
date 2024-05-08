@@ -60,9 +60,13 @@ export const Star = styled(SvgXml)``;
 
 export const Open = styled(SvgXml)``;
 
-export const OrderButton = styled(Button).attrs({ buttonColors: colors.brand.primary, mode: 'contained', icon: 'cash' })`
+export const OrderButton = styled(Button).attrs({
+  buttonColors: colors.brand.primary,
+  mode: "contained",
+  icon: "cash",
+})`
   width: 80%;
   align-self: center;
-  padding: ${props => props.theme.space[2]};
-  margin-bottom: ${props => props.theme.space[4]};
+  padding: ${(props) => props.theme.space[2]};
+  margin-bottom: ${(props) => props.theme.space[4]};
 `;
